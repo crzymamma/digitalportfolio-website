@@ -1,0 +1,350 @@
+/*CSS DOCUMENT*/
+
+html, body, div, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    font-size: 100%; 
+    font: inherit;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*Keyframes/Animations*/
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scroll-fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.works > *:not(h3),
+.about > *:not(h3),
+.contact > *:not(h3) {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.works > *.visible,
+.about > *.visible,
+.contact > *.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*Buttons*/
+.view-project {
+    align-items: center;
+      appearance: none;
+      background-color: rgb(240, 240, 240);
+      border-radius: 4px;
+      border-width: 0;
+      box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+      box-sizing: border-box;
+      color: #000000;
+      cursor: pointer;
+      display: inline-flex;
+      font-family: "JetBrains Mono",monospace;
+      height: 48px;
+      justify-content: center;
+      line-height: 1;
+      list-style: none;
+      overflow: hidden;
+      padding-left: 16px;
+      padding-right: 16px;
+      position: relative;
+      text-align: left;
+      text-decoration: none;
+      transition: box-shadow .15s,transform .15s;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      white-space: nowrap;
+      will-change: box-shadow,transform;
+      font-size: 18px;
+}
+    
+.view-project:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.view-project:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.view-project:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+/*Font Styles*/
+@font-face {
+    font-family: ello_bold;
+    src: url(Ellograph\ CF\ Bold.ttf);
+}
+
+@font-face {
+    font-family: ello;
+    src: url(Ellograph\ CF\ Light.ttf);
+}
+
+h2 {
+    font-family: ello_bold;
+    font-size: 120px;
+    line-height: 120px;
+}
+
+h3 {
+    font-family: monospace;
+    font-size: 50px;
+}
+
+h4 {
+    font-family: ello_bold;
+    font-size: 30px;
+}
+
+p {
+    font-family: monospace;
+}
+
+p.contact a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-family: ello_bold;
+    opacity: 50% !important;
+    transition: none !important;
+}
+
+p.contact a:hover {
+    text-decoration: underline;
+    opacity: 100% !important;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+/*Parent Container Styles*/
+body {
+    background-color: rgb(235, 235, 235);
+    animation: fade-in 2s forwards;
+}
+
+.container {
+    display: flex;
+}
+
+section {
+    margin: 25% 8% 0% 40%;
+    padding: 3% 0% 50%;
+}
+
+/*Logo*/
+.logo {
+    position: fixed;
+    top: 70px;
+    left: 60px;
+    z-index: 100;
+    width: 150px;
+    height: auto;
+}
+
+.logo:hover {
+    filter: blur(2px);
+    transition: all 0.3s ease;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+}
+
+/*Navigation*/
+.nav {
+    margin: 20% 0% 0% 7%;
+    position: fixed;
+}
+
+.nav ul {
+    list-style: none;
+}
+
+.nav ul li a {
+    display: block;
+    width: 180%;
+    padding: 20px 0;
+    font-family: monospace;
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    filter: blur(2px);
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.nav ul li a:hover {
+    filter: blur(0);
+    transform: scale(1.3);
+    transform-origin: left center;
+}
+
+/*Intro*/
+.intro {
+    margin: 10% 8% 10% 40%;
+}
+
+/*Works*/
+.works h3 {
+    margin-bottom: 50px;
+}
+
+.works h4 {
+    margin: 10px 0px 15px;
+}
+
+.works p {
+    font-size: 18px;
+}
+
+.works img, .works video {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.works button.view-project {
+    margin: 15px 0px 300px;
+}
+
+/*About*/
+.about h3 {
+    margin-bottom: 50px;
+}
+
+.about h4 {
+    margin-bottom: 20px;
+}
+
+.about img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.about p {
+    font-size: 30px;
+    line-height: 40px;
+    margin: 15px 0px;
+}
+
+/*Contact*/
+.contact h3 {
+    margin-bottom: 100px;
+}
+
+.contact h4 {
+    margin-bottom: 50px;
+}
+
+.contact p {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+/*Footer*/
+
+footer {
+    padding: 20px;
+    backdrop-filter: blur(2px);
+}
+
+footer p {
+    font-size: small;
+    margin-bottom: 18px;
+    opacity: 50%;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+/*Media Queries*/
+@media (max-width: 650px) {
+
+    /*Logo*/
+    .logo {
+        width: 80px;
+        top: 60px;
+        left: 20px;
+    }
+
+    /*Navigation*/
+    .nav {
+        margin-top: 10rem;
+    }
+
+    /*Intro*/
+    .intro {
+        margin: 40% 8% 50% 40%;
+    }
+
+    .intro h2 {
+        font-size: 50px;
+        line-height: 50px;
+    }
+
+    .intro h3 {
+        font-size: 20px;
+    }
+
+    /*About*/
+    .about h4 {
+        font-size: 20px;
+    }
+
+    .about p {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    /*Footer*/
+    footer {
+        padding: 10px 15px;
+    }
+
+    footer p {
+        font-size: 8px;
+        margin-bottom: 10px;
+    }
+}
