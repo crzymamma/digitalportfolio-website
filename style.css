@@ -235,7 +235,7 @@ section {
     font-size: 18px;
 }
 
-.works img, .works video {
+.works img, .works embed {
     max-width: 100%;
     border-radius: 8px;
 }
@@ -347,4 +347,34 @@ footer p {
         font-size: 8px;
         margin-bottom: 10px;
     }
+}
+
+@media (min-width: 1300px) {
+    .logo {
+        left: 140px;
+        width: 250px;
+    }
+
+    .nav {
+        margin: 18% 0% 0% 7%;
+    }
+
+    .nav ul li a {
+        font-size: 35px;
+        margin: 30px 0px;
+    }
+
+    .intro h2 {
+        font-size: 180px;
+        line-height: 180px;
+    }
+
+    .intro h3 {
+        font-size: 75px;
+    }
+
+    .works embed {
+        height: 500px;
+    }
+
 }
