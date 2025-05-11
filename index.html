@@ -79,7 +79,6 @@
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
                     const fadeElements = document.querySelectorAll('.works > *:not(h3), .about > *:not(h3), .contact > *:not(h3), *:not(p)');
-                    
                     const observer = new IntersectionObserver((entries) => {
                         entries.forEach(entry => {
                             if (entry.isIntersecting) {
@@ -92,10 +91,46 @@
                         threshold: 0.1,
                         rootMargin: '0px 0px -100px 0px'
                     });
-                    
                     fadeElements.forEach(element => {
                         observer.observe(element);
                     });
+
+                    function isMobileDevice() {
+                        return window.innerWidth <= 650;
+                    }
+
+                    if (isMobileDevice()) {
+                        const navLinks = document.querySelectorAll('.nav ul li a');
+                        const sections = document.querySelectorAll('section, .intro');
+                        
+                        const navObserver = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    const id = entry.target.getAttribute('id');
+                                    navLinks.forEach(link => {
+                                        link.classList.remove('active');
+                                        if (link.getAttribute('href') === `#${id}`) {
+                                            link.classList.add('active');
+                                        }
+                                    });
+                                }
+                            });
+                        }, {
+                            threshold: 0.5,
+                            rootMargin: '0px 0px -50% 0px'
+                        });
+
+                        sections.forEach(section => {
+                            navObserver.observe(section);
+                        });
+
+                        navLinks.forEach(link => {
+                            link.addEventListener('click', () => {
+                                navLinks.forEach(l => l.classList.remove('active'));
+                                link.classList.add('active');
+                            });
+                        });
+                    }
                 });
             </script>
         </body>
