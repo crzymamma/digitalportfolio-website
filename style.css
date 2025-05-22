@@ -265,6 +265,11 @@ section {
 
 }
 
+.project-description-short {
+    width: 100%;
+    height: 70px;
+}
+
 .works h3 {
     margin-bottom: 50px;
 }
