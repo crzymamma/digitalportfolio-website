@@ -211,8 +211,7 @@ li a:hover {
 .about-container {
     background-color: rgb(235, 235, 235);
     margin: 100px 70px 0px;
-    padding-top: 100px;
-    padding-bottom: 50px;
+    padding: 100px 40px 50px;
 }
 
 .about-container img {
