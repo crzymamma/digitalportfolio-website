@@ -145,13 +145,13 @@ li a:hover {
 .intro h3 {
     margin: 2% 30% 0 0;
     background: rgba(255, 255, 255, 0.005);
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(16px);
     padding: 15px 0 15px 20px;
     border-radius: 40px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
 }
 
 /* Works */
-
 .project-link {
     text-decoration: none;
     color: inherit;
@@ -160,9 +160,9 @@ li a:hover {
 
 .project-container {
     background-color: rgb(235, 235, 235);
-    margin: 50px 40px 0px;
-    padding-top: 100px;
-    padding-bottom: 50px;
+    margin: -80px 0px 0px;
+    padding: 100px 40px 50px;
+    border-radius: 40px;
 }
 
 .project {
