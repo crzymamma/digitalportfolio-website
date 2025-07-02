@@ -95,7 +95,7 @@ p {
 
 /* Parent Container Styles */
 body {
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(255, 255, 255);
     animation: fade-in 2s forwards;
 }
 
@@ -165,7 +165,7 @@ li a:hover {
     justify-content: center;
     position: relative;
     overflow: hidden;
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(255, 255, 255);
 }
 
 .hero-items-container {
@@ -220,7 +220,7 @@ spline-viewer {
 }
 
 .project-container {
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(255, 255, 255);
     margin: -80px 0px 0px;
     padding: 150px 40px 50px;
 }
@@ -229,7 +229,7 @@ spline-viewer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 200px;
-    background: rgb(235, 235, 235);
+    background: rgb(255, 255, 255);
     backdrop-filter: blur(16px);
     margin: 20px 70px;
     padding: 20px 50px;
@@ -271,7 +271,7 @@ spline-viewer {
 
 /* About */
 .about-container {
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(255, 255, 255);
     margin: 0px 70px 0px;
     padding: 150px 40px 50px;
 }
@@ -297,7 +297,7 @@ spline-viewer {
 
 /* Contact */
 .contact-container {
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(255, 255, 255);
     margin: 100px 110px 0px;
     padding-top: 100px;
     padding-bottom: 180px;
