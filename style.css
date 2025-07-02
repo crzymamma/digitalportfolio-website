@@ -8,6 +8,8 @@ html, body, div, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
     font: inherit;
 }
 
+/* Transitions */
+
 html {
     scroll-behavior: smooth;
 }
@@ -21,6 +23,39 @@ html {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Cursor */
+html {
+    cursor: url('wii-open-ccw.cur'), auto;
+}
+
+a, button, .clickable {
+    cursor: url('wii-pointer-ccw.cur'), pointer;
+}
+
+body {
+    cursor: none;
+}
+
+.custom-cursor {
+    position: fixed;
+    width: 32px;
+    height: 32px;
+    pointer-events: none;
+    z-index: 9999;
+    display: none;
+    will-change: transform;
+    transform: translate(-50%, -50%);
+}
+
+.custom-cursor-default {
+    background-image: url('wii-open-ccw.cur');
+    background-size: cover;
+}
+
+.custom-cursor-hover {
+    background-size: cover;
 }
 
 /*Font Styles*/
