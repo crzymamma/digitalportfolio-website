@@ -188,18 +188,17 @@ spline-viewer {
     background-color: rgb(235, 235, 235);
     margin: -80px 0px 0px;
     padding: 150px 40px 50px;
-    border-radius: 40px;
 }
 
 .project {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 200px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgb(235, 235, 235);
     backdrop-filter: blur(16px);
     margin: 20px 70px;
     padding: 20px 50px;
-    border-radius: 40px;
+    border-radius: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -212,14 +211,14 @@ spline-viewer {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    border-radius: 40px;
+    border-radius: 20px;
 }
 
 .project-video embed {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    border-radius: 40px;
+    border-radius: 20px;
 }
 
 .project-container h3 {
@@ -227,10 +226,11 @@ spline-viewer {
 }
 
 .project h4 {
-    margin-bottom: 10px;
+    line-height: 30px;
 }
 
 .project p {
+    margin-top: 10px;
     font-size: 15px;
 }
 
@@ -316,15 +316,14 @@ footer p {
 
 /* General adjustments for tablets and smaller */
 @media (max-width: 1024px) {
-    .intro h3 {
-        margin-right: 15%;
-    }
     
+    /* Projects */
     .project {
         gap: 100px;
         margin: 20px 40px;
     }
     
+    /* About */
     .about-container p {
         margin-right: 100px;
     }
@@ -332,15 +331,28 @@ footer p {
 
 /* Tablet */
 @media (max-width: 768px) {
+
+    /* Nav */
+    .nav {
+        width: 80%;
+    }
+
+    /* Hero */
     .hero-items-container {
         flex-direction: column;
         margin: 150px 0 50px;
     }
     
-    .intro, .intro-model {
+    .intro {
+        max-width: 70%;
+        font-size: 30px;
+    }
+
+    .intro-model {
         max-width: 90%;
         width: 90%;
-        margin: 0 auto;
+        min-height: 240px;
+        margin-bottom: 50px;
     }
 
     h2 {
@@ -348,46 +360,34 @@ footer p {
         line-height: 80px;
     }
     
-    .nav {
-        width: 80%;
-    }
-    
-    .intro {
-        order: 1;
-        margin-bottom: 40px;
-    }
-    
-    .intro-model {
-        order: 2;
-        min-height: 240px;
-        margin-bottom: 50px;
-    }
-    
     spline-viewer {
         min-height: 300px;
     }
-    
-    .intro h3 {
-        margin-right: 0;
-        font-size: 30px;
-    }
-    
+
+    /* Projects */
     .project {
         grid-template-columns: 1fr;
         gap: 30px;
     }
     
-    .project-container, 
-    .about-container {
+    .project-container {
         margin-left: 30px;
         margin-right: 30px;
     }
     
+    /* About */
+
+    .about-container {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
     .about-container p {
         margin-right: 0;
         font-size: 18px;
     }
     
+    /* Contact */
     .contact-container {
         margin-left: 50px;
         margin-right: 50px;
@@ -428,18 +428,31 @@ footer p {
 
     /* Hero */
     .hero-items-container {
-        margin: 120px 0 30px;
+        margin: 120px 0 0;
     }
     
+    .intro {
+        max-width: 80%;
+        padding: 0 20px !important;
+        text-align: center;
+        margin: 0 auto;
+    }
+
     .intro h2 {
         font-size: 50px;
         line-height: 50px;
-        padding-left: 0;
+    }
+    
+    .intro h2, 
+    .intro h3 {
+        text-align: center;
+        padding-left: 0 !important;
+        margin-left: 0 !important;
     }
     
     .intro h3 {
+        margin-top: 20px !important;
         font-size: 20px;
-        margin: 10px 20px 0 0;
     }
     
     .intro-model {
@@ -448,10 +461,6 @@ footer p {
     
     spline-viewer {
         min-height: 250px;
-    }
-
-    .intro {
-        margin: 10px 30px;
     }
     
     /* Projects */
@@ -484,7 +493,7 @@ footer p {
     .about-container {
         margin-left: 15px;
         margin-right: 15px;
-        padding-top: 70px 15px;
+        padding-top: 100px;
         text-align: center;
     }
 
