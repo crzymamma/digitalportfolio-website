@@ -60,33 +60,35 @@ body {
 
 /*Font Styles*/
 @font-face {
-    font-family: ello_bold;
-    src: url(Ellograph\ CF\ Bold.ttf);
+    font-family: helveticareg;
+    src: url(Helvetica\ Neue\ LT\ Pro\ 55\ Roman.ttf);
 }
 
 @font-face {
-    font-family: ello;
-    src: url(Ellograph\ CF\ Light.ttf);
+    font-family: helveticabold;
+    src: url(Helvetica\ Neue\ LT\ Pro\ 75\ Bold.ttf);
 }
 
 h2 {
-    font-family: ello_bold;
-    font-size: 70px;
+    font-family: helveticabold;
+    font-size: 66px;
     line-height: 70px;
+    letter-spacing: -2px;
 }
 
 h3 {
-    font-family: monospace;
+    font-family: helveticareg;
     font-size: 40px;
+    letter-spacing: -2px;
 }
 
 h4 {
-    font-family: ello_bold;
-    font-size: 30px;
+    font-family: helveticabold;
+    font-size: 28px;
 }
 
 p {
-    font-family: monospace;
+    font-family: helveticareg;
 }
 
 .bold {
@@ -149,7 +151,7 @@ li a {
     text-align: center;
     padding: 0px 18px;
     text-decoration: none;
-    font-family: monospace;
+    font-family: helveticareg;
     font-size: 16px;
 }
 
@@ -262,6 +264,7 @@ spline-viewer {
 
 .project h4 {
     line-height: 30px;
+    font-size: 24px;
 }
 
 .project p {
@@ -319,9 +322,9 @@ spline-viewer {
 
 p.contact a {
     text-decoration: none;
-    font-family: ello_bold;
+    font-family: helveticabold;
     color: rgb(0, 0, 0);
-    opacity: 50%
+    opacity: 50%;
 }
 
 p.contact a:hover {
@@ -430,7 +433,7 @@ footer p {
 }
 
 /* Mobile */
-@media (max-width: 480px) {
+@media (max-width: 540px) {
 
     /* Text Styles */
     h2 {
@@ -440,6 +443,7 @@ footer p {
     
     h3 {
         font-size: 30px;
+        letter-spacing: -1px;
     }
     
     h4 {
@@ -509,6 +513,8 @@ footer p {
 
     .project-container h3 {
         padding: 40px 0;
+        letter-spacing: -1px;
+        margin-left: 0;
     }
     
     .project {
@@ -516,12 +522,12 @@ footer p {
         padding: 20px;
     }
 
+    .project h4 {
+        font-size: 18px;
+    }
+
     .project-description p {
         display: none;
-    }
-    
-    .project-container h3 {
-        margin-left: 0;
     }
     
     /* About */
@@ -553,6 +559,7 @@ footer p {
     
     .contact-container p {
         font-size: 18px;
+        margin-bottom: 8px;
     }
     
     /* Footer */
