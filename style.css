@@ -27,7 +27,7 @@ html {
 
 /* Cursor */
 html {
-    cursor: url('wii-open-ccw.cur'), auto;
+    cursor: url('wii-open-ccw.cur'), url('wii-open-ccw.png'), auto;
 }
 
 a, button, .clickable {
