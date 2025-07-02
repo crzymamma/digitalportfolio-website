@@ -25,7 +25,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="hero-items-container">
+                <div class="hero-items-container fade-in">
                     <div class="intro">
                         <h2>Hey! I'm Ethan.</h2>
                         <h3>A UX designer, car enthusiast, music lover, and currently attending <span class="bold">Cal Poly SLO</span>.</h3>
@@ -37,8 +37,8 @@
                 </div>
             </div>
 
-            <div class="project-container" id="works">
-                <h3>Works</h3>
+            <div class="project-container fade-in" id="works">
+                <h3>Selected Projects</h3>
                 <a href="https://dribbble.com/shots/25996323-Cal-Poly-Racing-FSAE-Car-Livery?utm_source=Clipboard_Shot&utm_campaign=ethansautto&utm_content=Cal%20Poly%20Racing%20FSAE%20Car%20Livery&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=ethansautto&utm_content=Cal%20Poly%20Racing%20FSAE%20Car%20Livery&utm_medium=Social_Share" class="project-link">
                     <div class="project">
                         <div class="project-description">
@@ -70,7 +70,7 @@
                 </a>
             </div>
 
-            <div class="about-container" id="about">
+            <div class="about-container fade-in" id="about">
                 <h3>About</h3>
                 <h4>For me, all things design can be traced back to my love of cars.</h4>
                 <img src="mycar.jpg" alt="Flash photography of a red Nissan 240SX parked in a neighborhood.">
@@ -79,8 +79,8 @@
                 <p>Inspired by the individuality and creativity of my peers, I channeled my own personal style and love for car-modifying into a UX design philosophy — <span class="bold">simple beauty and usability.</span></p>
             </div>
 
-            <div class="contact-container" id="contact">
-                <h3>Contact</h3>
+            <div class="contact-container fade-in" id="contact">
+                <h3>Contact Me</h3>
                 <h4>I need a job!</h4>
                 <p>If you're looking for a new designer, feel free to contact me:</p>
                 <p class="contact"><a href="mailto: ethansautto545@gmail.com" target="_blank">Email &#8599;</a></p>
@@ -96,6 +96,7 @@
             </footer>
 
             <script>
+                // Video player
                 document.addEventListener('DOMContentLoaded', function() {
                     var video = document.getElementById('bg-video');
                     if (video) {
@@ -104,6 +105,29 @@
                             this.play();
                         }, false);
                     }
+                });
+            </script>
+
+            <script>
+                // Scroll animation
+                document.addEventListener('DOMContentLoaded', function() {
+                    const fadeElements = document.querySelectorAll('.fade-in');
+                    
+                    const fadeObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('visible');
+                            } else {
+                                entry.target.classList.remove('visible');
+                            }
+                        });
+                    }, {
+                        threshold: 0.2
+                    });
+
+                    fadeElements.forEach(element => {
+                        fadeObserver.observe(element);
+                    });
                 });
             </script>
         </body>
