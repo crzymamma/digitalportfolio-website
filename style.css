@@ -73,7 +73,7 @@ h2 {
     font-family: helveticabold;
     font-size: 66px;
     line-height: 70px;
-    letter-spacing: -2px;
+    letter-spacing: -1.5px;
 }
 
 h3 {
@@ -467,7 +467,7 @@ footer p {
 
     /* Hero */
     .hero-items-container {
-        margin: 120px 0 0;
+        margin: 0;
     }
     
     .intro {
@@ -495,19 +495,15 @@ footer p {
     }
     
     .intro-model {
-        min-height: 192px;
-    }
-    
-    spline-viewer {
-        min-height: 250px;
+        display: none;
     }
     
     /* Projects */
     .project-container {
         margin-left: 15px;
         margin-right: 15px;
-        padding-top: 70px;
-        margin-top: 10px;
+        padding-top: 0;
+        margin-top: -100px;
         text-align: center;
     }
 
@@ -515,6 +511,7 @@ footer p {
         padding: 40px 0;
         letter-spacing: -1px;
         margin-left: 0;
+        display: none;
     }
     
     .project {
@@ -534,7 +531,7 @@ footer p {
     .about-container {
         margin-left: 15px;
         margin-right: 15px;
-        padding-top: 100px;
+        padding-top: 20px;
         text-align: center;
     }
 
@@ -574,3 +571,4 @@ footer p {
         text-align: center;
     }
 }
+
