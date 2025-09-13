@@ -19,7 +19,7 @@ html, body, div, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
   padding-left: 4.8rem;
   gap: 4.8rem;
   width: max-content;
-  animation: marquee-move-text var(--speed, 10s) linear infinite
+  animation: marquee-move-text var(--speed, 20s) linear infinite
     var(--direction, forwards);
 }
 
@@ -841,6 +841,7 @@ footer p {
         grid-row: auto;
     }
 }
+
 
 
 
