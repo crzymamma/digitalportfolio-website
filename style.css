@@ -223,57 +223,73 @@ spline-viewer {
 
 .project-container {
     background-color: rgb(255, 255, 255);
-    margin: -80px 0px 0px;
-    padding: 150px 40px 50px;
+    margin: -80px 20px 0;
+    padding: 150px 0 50px;
 }
 
 .project {
-    backdrop-filter: blur(16px);
-    margin: 50px 70px;
+    margin: 50px 20px 180px 40px;
     border-radius: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 80px;
 }
 
-.project:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+.project-description {
+    flex: 1;
+}
+
+.project-tags {
+    margin: 5px 0 12px;
+    display: inline-flex;
+}
+
+.project-tag {
+    font-family: helveticareg;
+    font-size: 11px;
+    padding: 5px 8px;
+    margin-right: 10px;
+    text-align: center;
+    border: rgb(0, 0, 0);
+    border-style: solid;
+    border-radius: 40px;
+    border-width: 1px;
 }
 
 .project img {
     width: 100%;
-    height: 600px;
     object-fit: cover;
     border-radius: 20px;
+    flex: 1.5;
+    transition: transform 0.3s ease;
 }
 
-.project-title {
-    position: absolute;
-    padding: 20px 22px;
-    margin: 500px 0 0 30px;
-    border-radius: 50px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+.project img:hover, .project-video embed:hover {
+    transform: translateY(-10px) scale(1.02);
 }
 
 .project-video embed {
     width: 100%;
-    height: 600px;
+    min-height: 350px;
+    min-width: 600px;
     object-fit: cover;
     border-radius: 20px;
+    transition: transform 0.3s ease;
 }
 
 .project-container h3 {
-    margin-left: 70px;
+    margin: 0 0 50px 70px;
 }
 
 .project h4 {
-    line-height: 30px;
-    font-size: 20px;
+    line-height: 42px;
+    font-size: 42px;
 }
 
 .project p {
     margin-top: 10px;
-    font-size: 15px;
+    font-size: 22px;
+    letter-spacing: -.5px;
 }
 
 /* About */
@@ -449,11 +465,7 @@ footer p {
 @media (max-width: 1024px) {
     
     /* Projects */
-    .project {
-        gap: 100px;
-        margin: 20px 40px;
-    }
-    
+
     /* About */
     .about-container p {
         margin-right: 100px;
@@ -502,13 +514,7 @@ footer p {
 
     /* Projects */
     
-    .project-container {
-        margin-left: 30px;
-        margin-right: 30px;
-    }
-    
     /* About */
-
     .about-container {
         margin-left: 30px;
         margin-right: 30px;
@@ -613,47 +619,83 @@ footer p {
     }
     
     /* Projects */
+
     .project-container {
-        margin-left: 15px;
-        margin-right: 15px;
-        padding-top: 0;
-        margin-top: -100px;
+        padding: 60px 15px 30px;
+        margin: 0;
+    }
+
+    .project {
+        flex-direction: column; 
+        margin: 30px 0 80px;
+        gap: 20px; 
+    }
+
+    .project-description {
+        order: 1;
         text-align: center;
     }
 
-    .project-container h3 {
-        display: none;
-    }
-    
-    .project {
-        margin: 30px 0;
+    .project img,
+    .project-video {
+        order: 2;
+        width: 100%;
     }
 
-    .project img {
-        height: 400px;
-        object-fit: cover;
+    .project-video {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
         border-radius: 20px;
     }
 
-    .project-title {
-        padding: 10px 12px;
-        margin: 330px 0 0 10px;
+    .project-video embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        min-width: unset;
+        min-height: 200px;
+        border-radius: 20px;
     }
 
+    .project img,
     .project-video embed {
+        min-width: unset;
         width: 100%;
-        height: 400px;
-        object-fit: cover;
+        height: auto;
+    }
+
+    .project-description {
+        text-align: center;
     }
 
     .project h4 {
-        font-size: 14px;
+        font-size: 22px;
+        line-height: 28px;
     }
 
-    .project-description p {
-        display: none;
+    .project p {
+        font-size: 16px;
+        line-height: 22px;
     }
-    
+
+    .project-tags {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .project-tag {
+        margin-bottom: 6px;
+    }
+
+    .project-container h3 {
+        margin: 0 auto;
+        text-align: center;
+    }
+
     /* About */
     .about-container {
         margin-left: 15px;
@@ -754,6 +796,7 @@ footer p {
         grid-row: auto;
     }
 }
+
 
 
 
