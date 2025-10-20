@@ -367,6 +367,7 @@ spline-viewer {
 .project p {
     margin-top: 10px;
     font-size: 22px;
+    line-height: 26px;
     letter-spacing: -.5px;
 }
 
@@ -393,6 +394,7 @@ spline-viewer {
 
 .about-container p {
     font-size: 22px;
+    line-height: 26px;
     margin: 0 200px 12px 0;
 }
 
@@ -483,7 +485,8 @@ footer p {
 }
 
 .project-section p {
-    line-height: 22px;
+    font-size: 22px;
+    line-height: 26px;
 }
 
 .project-gallery {
@@ -901,6 +904,7 @@ footer p {
         text-align: center;
     }
 }
+
 
 
 
