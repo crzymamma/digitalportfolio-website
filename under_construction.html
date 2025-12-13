@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Speed Design | Aston Martin</title>
+    <link rel="icon" href="Assets_icons/headimage.png" type="image/icon type">
+    </head>
+
+    <body>
+        
+        <div class="casestudy-nav">
+            <div class="logo">
+                    <a href="index.html#home"><img src="Assets_icons/ethansautto_logo.png" alt="Ethan Sautto Logo."></a>
+                </div>
+                <div class="nav-items">
+                    <ul>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+        </div>
+
+        <div class="under-construction">
+            <h3>Sorry, this page is under construction. Check back soon!</h3>
+            <h3>If you're interested in learning more, feel free to <a href="mailto: ethansautto545@gmail.com" target="_blank">email me&#8599;</a>.</h3>
+        </div>
+        
+        <!-- FOOTER -->
+        <footer>
+            <p class="footer">
+            <span class="left">Designed and coded by Ethan Sautto.</span>
+            <span class="right">© All rights reserved, Ethan Sautto, 2025.</span>
+            </p>
+        </footer>
+
+        <!-- SCRIPTS -->
+
+        <!-- Fade in -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+                else entry.target.classList.remove('visible');
+                });
+            }, { threshold: 0.15 });
+            fadeElements.forEach(el => fadeObserver.observe(el));
+            });
+        </script>
+
+        <script>   
+            // Border gradient effect that follows mouse position
+            document.addEventListener('DOMContentLoaded', function() {
+            const projects = document.querySelectorAll('.project');
+            
+            projects.forEach(project => {
+                let rafId = null;
+                let lastX = 0;
+                let lastY = 0;
+                
+                function throttle(callback, limit) {
+                let waiting = false;
+                return function() {
+                    if (!waiting) {
+                    callback.apply(this, arguments);
+                    waiting = true;
+                    setTimeout(() => {
+                        waiting = false;
+                    }, limit);
+                    }
+                };
+                }
+                
+                const updateGradient = throttle(function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                if (Math.abs(x - lastX) < 2 && Math.abs(y - lastY) < 2) return;
+                lastX = x;
+                lastY = y;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const deltaX = x - centerX;
+                const deltaY = y - centerY;
+                
+                let angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+                
+                angle = angle - 90;
+                if (angle < 0) angle += 360;
+                
+                if (rafId) cancelAnimationFrame(rafId);
+                
+                rafId = requestAnimationFrame(() => {
+                    this.style.setProperty('--border-angle', `${angle}deg`);
+                });
+                }, 16);
+                
+                project.addEventListener('mousemove', function(e) {
+                updateGradient.call(this, e);
+                });
+                
+                project.addEventListener('mouseleave', function() {
+                if (rafId) {
+                    cancelAnimationFrame(rafId);
+                    rafId = null;
+                }
+
+                setTimeout(() => {
+                    this.style.removeProperty('--border-angle');
+                }, 300);
+                });
+            });
+            });
+
+        </script>
+        
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+            const cursor = document.createElement("div");
+            cursor.className = "custom-solid-cursor";
+            document.body.appendChild(cursor);
+
+            // Track mouse position
+            document.addEventListener("mousemove", (e) => {
+                cursor.style.left = e.clientX + "px";
+                cursor.style.top = e.clientY + "px";
+            });
+
+            // Elements that trigger hover state
+            const hoverTargets = document.querySelectorAll("a, button, .clickable");
+
+            hoverTargets.forEach(el => {
+                el.addEventListener("mouseenter", () => {
+                cursor.classList.add("hover");
+                });
+
+                el.addEventListener("mouseleave", () => {
+                cursor.classList.remove("hover");
+                });
+            });
+            });
+        </script>
+    </body>
