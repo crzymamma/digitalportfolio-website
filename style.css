@@ -218,7 +218,7 @@ body {
 .project-container,
 .about-container,
 .contact-container {
-    max-width: 1600px;
+    max-width: 1300px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 20px;
@@ -1823,6 +1823,7 @@ footer p {
 .under-construction a:hover {
   text-decoration: underline;
 }
+
 
 
 
