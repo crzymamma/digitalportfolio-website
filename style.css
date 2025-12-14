@@ -1049,58 +1049,128 @@ footer p {
   }
 }
 
-/* Large Desktop (above 1440px) */
-@media (min-width: 1440px) {
-  .wrapper {
-    max-width: 1200px;
+/* Large Desktop (above 1025px) - Lock to 14-inch proportions */
+@media (min-width: 1025px) {
+  /* Main container constraints */
+  body {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
   }
-
+  
+  /* Navigation - keep proportional */
   .nav {
-    width: 1200px;
+    width: 90%;
+    max-width: 1200px;
+    left: 50%;
+    transform: translateX(-50%);
   }
-
+  
+  /* Hero section - maintain spacing */
   .hero-items-container {
-    padding: 0 100px;
+    padding: 0 80px;
+    max-width: 1200px;
+    margin: 100px auto 0;
   }
-
+  
+  /* Projects - constrain width */
+  .project-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
   .project {
-    margin: 50px 100px 80px;
+    margin: 50px 60px 80px;
   }
-
+  
+  /* Bento grid - keep original proportions */
+  .bento-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
   .bento-grid {
-    margin: 0 100px;
+    margin: 0 60px;
+  }
+  
+  /* About section - maintain layout */
+  .about-container {
+    max-width: 1200px;
+    margin: -120px auto 0;
+    padding: 120px 80px 50px;
+  }
+  
+  .career-skills {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 80px;
+  }
+  
+  /* Contact section - keep centered */
+  .contact-container {
+    max-width: 1200px;
+    margin: 100px auto 0;
+    padding: 100px 0 180px;
+  }
+  
+  /* Case Study pages */
+  .casestudy-hero,
+  .project-overview,
+  .problem-statement,
+  .process,
+  .endproduct {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
-/* Extra Large Desktop (above 1920px) */
+/* Extra Large Desktop (above 1920px) - Scale proportionally */
 @media (min-width: 1920px) {
   body {
-    font-size: 1.1em;
+    max-width: 1600px;
   }
-
-  .wrapper {
+  
+  .nav {
     max-width: 1400px;
   }
-
-  .nav {
-    width: 1400px;
+  
+  .hero-items-container,
+  .project-container,
+  .bento-wrap,
+  .about-container,
+  .career-skills,
+  .contact-container {
+    max-width: 1400px;
   }
-
+  
+  /* Slightly increase font sizes but keep proportions */
   h2 {
-    font-size: 72px;
-    line-height: 78px;
+    font-size: 68px;
+    line-height: 74px;
   }
-
+  
   h3 {
-    font-size: 42px;
+    font-size: 36px;
   }
-
+  
   h4 {
-    font-size: 32px;
+    font-size: 30px;
   }
-
+  
+  .project h4 {
+    font-size: 44px;
+    line-height: 46px;
+  }
+  
   p {
-    font-size: 1.1em;
+    font-size: 20px;
+    line-height: 28px;
+  }
+  
+  .project p {
+    font-size: 24px;
+    line-height: 30px;
   }
 }
 
@@ -1814,6 +1884,7 @@ footer p {
 .under-construction a:hover {
   text-decoration: underline;
 }
+
 
 
 
