@@ -1048,80 +1048,58 @@ footer p {
     line-height: 28px;
   }
 }
+/* Large Desktop (above 1440px) */
+@media (min-width: 1440px) {
+  .wrapper {
+    max-width: 1200px;
+  }
 
-/* Large Desktop (above 1025px) - Lock to 14-inch proportions */
-@media (min-width: 1025px) {
-  /* Main container constraints */
-  body {
-    max-width: 1400px;
-    margin: 0 auto;
-    position: relative;
-  }
-  
-  /* Navigation - keep proportional */
   .nav {
-    width: 90%;
-    max-width: 1200px;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 1200px;
   }
-  
-  /* Hero section - maintain spacing */
+
   .hero-items-container {
-    padding: 0 80px;
-    max-width: 1200px;
-    margin: 100px auto 0;
+    padding: 0 100px;
   }
-  
-  /* Projects - constrain width */
-  .project-container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
+
   .project {
-    margin: 50px 60px 80px;
+    margin: 50px 100px 80px;
   }
-  
-  /* Bento grid - keep original proportions */
-  .bento-wrap {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
+
   .bento-grid {
-    margin: 0 60px;
+    margin: 0 100px;
   }
-  
-  /* About section - maintain layout */
-  .about-container {
-    max-width: 1200px;
-    margin: -120px auto 0;
-    padding: 120px 80px 50px;
+}
+
+/* Extra Large Desktop (above 1920px) */
+@media (min-width: 1920px) {
+  body {
+    font-size: 1.1em;
   }
-  
-  .career-skills {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 80px;
+
+  .wrapper {
+    max-width: 1400px;
   }
-  
-  /* Contact section - keep centered */
-  .contact-container {
-    max-width: 1200px;
-    margin: 100px auto 0;
-    padding: 100px 0 180px;
+
+  .nav {
+    width: 1400px;
   }
-  
-  /* Case Study pages */
-  .casestudy-hero,
-  .project-overview,
-  .problem-statement,
-  .process,
-  .endproduct {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+
+  h2 {
+    font-size: 72px;
+    line-height: 78px;
+  }
+
+  h3 {
+    font-size: 42px;
+  }
+
+  h4 {
+    font-size: 32px;
+  }
+
+  p {
+    font-size: 1.1em;
   }
 }
 
@@ -1884,6 +1862,7 @@ footer p {
 .under-construction a:hover {
   text-decoration: underline;
 }
+
 
 
 
