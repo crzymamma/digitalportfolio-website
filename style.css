@@ -1068,7 +1068,20 @@ footer p {
   }
 
   .hero-items-container {
-    padding: 0 0 0 180px;
+    padding: 50px 0 150px 150px;
+  }
+
+  .intro {
+    min-width: 700px;
+  }
+
+  .hero-items-container h2 {
+    font-size: 82px;
+    line-height: 90px;
+  }
+
+  .hero-items-container h3 {
+    font-size: 52px;
   }
 
   .project {
@@ -1936,4 +1949,3 @@ footer p {
 .under-construction a:hover {
   text-decoration: underline;
 }
-
