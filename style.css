@@ -218,7 +218,7 @@ body {
 .project-container,
 .about-container,
 .contact-container {
-    max-width: 1400px !important;
+    max-width: 1600px !important;
     margin-left: auto;
     margin-right: auto;
 }
@@ -288,7 +288,8 @@ body {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  background-color: #f8f8f8;
+  background-image: radial-gradient(circle at center center, transparent 0%,#f8f8f8 99%),repeating-linear-gradient(0deg, rgba(163, 163, 163,0.2) 0px, rgba(163, 163, 163,0.2) 1px,transparent 1px, transparent 6px),repeating-linear-gradient(90deg, rgba(163, 163, 163,0.2) 0px, rgba(255, 255, 255, 0.2) 1px,transparent 1px, transparent 6px),linear-gradient(90deg, #f8f8f8,#f8f8f8);
+  height: 90vh;
 }
 
 .hero-items-container {
@@ -565,7 +566,8 @@ spline-viewer {
   align-items: top;
   gap: 90px;
   padding: 60px 80px;
-  background-color: #f8f8f8;
+  position: relative;
+  background-image: radial-gradient(circle at center center, transparent 0%,#f8f8f8 99%),repeating-linear-gradient(0deg, rgba(163, 163, 163,0.2) 0px, rgba(163, 163, 163,0.2) 1px,transparent 1px, transparent 6px),repeating-linear-gradient(90deg, rgba(163, 163, 163,0.2) 0px, rgba(255, 255, 255, 0.2) 1px,transparent 1px, transparent 6px),linear-gradient(90deg, #f8f8f8,#f8f8f8);
 }
 
 .career-skills h4 {
@@ -1121,12 +1123,55 @@ footer p {
     font-size: 22px;
   }
 
+  .hero-items-container {
+    padding: 50px 0 150px 150px;
+  }
+
+  .intro {
+    min-width: 800px;
+  }
+
+  .hero-items-container h2 {
+    font-size: 100px;
+    line-height: 100px;
+  }
+
+  .hero-items-container h3 {
+    font-size: 62px;
+  }
+
+  .intro-model { 
+  flex: 1; 
+  min-height: 700px;
+  margin: 0 0 100px 0; 
+  position: relative; 
+  overflow: hidden;
+  }
+
+  spline-viewer { 
+    width: 100%; 
+    height: 100%; 
+    min-height: 800px; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+  }
+
   .project-tag {
     font-size: 1rem;
   }
 
   .bento-tags span {
     font-size: 1rem;
+  }
+
+  .career-skills {
+    gap: 150px;
+  }
+
+  .skills ul li {
+    font-size: 24px;
+    margin-bottom: 12px;
   }
 
   .contact-container {
@@ -1830,7 +1875,7 @@ footer p {
 
 @media (min-width: 1440px) {
   .casestudy-hero {
-    padding-top: 450px;
+    padding-top: 600px;
   }
 
   .project-overview, .problem-statement p, .process p, .endproduct p {
@@ -1948,4 +1993,3 @@ footer p {
 .under-construction a:hover {
   text-decoration: underline;
 }
-
