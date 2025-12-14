@@ -288,8 +288,12 @@ body {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  background-image: radial-gradient(circle at center center, transparent 0%,#f8f8f8 99%),repeating-linear-gradient(0deg, rgba(163, 163, 163,0.2) 0px, rgba(163, 163, 163,0.2) 1px,transparent 1px, transparent 6px),repeating-linear-gradient(90deg, rgba(163, 163, 163,0.2) 0px, rgba(255, 255, 255, 0.2) 1px,transparent 1px, transparent 6px),linear-gradient(90deg, #f8f8f8,#f8f8f8);
   height: 90vh;
+  background-color: #f8f8f8;
+  background-image: 
+    radial-gradient(circle at center center, transparent 0%, #f8f8f8 99%),
+    repeating-linear-gradient(0deg, rgba(163, 163, 163, 0.2) 0px, rgba(163, 163, 163, 0.2) 1px, transparent 1px, transparent 6px),
+    repeating-linear-gradient(90deg, rgba(163, 163, 163, 0.2) 0px, rgba(255, 255, 255, 0.2) 1px, transparent 1px, transparent 6px);
 }
 
 .hero-items-container {
@@ -567,8 +571,11 @@ spline-viewer {
   gap: 90px;
   padding: 60px 80px;
   position: relative;
-  background-image: radial-gradient(circle at center center, transparent 0%,#f8f8f8 99%),repeating-linear-gradient(0deg, rgba(163, 163, 163,0.2) 0px, rgba(163, 163, 163,0.2) 1px,transparent 1px, transparent 6px),repeating-linear-gradient(90deg, rgba(163, 163, 163,0.2) 0px, rgba(255, 255, 255, 0.2) 1px,transparent 1px, transparent 6px),linear-gradient(90deg, #f8f8f8,#f8f8f8);
-}
+  background-color: #f8f8f8;
+  background-image: 
+    radial-gradient(circle at center center, transparent 0%, #f8f8f8 99%),
+    repeating-linear-gradient(0deg, rgba(163, 163, 163, 0.2) 0px, rgba(163, 163, 163, 0.2) 1px, transparent 1px, transparent 6px),
+    repeating-linear-gradient(90deg, rgba(163, 163, 163, 0.2) 0px, rgba(255, 255, 255, 0.2) 1px, transparent 1px, transparent 6px);}
 
 .career-skills h4 {
   margin-bottom: 20px;
