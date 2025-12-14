@@ -215,6 +215,15 @@ body {
   animation: fade-in 2s forwards; 
 }
 
+.project-container,
+.about-container,
+.contact-container {
+    max-width: 1400px !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 
 /* ==================== INDEX ==================== */
 
@@ -1054,35 +1063,62 @@ footer p {
     max-width: 1200px;
   }
 
-  .nav {
-    width: 1200px;
+  .nav li a {
+    font-size: 18px;
   }
 
   .hero-items-container {
-    padding: 0 100px;
+    padding: 0 0 0 180px;
   }
 
   .project {
     margin: 50px 100px 80px;
   }
 
+  .more-work {
+    padding-left: 100px;
+  }
+
   .bento-grid {
     margin: 0 100px;
+  }
+
+  .bento-grid p {
+    font-size: 16px;
+  }
+
+  .about-container {
+    padding: 120px 200px 50px;
+
+  }
+
+  .career-skills {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 90px;
+    padding: 60px 80px;
+    background-color: #f8f8f8;
+    margin: 0 auto;
   }
 }
 
 /* Extra Large Desktop (above 1920px) */
 @media (min-width: 1920px) {
-  body {
-    font-size: 1.1em;
+  .nav li a {
+    font-size: 22px;
   }
 
-  .wrapper {
-    max-width: 1400px;
+  .project-tag {
+    font-size: 1rem;
   }
 
-  .nav {
-    width: 1400px;
+  .bento-tags span {
+    font-size: 1rem;
+  }
+
+  .contact-container {
+    margin-left: 220px;
   }
 
   h2 {
@@ -1099,7 +1135,7 @@ footer p {
   }
 
   p {
-    font-size: 1.1em;
+    font-size: 1.4em;
   }
 }
 
@@ -1337,7 +1373,6 @@ footer p {
   display: flex;
   align-items: top;
   gap: 80px;
-  margin: 0 50px;
 }
 
 .process-description {
@@ -1781,6 +1816,94 @@ footer p {
   }
 }
 
+@media (min-width: 1440px) {
+  .casestudy-hero {
+    padding-top: 450px;
+  }
+
+  .project-overview, .problem-statement p, .process p, .endproduct p {
+    font-size: 24px;
+  }
+
+  .project-overview li, .problem-statement li {
+    font-size: 24px;
+  }
+
+  .process-description {
+    min-width: 500px;
+  }
+
+  .process li {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  .skipbutton {
+    margin-top: -90px;
+  }
+
+  .skipbutton p {
+    font-size: 24px;
+  }
+
+  .footer span {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .casestudy-nav li a {
+    font-size: 24px;
+  }
+
+  .logo {
+    height: 70px;
+  }
+
+  .casestudy-nav p {
+    font-size: 22px;
+  }
+
+  .casestudy-hero {
+    padding-top: 550px;
+  }
+
+  .casestudy-hero h3 {
+    font-size: 42px;
+  }
+
+  .project-stats {
+    min-width: 400px;
+  }
+
+  .skipbutton {
+    margin-top: -260px;
+    margin-bottom: 300px;
+  }
+
+  .process p, .process h3 {
+    font-size: 28px;
+  }
+
+  .process li {
+    font-size: 24px;
+    line-height: 38px;
+  }
+
+  .endproduct p, .endproduct h3 {
+    font-size: 28px;
+  }
+
+  .figma-prototype {
+    min-width: 1000px;
+  }
+
+  .footer span {
+    font-size: 18px;
+  }
+}
+
+
 
 
 /* ==================== UNDER CONSTRUCTION ==================== */
@@ -1813,14 +1936,4 @@ footer p {
 .under-construction a:hover {
   text-decoration: underline;
 }
-
-
-
-
-
-
-
-
-
-
 
