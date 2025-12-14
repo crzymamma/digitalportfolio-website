@@ -215,6 +215,15 @@ body {
   animation: fade-in 2s forwards; 
 }
 
+.project-container,
+.about-container,
+.contact-container {
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
 
 
 /* ==================== INDEX ==================== */
@@ -1814,6 +1823,7 @@ footer p {
 .under-construction a:hover {
   text-decoration: underline;
 }
+
 
 
 
