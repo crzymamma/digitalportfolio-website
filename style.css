@@ -531,7 +531,6 @@ spline-viewer {
 /* About */
 
 .about-container {
-  background: #ffffff;
   padding: 120px 80px 50px;
   margin-top: -120px;
 }
@@ -1949,3 +1948,4 @@ footer p {
 .under-construction a:hover {
   text-decoration: underline;
 }
+
