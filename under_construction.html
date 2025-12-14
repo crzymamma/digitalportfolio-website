@@ -48,7 +48,7 @@
                 if (entry.isIntersecting) entry.target.classList.add('visible');
                 else entry.target.classList.remove('visible');
                 });
-            }, { threshold: 0.15 });
+            }, { threshold: 0.03 });
             fadeElements.forEach(el => fadeObserver.observe(el));
             });
         </script>
@@ -149,3 +149,4 @@
         </script>
 
     </body>
+
