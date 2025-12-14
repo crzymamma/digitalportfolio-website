@@ -41,18 +41,6 @@ table {
   border-collapse: collapse; border-spacing: 0; 
 }
 
-/* Container for max-width centering */
-.container {
-  max-width: 1440px;
-  margin: 0 auto;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Full-width container for elements that should stretch */
-.full-width {
-  width: 100%;
-}
 
 /* General transitions */
 
@@ -243,7 +231,6 @@ body {
   left: 50%;
   transform: translateX(-50%);
   width: 80%;
-  max-width: 1200px;
   padding: 10px 30px;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(16px);
@@ -1197,17 +1184,10 @@ footer p {
   align-items: center;
   position: fixed;
   width: 100%;
-  padding: 20px 0;
+  padding: 20px;
   box-sizing: border-box;
   top: 0;
   z-index: 1001;
-}
-
-.casestudy-nav .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
 }
 
 .casestudy-nav li a {
@@ -1270,6 +1250,7 @@ footer p {
   align-items: top;
   gap: 200px;
   border-bottom: 1px solid #000000;
+  margin: 0 50px;
 }
 
 .project-stats {
@@ -1298,7 +1279,7 @@ footer p {
 /* Problem Statement */
 
 .problem-statement {
-  padding: 75px 0;
+  padding: 75px 50px;
   display: flex;
   align-items: top;
   gap: 80px;
@@ -1333,7 +1314,7 @@ footer p {
 /* Skip Button */
 
 .skipbutton {
-  margin: -70px 0 100px;
+  margin: -70px 50px 100px;
 }
 
 .skipbutton a {
@@ -1353,10 +1334,11 @@ footer p {
 /* Process */
 
 .process {
-  padding: 50px 0;
+  padding: 50px 50px;
   display: flex;
   align-items: top;
   gap: 80px;
+  margin: 0 50px;
 }
 
 .process-description {
@@ -1392,6 +1374,7 @@ footer p {
 /* Divider */
 
 .divider {
+  margin: 0 50px;
   border-bottom: 1px solid #000000;
 }
 
@@ -1404,7 +1387,7 @@ footer p {
 }
 
 .endproduct {
-  padding: 25px 0 80px;
+  padding: 25px 50px 80px;
   display: flex;
   align-items: center;
   gap: 80px;
@@ -1443,11 +1426,7 @@ footer p {
 @media (max-width: 1024px) {
   /* Navigation */
   .casestudy-nav {
-    padding: 15px 0;
-  }
-  
-  .casestudy-nav .container {
-    padding: 0 20px;
+    padding: 15px 20px;
   }
   
   .casestudy-nav li a {
@@ -1476,6 +1455,7 @@ footer p {
   .project-overview {
     flex-direction: column;
     gap: 60px;
+    margin: 0 30px;
     padding: 40px 0 20px;
   }
   
@@ -1491,7 +1471,7 @@ footer p {
   /* Problem Statement */
   .problem-statement {
     flex-direction: column;
-    padding: 50px 0;
+    padding: 50px 30px;
     gap: 50px;
   }
   
@@ -1506,14 +1486,15 @@ footer p {
   
   /* Skip Button */
   .skipbutton {
-    margin: -50px 0 80px;
+    margin: -50px 30px 80px;
     text-align: center;
   }
   
   /* Process */
   .process {
     flex-direction: column;
-    padding: 40px 0;
+    padding: 40px 30px;
+    margin: 0 30px;
     gap: 50px;
   }
   
@@ -1528,13 +1509,13 @@ footer p {
   
   /* Divider */
   .divider {
-    margin: 0;
+    margin: 0 30px;
   }
   
   /* End Product */
   .endproduct {
     flex-direction: column;
-    padding: 20px 0 60px;
+    padding: 20px 30px 60px;
     gap: 50px;
   }
   
@@ -1570,11 +1551,7 @@ footer p {
   
   /* Navigation */
   .casestudy-nav {
-    padding: 12px 0;
-  }
-  
-  .casestudy-nav .container {
-    padding: 0 15px;
+    padding: 12px 15px;
   }
   
   .casestudy-nav p {
@@ -1593,6 +1570,7 @@ footer p {
   
   /* Project Overview */
   .project-overview {
+    margin: 0 20px;
     padding: 30px 0 15px;
   }
   
@@ -1602,7 +1580,7 @@ footer p {
   
   /* Problem Statement */
   .problem-statement {
-    padding: 40px 0;
+    padding: 40px 20px;
   }
   
   .painpoints ul {
@@ -1611,7 +1589,7 @@ footer p {
   
   /* Skip Button */
   .skipbutton {
-    margin: -40px 0 60px;
+    margin: -40px 20px 60px;
   }
   
   .skipbutton a {
@@ -1622,7 +1600,8 @@ footer p {
   
   /* Process */
   .process {
-    padding: 30px 0;
+    padding: 30px 20px;
+    margin: 0 20px;
   }
   
   .process-description ol {
@@ -1631,12 +1610,12 @@ footer p {
   
   /* Divider */
   .divider {
-    margin: 0;
+    margin: 0 20px;
   }
   
   /* End Product */
   .endproduct {
-    padding: 15px 0 50px;
+    padding: 15px 20px 50px;
   }
   
   .figma-prototype {
@@ -1647,10 +1626,11 @@ footer p {
 /* Small Mobile (below 480px) */
 @media (max-width: 480px) {
   /* Navigation */
-  .casestudy-nav .container {
+  .casestudy-nav {
     flex-direction: column;
     gap: 10px;
-    padding: 0 15px;
+    padding: 10px 15px;
+    position: relative;
   }
   
   .casestudy-nav .logo {
@@ -1691,6 +1671,7 @@ footer p {
   
   /* Project Overview */
   .project-overview {
+    margin: 0 15px;
     padding: 25px 0 10px;
     gap: 40px;
   }
@@ -1705,7 +1686,7 @@ footer p {
   
   /* Problem Statement */
   .problem-statement {
-    padding: 30px 0;
+    padding: 30px 15px;
   }
   
   .painpoints h3 {
@@ -1715,7 +1696,7 @@ footer p {
   
   /* Skip Button */
   .skipbutton {
-    margin: -30px 0 50px;
+    margin: -30px 15px 50px;
   }
   
   .skipbutton a {
@@ -1725,7 +1706,8 @@ footer p {
   
   /* Process */
   .process {
-    padding: 25px 0;
+    padding: 25px 15px;
+    margin: 0 15px;
     gap: 40px;
   }
   
@@ -1736,12 +1718,12 @@ footer p {
   
   /* Divider */
   .divider {
-    margin: 0;
+    margin: 0 15px;
   }
   
   /* End Product */
   .endproduct {
-    padding: 10px 0 40px;
+    padding: 10px 15px 40px;
     gap: 40px;
   }
   
@@ -1832,3 +1814,4 @@ footer p {
 .under-construction a:hover {
   text-decoration: underline;
 }
+
