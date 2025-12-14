@@ -1048,6 +1048,7 @@ footer p {
     line-height: 28px;
   }
 }
+
 /* Large Desktop (above 1440px) */
 @media (min-width: 1440px) {
   .wrapper {
@@ -1100,55 +1101,6 @@ footer p {
 
   p {
     font-size: 1.1em;
-  }
-}
-
-/* Extra Large Desktop (above 1920px) - Scale proportionally */
-@media (min-width: 1920px) {
-  body {
-    max-width: 1600px;
-  }
-  
-  .nav {
-    max-width: 1400px;
-  }
-  
-  .hero-items-container,
-  .project-container,
-  .bento-wrap,
-  .about-container,
-  .career-skills,
-  .contact-container {
-    max-width: 1400px;
-  }
-  
-  /* Slightly increase font sizes but keep proportions */
-  h2 {
-    font-size: 68px;
-    line-height: 74px;
-  }
-  
-  h3 {
-    font-size: 36px;
-  }
-  
-  h4 {
-    font-size: 30px;
-  }
-  
-  .project h4 {
-    font-size: 44px;
-    line-height: 46px;
-  }
-  
-  p {
-    font-size: 20px;
-    line-height: 28px;
-  }
-  
-  .project p {
-    font-size: 24px;
-    line-height: 30px;
   }
 }
 
