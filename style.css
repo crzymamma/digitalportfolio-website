@@ -554,9 +554,9 @@ spline-viewer {
   min-width: 600px;
   width: 100%;
   height: 450px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 40px;
-  margin: 10px 0;
+  margin: 0;
 }
 
 .about-me p {
@@ -2000,3 +2000,4 @@ footer p {
 .under-construction a:hover {
   text-decoration: underline;
 }
+
