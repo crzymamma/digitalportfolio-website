@@ -419,7 +419,7 @@ body {
 /* View Work Button */
 .center {
   position: absolute;
-  left: 68%;
+  left: 71%;
   top: 68%;
   height: 100%;
   display: flex;
@@ -1032,7 +1032,7 @@ footer p {
   }
 
   .center {
-    left: 68%;
+    left: 71%;
     top: 68%;
     bottom: 2.5em;
     transform: translateX(-50%);
