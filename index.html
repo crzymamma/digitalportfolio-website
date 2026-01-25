@@ -16,7 +16,7 @@
         <!-- HERO & NAV -->
 
         <div class="hero" id="home">
-
+            
             <div class="nav">
                 <div class="logo">
                     <a href="#home"><img src="Assets_icons/ethansautto_logo.png" alt="Ethan Sautto Logo."></a>
@@ -25,6 +25,7 @@
                     <ul>
                         <li><a href="#works">Projects</a></li>
                         <li><a href="#about">About</a></li>
+                        <!-- <li><a href="Blog/blog.html" target="_blank" rel="noopener">Blog</a></li> -->
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -33,14 +34,36 @@
             <div class="hero-items-container fade-in">
                 <div class="intro">
                     <h2>Hello! I'm Ethan.</h2>
-                    <h3>Multi-disciplinary UX designer focused on automotive design and branding, currently attending <span class="bold">Cal Poly SLO</span>.</h3>
+                    <h3>
+                        A multi-disciplinary UX designer specializing in
+                        <span class="slottt-machine-inline">
+                            <span class="slottt-machine-recipe__mask">
+                                <span class="slottt-machine-recipe__items_container" id="wordbox"></span>
+                            </span>
+                        </span>
+                    </h3>
+                    <p><span class="quiettext">Currently</span> UX Designer @ iter8</p>
+                    <p><span class="quiettext">Attending</span> Cal Poly SLO</p>
                 </div>
-
-                <div class="intro-model">
-                    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.16/build/spline-viewer.js"></script>
-                    <spline-viewer url="https://prod.spline.design/ftBQj-HYacScB5mt/scene.splinecode"></spline-viewer>
-                </div>
+                <a href="#works">
+                    <div class="center">
+                        <div class="circle">
+                            <div class="buttonlogo">↓</div>
+                            <div class="text">
+                                <svg x="0" y="0" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+                                    <defs>
+                                        <path id="circlePath" d="M 150, 150m -120, 0a 120,120 0 0,1 240,0a 120,120 0 0,1 -240,0"/>
+                                    </defs>
+                                    <g>
+                                        <text><textPath xlink:href="#circlePath">View My Work! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ⁂ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; View My Work! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ⁂ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</textPath></text>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
             </div>
+
 
         </div>
 
@@ -67,58 +90,56 @@
                 </div>
             </div>
 
-            <!-- Speed Design: Aston Martin -->
-            <a href="casestudy_astonmartin.html" class="project-link">
+            <div class="projects-grid">
+                <!-- Aston Martin -->
+                <a href="casestudy_astonmartin.html" class="project-link" id="astonmartin">
                 <div class="project">
-                    <div class="project-description">
-                        <h4>Speed Design: Aston Martin Web Facelift</h4>
-                            <div class="project-tags">
-                                <div class="project-tag">User Interface</div>
-                                <div class="project-tag">Branding</div>
-                                <div class="project-tag">Automotive</div>
-                                <div class="project-tag">Personal</div>
-                            </div>
-                        <p>Redesigned elements and layout for Aston Martin's landing page to better represent the company's branding.</p>
-                    </div>
                     <img src="Pictures/Index/astonmartin_thumbnail.png" alt="Mockup of website on a laptop.">
+                    <div class="project-description">
+                    <h4>Aston Martin Web Facelift</h4>
+                        <div class="project-tags">
+                            <div class="project-tag">User Interface</div>
+                            <div class="project-tag">Branding</div>
+                            <div class="project-tag">Automotive</div>
+                            <div class="project-tag">Personal</div>
+                        </div>
+                    </div>
                 </div>
-            </a>
+                </a>
 
-            <!-- Carfolio -->
-            <a href="under_construction.html" class="project-link">
+                <!-- Carfolio -->
+                <a href="under_construction.html" class="project-link" id="carfolio">
                 <div class="project">
                     <img src="Pictures/Index/Carfolio_thumbnail.png" alt="Mockup of an app on two phones.">
                     <div class="project-description">
-                        <h4>Carfolio: Automotive Companion App (Coming Soon)</h4>
-                            <div class="project-tags">
-                                <div class="project-tag">User Experience</div>
-                                <div class="project-tag">Mobile</div>
-                                <div class="project-tag">Automotive</div>
-                                <div class="project-tag">Personal</div>
-                            </div>
-                        <p>Creating a solution for car collectors who wish to better maintain and keep track of their automotive fleet.</p>
+                        <h4>Carfolio: Automotive Companion App</h4>
+                        <div class="project-tags">
+                            <div class="project-tag">User Experience</div>
+                            <div class="project-tag">Mobile</div>
+                            <div class="project-tag">Automotive</div>
+                            <div class="project-tag">Personal</div>
+                        </div>
                     </div>
                 </div>
-            </a>
+                </a>
+            </div>
 
             <!-- MORE WORK -->
             <div class="more-work fade-in">
                 <h4><span class="bold">More Work</span></h4>
-                <p class="more-work-sub">Other pieces I'm proud of that aren't case studies.</p>
+                <p>Other pieces I'm proud of that aren't case studies.</p>
             </div>
 
             <section class="bento-wrap">
                 <div class="bento-grid">
-
                     <!-- Large tile - Cal Poly Racing -->
-                    <a class="bento-item bento-large" href="https://dribbble.com/shots/25996323-Cal-Poly-Racing-FSAE-Car-Livery" target="_blank" rel="noopener">
+                    <a class="bento-item bento-large" id="livery" href="https://dribbble.com/shots/25996323-Cal-Poly-Racing-FSAE-Car-Livery" target="_blank" rel="noopener">
                         <img src="Pictures/Index/cpr_livery.jpg" alt="Cal Poly Racing FSAE Car Livery">
                         <div class="bento-description">
                             <div class="bento-tags">
                                 <span>Automotive</span><span>Branding</span>
                             </div>
                             <h4>Cal Poly Racing — FSAE Livery</h4>
-                            <p>Full livery design and branding for the 2025 Formula SAE competition car.</p>
                         </div>
                     </a>
 
@@ -130,7 +151,6 @@
                                 <span>Digital Art</span><span>Branding</span>
                             </div>
                             <h4>Grassroots Magazine</h4>
-                            <p>Cover art for my concept magazine series, Grassroots.</p>
                         </div>
                     </a>
 
@@ -142,7 +162,6 @@
                                 <span>Digital Art</span>
                             </div>
                             <h4>Pixel Art</h4>
-                            <p>A collection of pixel art pieces made for Cal Poly Racing merchandise.</p>
                         </div>
                     </a>
 
@@ -154,7 +173,6 @@
                                 <span>Poster Design</span><span>Typography</span>
                             </div>
                             <h4>Font Posters</h4>
-                            <p>Font posters I made for a school project at Ventura College.</p>
                         </div>
                     </a>
 
@@ -168,25 +186,22 @@
                                 <span>Animation</span><span>Branding</span>
                             </div>
                             <h4>Logo Animation</h4>
-                            <p>Looping logo animation created for team video and social use.</p>
                         </div>
                     </a>
 
                     <!-- Small Tile -->
-                    <a class="bento-item bento-small" href="under_construction.html" target="_blank" rel="noopener">
+                    <a class="bento-item bento-small" href="Blog/blog.html" target="_blank" rel="noopener">
                         <img src="Pictures/Index/my_e30.jpg" alt="White BMW E30 in a driveway.">
                         <div class="bento-description">
                             <div class="bento-tags">
                                 <span>Hobby</span><span>Writing</span>
                             </div>
                             <h4>My blog</h4>
-                            <p>Sometimes I write about my thoughts on the car world and about my own car adventures here.</p>
                         </div>
                     </a>
 
                 </div>
             </section>
-
         </div>
 
         <!-- ABOUT -->
@@ -194,9 +209,9 @@
             <h4>About Me.</h4>
             <div class="about-me"> 
                 <div class="about-me-text">
-                    <p>For Ethan, all things design can be traced back to a passion for modifying cars.</p>
-                    <p>He loves to take his personal project car, a <span class="bold">1989 Nissan 240sx</span>, to local meet-ups and enjoys talking with other enthusiasts about their vehicles.</p>
-                    <p>Inspired by the individuality and creativity of his peers, Ethan channeled his own personal style and love for car-modifying into a UX design philosophy — <span class="bold">simple beauty and usability.</span></p>
+                    <p>For me, all things design can be traced back to a passion for modifying cars.</p>
+                    <p>I love to take my personal project car, a <span class="bold">1989 Nissan 240sx</span>, to local meet-ups and enjoy talking with other enthusiasts about their vehicles.</p>
+                    <p>Inspired by the individuality and creativity of my peers, I've channeled my own personal style and love for car-modifying into a UX design philosophy — <span class="bold">simple beauty and usability.</span></p>
                     <p>Besides tinkering with cars, I also love making music🎹, playing my favorite videogames🎮, and making nutella tortillas🍫.</p>
                 </div>
 
@@ -232,7 +247,7 @@
                     <li>Java (basic)</li>
                 </ul>
             </div>
-            <div class="skills">
+            <div class="skills" id="skills">
                 <h4>Skills</h4>
                 <ul>
                     <li>A/B Testing</li>
@@ -264,7 +279,11 @@
             </p>
         </footer>
 
+
+
         <!-- SCRIPTS -->
+
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
         <!-- Fade in -->
         <script>
@@ -280,6 +299,30 @@
             });
         </script>
 
+        <!-- Nav -->
+        <script>
+            let lastScrollY = window.scrollY;
+            const nav = document.querySelector('.nav');
+            const threshold = 10;
+
+            window.addEventListener('scroll', () => {
+                const currentScrollY = window.scrollY;
+
+                if (Math.abs(currentScrollY - lastScrollY) < threshold) return;
+
+                if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                // scrolling down
+                nav.classList.add('nav--compact');
+                } else {
+                // scrolling up
+                nav.classList.remove('nav--compact');
+                }
+
+                lastScrollY = currentScrollY;
+            });
+        </script>
+
+        <!-- Project Border gradient -->
         <script>   
             // Border gradient effect that follows mouse position
             document.addEventListener('DOMContentLoaded', function() {
@@ -373,9 +416,64 @@
                 });
             });
             });
-        </script>   
+        </script>
+
+        <script>
+        var wordlist = [
+        'automotive branding.',
+        'mobile interfaces.',
+        'graphic design.',
+        'HTML + CSS + JS.',
+        'user research.',
+        'bridging the gap.',
+        'web design.',
+        'solving puzzles.'
+        ];
+
+        function buildSlotItem(text) {
+        return $('<div>')
+            .addClass('slottt-machine-recipe__item')
+            .text(text);
+        }
+
+        function buildSlotContents($container, words) {
+        $container.append(words.map(buildSlotItem));
+        }
+
+        function popPushNItems($container, n) {
+        const $children = $container.children();
+        $children.slice(0, n).appendTo($container);
+        $container.css({ top: 0 });
+        }
+
+        function randomIndex(max) {
+        let i = Math.floor(Math.random() * max);
+        return i < 2 ? randomIndex(max) : i;
+        }
+
+        function animateSlot() {
+        const index = randomIndex(wordlist.length);
+        const itemHeight = $('#wordbox .slottt-machine-recipe__item').first().outerHeight();
+
+        $('#wordbox').animate(
+            { top: -index * itemHeight },
+            500,
+            'swing',
+            function () {
+            popPushNItems($('#wordbox'), index);
+            }
+        );
+        }
+
+        $(document).ready(function () {
+        const $box = $('#wordbox');
+
+        buildSlotContents($box, wordlist);
+        buildSlotContents($box, wordlist);
+        buildSlotContents($box, wordlist);
+
+        setInterval(animateSlot, 2200);
+        });
+        </script>
     </body>
 </html>
-
-
-
