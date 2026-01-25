@@ -1724,8 +1724,12 @@ footer p {
   }
 
   .nav--compact li a {
-    padding: 0 1.2em;
+    padding: 0 1em;
     font-size: 1em;
+  }
+
+  .logo {
+    height: 2.5em;
   }
 
 
