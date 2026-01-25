@@ -363,7 +363,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: -4em;
+  margin: 0;
   padding: 0;
   align-items: center;
   justify-content: center;
@@ -419,8 +419,8 @@ body {
 /* View Work Button */
 .center {
   position: absolute;
-  left: 75%;
-  top: 75%;
+  left: 68%;
+  top: 68%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -1032,8 +1032,8 @@ footer p {
   }
 
   .center {
-    left: 75%;
-    top: 75%;
+    left: 68%;
+    top: 68%;
     bottom: 2.5em;
     transform: translateX(-50%);
   }
@@ -1053,7 +1053,6 @@ footer p {
   /* PROJECTS */
   .project-container {
     padding: 6em 1.5em;
-    margin-top: -2em;
   }
 
   .project {
@@ -1976,7 +1975,7 @@ footer p {
   align-items: center;
   position: fixed;
   width: 100%;
-  padding: 20px;
+  padding: 1em;
   box-sizing: border-box;
   top: 0;
   z-index: 1001;
@@ -1986,10 +1985,10 @@ footer p {
   display: block;
   color: #000;
   text-align: center;
-  padding: 0 22px;
+  padding: 0 1em;
   text-decoration: none;
   font-family: sfpro;
-  font-size: 18px;
+  font-size: 1.1em;
 }
 
 .casestudy-nav li a:hover { 
@@ -2004,7 +2003,7 @@ footer p {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 350px 42px 50px;
+  padding: 18em 2em 2em;
   box-sizing: border-box;
   top: 0;
   gap: 300px;
@@ -2012,12 +2011,12 @@ footer p {
 
 .casestudy-title {
   display: block;
-  min-width: 400px;
+  min-width: fit-content;
 }
 
 .casestudy-title h3 {
-  font-size: 32px;
-  margin-bottom: 10px;
+  font-size: 2em;
+  margin-bottom: .25em;
 }
 
 .casestudy-title p {
@@ -2025,7 +2024,7 @@ footer p {
 }
 
 .casestudy-description h3 {
-  font-size: 28px;
+  font-size: 1.6em;
   text-align: right;
 }
 
@@ -2037,34 +2036,38 @@ footer p {
 /* Project Overview */
 
 .project-overview {
-  padding: 50px 0px 25px;
+  padding: 2.5em 0 1em;
   display: flex;
   align-items: top;
-  gap: 200px;
+  gap: 18em;
   border-bottom: 1px solid #000000;
-  margin: 0 50px;
+  margin: 0 3em;
 }
 
 .project-stats {
-  min-width: 200px;
+  min-width: fit-content;
 }
 
 .project-overview ul {
-  margin-bottom: 60px;
+  margin-bottom: 2.1em;
 }
 
 .project-overview li {
   font-family: sfpro;
-  margin-bottom: 10px;
+  text-align: center;
+  padding: .6em 1em;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  margin-bottom: .5em;
 }
 
 .project-overview h3 {
-  margin-bottom: 20px;
+  margin-bottom: 1em;
   line-height: 48px;
 }
 
 .project-overview p {
-  margin-bottom: 40px;
+  margin-bottom: 1em;
 }
 
 
