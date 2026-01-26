@@ -1006,11 +1006,11 @@ footer p {
     min-width: 18em;
   }
 
+  
   /* HERO */
  .hero-items-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
     justify-content: center;
     align-items: center;
   }
@@ -1042,7 +1042,6 @@ footer p {
     width: 13em;
     height: 13em;
   }
-
   .buttonlogo {
     font-size: 4em;
     line-height: 3.25em;
@@ -1052,7 +1051,7 @@ footer p {
 
   /* PROJECTS */
   .project-container {
-    padding: 6em 1.5em;
+    padding: 12em 1.5em;
   }
 
   .project {
@@ -1107,11 +1106,16 @@ footer p {
 
 
   /* ABOUT */
+  .about-container {
+    padding: 12em 3em 15em;
+  }
+
   .career-skills {
     display: flex;
     align-items: flex-start;
     justify-content: center;
     gap: 90px;
+    margin: 12em 0; 
     padding: 60px 80px;
     background-color: #f8f8f8;
     margin: 0 auto;
@@ -1131,6 +1135,12 @@ footer p {
 
   .career-skills p, .skills ul li {
     font-size: 1.6em;
+  }
+
+  /* CONTACT */
+  .contact-container {
+    margin-top: 12em;
+    padding-bottom: 23em;
   }
 }
 
@@ -2612,13 +2622,6 @@ footer p {
 }
 
 @media (min-width: 1920px) {
-  .casestudy-nav li a {
-    font-size: 24px;
-  }
-
-  .logo {
-    height: 70px;
-  }
 
   .casestudy-nav p {
     font-size: 22px;
