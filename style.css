@@ -1563,6 +1563,10 @@ footer p {
     top: 45%;
   }
 
+  #volvo {
+    grid-column: span 1;
+  }
+
   .project h4 {
     font-size: 1.25em;
     line-height: 1em;
@@ -1976,8 +1980,6 @@ footer p {
 /* ==================== CASE STUDIES ==================== */
 
 
-/* SPEED DESIGN | ASTON MARTIN */
-
 
 /* Nav */
 
@@ -2214,7 +2216,7 @@ footer p {
 }
 
 .endproduct {
-  padding: 1.6em 3em 6em;
+  padding: 1.6em 0 6em 3em;
   display: flex;
   align-items: center;
   gap: 5em;
@@ -2250,26 +2252,108 @@ footer p {
     height: 111%;
 }
 
+.trim {
+  width: 150em;
+  justify-content: left;
+  overflow: hidden;
+}
+
 
 /* RESPONSIVE ADJUSTMENTS */
+
+
+/* Extra Large Screens */
+@media (min-width: 1920px) {
+
+  .casestudy-nav {
+    max-width: 100%;
+  }
+
+  .casestudy-nav p {
+    font-size: 22px;
+  }
+
+  .casestudy-hero {
+    padding-top: 550px;
+  }
+
+  .casestudy-hero h3 {
+    font-size: 42px;
+  }
+
+  .project-stats {
+    min-width: 400px;
+  }
+
+  .skipbutton {
+    margin-top: -4em;
+  }
+
+  .process p, .process h3 {
+    font-size: 28px;
+  }
+
+  .process li {
+    font-size: 24px;
+    line-height: 38px;
+  }
+
+  .endproduct p, .endproduct h3 {
+    font-size: 28px;
+  }
+
+  .figma-prototype {
+    min-width: 1000px;
+  }
+
+  .footer span {
+    font-size: 18px;
+  }
+}
+
+
+/* Large Screens */
+@media (min-width: 1440px) {
+  .casestudy-hero {
+    padding-top: 600px;
+  }
+
+  .project-overview, .problem-statement p, .process p, .endproduct p {
+    font-size: 24px;
+  }
+
+  .project-overview li, .problem-statement li {
+    font-size: 24px;
+  }
+
+  .process-description {
+    min-width: 500px;
+  }
+
+  .process li {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  .skipbutton p {
+    font-size: 24px;
+  }
+
+  .footer span {
+    font-size: 16px;
+  }
+}
+
 
 /* Tablet (768px - 1024px) */
 @media (max-width: 1024px) {
   /* Navigation */
-  .casestudy-nav {
-    padding: 15px 20px;
-  }
-  
-  .casestudy-nav li a {
-    padding: 0 18px;
-    font-size: 16px;
-  }
   
   /* Hero Section */
   .casestudy-hero {
     flex-direction: column;
     align-items: flex-start;
-    padding: 250px 30px 40px;
+    padding: 8em 30px 40px;
     gap: 40px;
   }
   
@@ -2281,23 +2365,7 @@ footer p {
     text-align: left;
     font-size: 24px;
   }
-  
-  /* Project Overview */
-  .project-overview {
-    flex-direction: column;
-    gap: 60px;
-    margin: 0 30px;
-    padding: 40px 0 20px;
-  }
-  
-  .project-stats {
-    min-width: 100%;
-  }
-  
-  .project-overview h3 {
-    font-size: 22px;
-    line-height: 36px;
-  }
+
   
   /* Problem Statement */
   .problem-statement {
@@ -2362,6 +2430,12 @@ footer p {
 
 /* Mobile (480px - 767px) */
 @media (max-width: 767px) {
+
+    html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
   /* Typography Adjustments */
   .casestudy-title h3 {
     font-size: 28px;
@@ -2393,20 +2467,12 @@ footer p {
     font-size: 14px;
   }
   
+
   /* Hero Section */
   .casestudy-hero {
     padding: 180px 20px 30px;
   }
-  
-  /* Project Overview */
-  .project-overview {
-    margin: 0 20px;
-    padding: 30px 0 15px;
-  }
-  
-  .project-overview li {
-    font-size: 16px;
-  }
+
   
   /* Problem Statement */
   .problem-statement {
@@ -2448,85 +2514,64 @@ footer p {
     padding: 15px 20px 50px;
   }
   
-  .figma-prototype {
-    height: 350px;
-  }
 }
 
 /* Small Mobile (below 480px) */
 @media (max-width: 480px) {
   /* Navigation */
   .casestudy-nav {
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px 15px;
     position: relative;
-  }
-  
-  .casestudy-nav .logo {
-    order: 1;
-  }
-  
-  .casestudy-nav p {
-    order: 2;
-    font-size: 13px;
-  }
-  
-  .casestudy-nav .nav-items {
-    order: 3;
-  }
-  
-  .casestudy-nav ul {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .casestudy-nav li a {
-    padding: 0 10px;
-    font-size: 13px;
   }
   
   /* Hero Section */
   .casestudy-hero {
-    padding: 200px 15px 25px;
+    justify-content: center;
+    overflow: hidden;
   }
   
   .casestudy-title h3 {
-    font-size: 24px;
+    text-align: center;
   }
   
   .casestudy-description h3 {
-    font-size: 20px;
+    text-align: center;
   }
   
+
   /* Project Overview */
   .project-overview {
-    margin: 0 15px;
-    padding: 25px 0 10px;
-    gap: 40px;
+    flex-direction: column;
+    gap: 4em;
   }
-  
-  .project-overview p {
-    margin-bottom: 30px;
+
+  .project-stats {
+    margin: 0;
+    padding: 0;
+    justify-content: center;
   }
-  
-  .project-overview ul {
-    margin-bottom: 40px;
+
+  .project-stats ul {
+    justify-content: center;
+  }
+
+  .project-stats ul li {
+    text-align: center;
+    padding: .75em 0;
+  }
+
+  .project-brief h3, .project-brief p {
+    text-align: center;
   }
   
   /* Problem Statement */
-  .problem-statement {
-    padding: 30px 15px;
-  }
-  
+
   .painpoints h3 {
-    font-size: 18px;
-    line-height: 28px;
+    text-align: center;
   }
   
   /* Skip Button */
   .skipbutton {
-    margin: -30px 15px 50px;
+    margin-top: .5em;
   }
   
   .skipbutton a {
@@ -2552,18 +2597,14 @@ footer p {
   }
   
   /* End Product */
-  .endproduct {
-    padding: 10px 15px 40px;
-    gap: 40px;
-  }
   
   .endproduct h3 {
     font-size: 18px;
     line-height: 28px;
   }
-  
-  .figma-prototype {
-    height: 300px;
+
+  .endproduct img {
+    visibility: hidden;
   }
 }
 
@@ -2583,81 +2624,6 @@ footer p {
   
   .casestudy-nav li a {
     padding: 12px 18px;
-  }
-}
-
-@media (min-width: 1440px) {
-  .casestudy-hero {
-    padding-top: 600px;
-  }
-
-  .project-overview, .problem-statement p, .process p, .endproduct p {
-    font-size: 24px;
-  }
-
-  .project-overview li, .problem-statement li {
-    font-size: 24px;
-  }
-
-  .process-description {
-    min-width: 500px;
-  }
-
-  .process li {
-    font-size: 20px;
-    line-height: 32px;
-  }
-
-  .skipbutton p {
-    font-size: 24px;
-  }
-
-  .footer span {
-    font-size: 16px;
-  }
-}
-
-@media (min-width: 1920px) {
-
-  .casestudy-nav p {
-    font-size: 22px;
-  }
-
-  .casestudy-hero {
-    padding-top: 550px;
-  }
-
-  .casestudy-hero h3 {
-    font-size: 42px;
-  }
-
-  .project-stats {
-    min-width: 400px;
-  }
-
-  .skipbutton {
-    margin-top: -4em;
-  }
-
-  .process p, .process h3 {
-    font-size: 28px;
-  }
-
-  .process li {
-    font-size: 24px;
-    line-height: 38px;
-  }
-
-  .endproduct p, .endproduct h3 {
-    font-size: 28px;
-  }
-
-  .figma-prototype {
-    min-width: 1000px;
-  }
-
-  .footer span {
-    font-size: 18px;
   }
 }
 
