@@ -2634,8 +2634,8 @@ footer p {
 
 .under-construction {
   text-align: center;
-  padding: 150px 20px 100px;
-  min-height: calc(100vh - 120px);
+  padding: 6em 3em;
+  min-height: calc(75vh);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2659,4 +2659,12 @@ footer p {
 
 .under-construction a:hover {
   text-decoration: underline;
+}
+
+
+@media (max-width: 480px) {
+  .under-contstruction {
+    padding-top: 0;
+    min-height: none;
+  }
 }
