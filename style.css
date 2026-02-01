@@ -500,6 +500,10 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+#volvo {
+  grid-column: span 2;
+}
+
 /* Hover animation */
 .project:hover {
   transform: translateY(-10px);
@@ -961,7 +965,11 @@ footer p {
   }
 
   .bento-tags span {
-    font-size: 1rem;
+    font-size: .75rem;
+  }
+
+  .bento-item h4 {
+    font-size: 1.5em;
   }
 
   .career-skills {
@@ -1099,11 +1107,6 @@ footer p {
   .more-work h4 {
     font-size: 2.5em;
   }
-
-  .more-work p {
-    font-size: 1.5em;
-  }
-
 
   /* ABOUT */
   .about-container {
@@ -2066,108 +2069,135 @@ footer p {
   font-family: sfpro;
   text-align: center;
   padding: .6em 1em;
-  background-color: #f0f0f0;
+  border: 1px solid #bababa;
   border-radius: 8px;
   margin-bottom: .5em;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
 }
 
 .project-overview h3 {
   margin-bottom: 1em;
-  line-height: 48px;
+  line-height: 1.25em;
 }
 
 .project-overview p {
   margin-bottom: 1em;
 }
 
+.project-overview a {
+  color: #000000;
+}
 
 /* Problem Statement */
 
 .problem-statement {
-  padding: 75px 50px;
+  padding: 4.6em 0 1em;
+  margin: 0 3em;
   display: flex;
   align-items: top;
-  gap: 80px;
+  gap: 2em;
 }
 
 .problem-statement img {
   width: 100%;
-  min-width: 700px;
+  min-width: 38em;
 }
 
 .painpoints p {
-  margin-bottom: 40px;
+  margin-bottom: 1.8em;
 }
 
 .painpoints h3 {
-  font-size: 28px;
-  line-height: 36px;
-  margin-bottom: 30px;
+  font-size: 1.5em;
+  line-height: 1.5em;
 }
 
 .painpoints ul {
   list-style: disc;
-  margin: 0 0 60px 20px;
+  margin: 0 0 3em;
+  padding: 1em 1em 1em 3em;
+  border: 1px solid #bababa;
+  border-radius: 8px;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
 }
 
 .painpoints li {
   font-family: sfpro;
-  margin-bottom: 10px;
+  font-size: 1.4em;
+  line-height: 1.5em;
 }
 
 
 /* Skip Button */
 
 .skipbutton {
-  margin: -70px 50px 100px;
+  margin: 2em 3em;
 }
 
 .skipbutton a {
   transition: all ease-in-out .2s;
   text-decoration: none;
-  color: #ffffff;
-  background-color: #0A7968;
-  border-radius: 12px;
+  color: #000000;
+  border: 1px solid #bababa;
+  border-radius: 8px;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
   padding: 18px 22px;
 }
 
 .skipbutton a:hover {
-  background-color: #054138;
+  background-color: #414141;
+  color: #ffffff;
 }
 
 
 /* Process */
 
 .process {
-  padding: 50px 50px;
+  padding: 4.6em 0 1em;
+  margin: 4.6em 3em;
   display: flex;
   align-items: top;
-  gap: 80px;
+  gap: 8em;
+  border-top: 1px solid #000000;
 }
 
 .process-description {
-  min-width: 400px;
+  min-width: 45%;
 }
 
 .process-description p {
-  margin-bottom: 40px;
+  margin-bottom: 2.5em;
 }
 
 .process-description h3 {
-  font-size: 22px;
-  line-height: 36px;
+  font-size: 1.5em;
+  line-height: 1.5em;
   margin-bottom: 30px;
 }
 
 .process-description ol {
   list-style: decimal;
-  margin: 0 0 30px 20px;
+  margin: 0 0 3em;
+  padding: 1.8em 1em 1em 3em;
+  border: 1px solid #bababa;
+  border-radius: 8px;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+}
+
+.process-description ul {
+  list-style: disc;
+  margin: 0 0 3em;
+  padding: 1.8em 1em 1em 3em;
+  border: 1px solid #bababa;
+  border-radius: 8px;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
 }
 
 .process-description li {
   font-family: sfpro;
-  margin-bottom: 10px;
-  line-height: 24px;
+  margin-bottom: .8em;
+  line-height: 1.5em;
+  font-size: 1.3em;
 }
 
 .process-pictures img {
@@ -2175,40 +2205,37 @@ footer p {
 }
 
 
-/* Divider */
-
-.divider {
-  margin: 0 50px;
-  border-bottom: 1px solid #000000;
-}
-
-
 /* End Product */
 
 .endproduct-image img {
-  margin: 50px 0;
+  margin: 4.5em 0;
+  padding: 1em 0;
   width: 100%;
 }
 
 .endproduct {
-  padding: 25px 50px 80px;
+  padding: 1.6em 3em 6em;
   display: flex;
   align-items: center;
-  gap: 80px;
+  gap: 5em;
+}
+
+.takeaways {
+  min-width: 40%;
 }
 
 .endproduct p {
-  margin-bottom: 40px;
+  margin-bottom: 2.5em;
 }
 
 .endproduct h3 {
-  font-size: 22px;
-  line-height: 36px;
-  margin-bottom: 30px;
+  font-size: 1.5em;
+  line-height: 1.5em;
+  margin-bottom: 1.7em;
 }
 
 .figma-prototype {
-    min-width: 700px;
+    min-width: 55%;
     height: 450px;
     overflow: hidden;
     position: relative;
@@ -2290,7 +2317,6 @@ footer p {
   
   /* Skip Button */
   .skipbutton {
-    margin: -50px 30px 80px;
     text-align: center;
   }
   
@@ -2560,32 +2586,6 @@ footer p {
   }
 }
 
-/* Print Styles for Case Study */
-@media print {
-  .casestudy-nav {
-    display: none;
-  }
-  
-  .skipbutton {
-    display: none;
-  }
-  
-  .figma-prototype {
-    display: none;
-  }
-  
-  .casestudy-hero {
-    padding-top: 50px;
-  }
-  
-  .problem-statement,
-  .process,
-  .endproduct {
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-}
-
 @media (min-width: 1440px) {
   .casestudy-hero {
     padding-top: 600px;
@@ -2606,10 +2606,6 @@ footer p {
   .process li {
     font-size: 20px;
     line-height: 32px;
-  }
-
-  .skipbutton {
-    margin-top: -90px;
   }
 
   .skipbutton p {
@@ -2640,8 +2636,7 @@ footer p {
   }
 
   .skipbutton {
-    margin-top: -260px;
-    margin-bottom: 300px;
+    margin-top: -4em;
   }
 
   .process p, .process h3 {
