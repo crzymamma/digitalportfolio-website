@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Ethan Sautto</title>
+    <link rel="icon" href="Assets_icons/headimage.png" type="image/icon type">
+</head>
+
+<body id="casestudy">
+
+    <!-- Case Study -->
+    <div class="casestudy-container">
+
+        <div class="logo" id="casestudy-logo">
+            <a a href="index.html" data-target="home"><h1>⁂ ⁂ ⁂</h1></a>
+        </div>
+        
+        <div class="casestudy-intro">
+            <div class="casestudy-intro-text">
+                <div class="casestudy-title">
+                    <h2>Aston Martin Web Redesign</h2>
+                    <p>Design Exercise</p>
+                </div>
+                <p id="casestudy-description">Redesigned elements and layout for Aston Martin's landing page to better represent the company's branding.</p>
+            </div>
+            <img src="Pictures/casestudy_astonmartin/heroimage.png" alt="A collection of screens from the final product.">
+        </div> 
+
+        <div class="casestudy-overview">
+
+            <div class="overview-stats">
+                <div class="overviewstat">
+                    <h4>Role</h4>
+                    <p>UX Designer</p>
+                </div>
+                <div class="overviewstat">
+                    <h4>Tools</h4>
+                    <div class="tool-logos">
+                        <div class="tool-item">
+                            <img src="Assets_icons/figma-logo.png" alt="Figma logo.">
+                            <div class="popup" id="figma">Figma</div>
+                        </div>
+                        <div class="tool-item">
+                            <img src="Assets_icons/figjam-logo.webp" alt="Figjam logo.">
+                            <div class="popup" id="figjam">Figjam</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="overviewstat">
+                    <h4>Timeline</h4>
+                    <p>4 hours</p>
+                </div>
+            </div>
+
+            <div class="overview-summary">
+                <div id="overviewdescription">
+                    <h4>Description</h4>
+                    <p>Redesigned and reorganized elements on Aston Martin's Landing page and created new components to modernize the website.</p>
+                </div>
+                <div id="overviewcontext">
+                    <h4>Context</h4>
+                    <p>Aston Martin, as a brand, has been very interesting to keep an eye on lately. I think there's a hesitancy to revolutionize the brand because of its storied history. That hesitancy is seen in there product lineup, but also in their digital presence. So, as a design exercise, I wanted to give their landing page a facelift. The goal here was to observe how small changes to the design system and layout could vastly improve the user experience.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="research-container">
+        
+        <h2>Research</h2>
+
+        <div class="research-text">
+            <p>Even a small "for fun" project deserves good research. So, before diving into Figma, I studied Aston Martin's competitors and honed in on design choices that would benefit the website.</p>
+            <p>I found some similarities across all brands. Design elements were flat with sharp edges, nav bars were minimalistic, and products were emphasized with 3D models.</p>
+        </div>
+
+
+        <div class="research-images">
+            <img src="Pictures/casestudy_astonmartin/paintpoint-notes.jpg" alt="Annotated screens from the original website.">
+        </div>
+
+        <div class="research-findings">
+
+            <div class="painpoints">
+                <h4>Pain Points</h4>
+                <ul>
+                    <li>Outdated design elements</li>
+                    <li>Congested layout</li>
+                    <li>Lack of consistency across designsystem</li>
+                    <li>Inconsistent brand image</li>
+                </ul>
+            </div>
+
+            <div class="solution">
+                <h4>Solution</h4>
+                <p>Update and standardize design elements, adjust layout structures, and prioritize new sections that better represent an upscale brand image.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="design-container">
+
+        <h2>Design Process</h2>
+
+        <div class="design-process">
+            <div class="design-process-text">
+                <p>I started the redesign by making some basic building blocks like buttons, a nav bar, and other small elements.</p>
+                <p>I then rebuilt the different sections of Aston Martin's landing page, using my new elements wherever necessary. While doing so, I focused on adding more breathability to the site as well as keep each section as meaningful to the brand image as possible.</p>
+                <div class="design-process-images">
+                    <img src="Pictures/casestudy_astonmartin/figma-ss-components.png" alt="Components made in Figma for the website.">
+                    <img src="Pictures/casestudy_astonmartin/figma-ss-layout.png" alt="Components being mocked-up next to each other in Figma.">
+                </div>
+                <p>One important element of Aston Martin's brand that wasn't included in their website was their involvment in racing. I made special emphasis of this with a new section dedicated to their F1 racecar.</p>
+                <p>Another large area for improvement was the news section. I combined the Stories and News sections into one and gave it a "hero" story as well as tags to give users a better idea of article topics.</p>
+                <div class="design-process-images">
+                    <img src="Pictures/casestudy_astonmartin/new-hero.png" alt="New hero section.">
+                    <img src="Pictures/casestudy_astonmartin/car-select-screen.png" alt="New car select screen.">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="design-container" id="conclusion">
+
+        <h2>Final Product + Takeaways</h2>
+
+            <img src="Pictures/casestudy_astonmartin/endproduct-gallery.png" alt="A gallery of end product screens.">
+            <div class="finalproduct-inner">
+                <div class="takeaways">
+                    <p>While not a full scale project that encapsulates the entire UX workflow, small exercises like this have proven to be helpful to me.</p>
+                    <p>I find that focusing on small areas of the UX design and research processes help me work more efficiently in large scale projects. It's kind of like practicing the fundamentals of a sport so that you can move more fluidly in a game.</p>
+                    <p>It was great to see and more importantly feel the difference between the original website and my redesign. Aston Martin is a brand with a rich history, but absolutely benefits from a push into the modern age.</p>
+                </div>
+
+                <div class="figma-prototype">
+                    <iframe src="https://embed.figma.com/proto/JlzCzL9xVOLVN2n6MjdNHu/Aston-Martin-Web-Redesign?page-id=0%3A1&node-id=6-19&p=f&viewport=242%2C7%2C0.13&scaling=scale-down&content-scaling=fixed&starting-point-node-id=6%3A19&embed-host=share" allowfullscreen></iframe>
+                </div>
+            </div>
+
+        <div class="next-project">
+            <p>Thanks for viewing.</p>
+            <h4><a href="casestudy-volvo.html">Next Project | Volvo Infotainment Redesign <span class="arrow">→</span></a></h4>
+        </div>
+    </div>
+
+    
+    
+
+
+
+    <script>
+        // Set a flag
+        let isNavigatingAway = false;
+
+        // Page Transition
+        document.addEventListener('DOMContentLoaded', function() {
+            // If we're coming from back/forward navigation, skip animations
+            if (sessionStorage.getItem('isBackNavigation') === 'true') {
+                document.body.style.animation = 'none';
+                document.body.style.opacity = '1';
+                document.body.style.filter = 'blur(0)';
+                sessionStorage.removeItem('isBackNavigation');
+            }
+            
+            const allLinks = document.querySelectorAll('a[href]');
+            
+            allLinks.forEach(link => {
+                // Skip external links, anchors, emails, and phones
+                if (link.getAttribute('href').startsWith('#') || 
+                    link.getAttribute('href').startsWith('http') ||
+                    link.getAttribute('href').startsWith('mailto:') ||
+                    link.getAttribute('href').startsWith('tel:')) {
+                    return;
+                }
+                
+                // Get current page filename
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                const linkPage = link.getAttribute('href');
+                
+                // Apply transition only to internal HTML page links
+                if (linkPage !== currentPage && 
+                    (linkPage.endsWith('.html') || linkPage === '/' || linkPage === '')) {
+                    
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const targetUrl = this.getAttribute('href');
+                        isNavigatingAway = true;
+                        
+                        // Add fade-out animation classes
+                        document.body.classList.add('fade-out', 'animating');
+                        
+                        // Navigate after animation completes
+                        setTimeout(() => {
+                            window.location.href = targetUrl;
+                        }, 200); // Match CSS animation duration of .2s
+                    });
+                }
+            });
+        });
+
+        // Detect back/forward navigation
+        window.addEventListener('beforeunload', function() {
+            if (!isNavigatingAway) {
+                sessionStorage.setItem('isBackNavigation', 'true');
+            }
+        });
+
+        // Reset flag after page loads
+        window.addEventListener('pageshow', function(event) {
+            isNavigatingAway = false;
+            if (event.persisted) {
+                document.body.classList.remove('fade-out', 'animating');
+            }
+        });
+    </script>
+
+    <script>
+        // Carousel
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const dots = document.querySelectorAll('.dot');
+            const nextArrow = document.querySelector('.carousel-arrow.next');
+            const carouselContainer = document.querySelector('.carousel-container');
+            
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+            
+            function updateSlide(index) {
+
+                const videos = document.querySelectorAll('.carousel-video');
+                videos.forEach(video => {
+                    if (video.tagName === 'VIDEO') {
+                        video.pause();
+                        video.classList.remove('playing');
+                        video.classList.add('paused');
+                    }
+                });
+                
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                    slide.style.opacity = '0';
+                    slide.style.transform = 'none';
+                });
+                
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                slides[index].classList.add('active');
+                slides[index].style.opacity = '1';
+                
+                const video = slides[index].querySelector('.carousel-video');
+                if (video && video.tagName === 'VIDEO') {
+                    video.play().then(() => {
+                        video.classList.add('playing');
+                        video.classList.remove('paused');
+                    }).catch(error => {
+                        console.log('Video autoplay prevented:', error);
+                    });
+                }
+                
+                dots[index].classList.add('active');
+                currentSlide = index;
+            }
+            
+            function nextSlide() {
+                const nextIndex = (currentSlide + 1) % totalSlides;
+                updateSlide(nextIndex);
+            }
+
+            nextArrow.addEventListener('click', function(e) {
+                e.stopPropagation();
+                nextSlide();
+            });
+            
+            carouselContainer.addEventListener('click', function(e) {
+                if (!e.target.closest('.carousel-arrow') && !e.target.closest('.carousel-dots')) {
+                    nextSlide();
+                }
+            });
+            
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    updateSlide(index);
+                });
+            });
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowRight') {
+                    nextSlide();
+                }
+            });
+            
+            const videos = document.querySelectorAll('.carousel-video');
+            videos.forEach(video => {
+                video.addEventListener('ended', function() {
+                    this.currentTime = 0;
+                    this.play();
+                });
+                
+                video.muted = true;
+                
+                video.setAttribute('playsinline', '');
+                video.setAttribute('webkit-playsinline', '');
+            });
+            
+            updateSlide(0);
+        });
+    </script>
+
+</body>
