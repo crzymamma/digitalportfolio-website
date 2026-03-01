@@ -806,6 +806,8 @@ body {
     .home {
         width: 90%;
         overflow-y: hidden;
+        align-content: stretch;
+        margin-top: 2em;
     }
 }
 
@@ -1904,6 +1906,7 @@ body:has(.about-container) {
     
     .about-container {
         width: 80%;
+        overflow-x: hidden;
     }
 
     #about-logo {
@@ -1932,7 +1935,6 @@ body:has(.about-container) {
     }
 
     .bio-pics {
-        margin-left: 4em;
         width: 100%;
     }
     
