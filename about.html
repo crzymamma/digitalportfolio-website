@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Ethan Sautto</title>
+    <link rel="icon" href="Assets_icons/headimage.png" type="image/icon type">
+</head>
+
+<body>
+
+    <div class="about-container">
+
+        <div class="logo" id="about-logo">
+            <a a href="index.html" data-target="home"><h1>⁂ ⁂ ⁂</h1></a>
+        </div>
+
+        <div class="profile-grid">
+            
+            <div class="row1">
+
+                <div class="greeting">
+                    <h2>Hi! I'm Ethan.</h2>
+                </div>
+
+                <div class="slotmachine-holder">
+                    <h3>
+                        A multi-disciplinary UX designer specializing in
+                        <span class="slottt-machine-inline">
+                            <span class="slottt-machine-recipe__mask">
+                                <span class="slottt-machine-recipe__items_container" id="wordbox"></span>
+                            </span>
+                        </span>
+                    </h3>
+                </div>
+
+            </div>
+
+            <div class="horizontal-divider" id="about-divider"></div>
+
+            <div class="bio">
+
+                <div class="bio-text">
+                    <h3>I think design gets <span class="italic">really</span> interesting when the creator's personality shines through.</h3>
+                    <h4>How I got into UX.</h4>
+                    <p>My journey into UX started with my love for cars, of all things. I've always viewed them as an extremely underrated medium for art — one that combines visual aesthetics with a specifically tuned user experience.</p>
+                    <h4>What I've been doing</h4>
+                    <p>After completing two years at my local community college, where I experimented with front end development, sculpting, and architectural drafting, I discovered Cal Poly's Graphic Communication program.</p>
+                    <p>For the past two years, I've been enrolled in a steady 16+ units while maintaining President's honor roll, heavily involved with several student orgs, and pursued personal projects.</p>
+                    <h4>Where I'm at now</h4>
+                    <p>Now I'm on the hunt for an internship or full time position where I can dedicate the same effort I've been putting in non-stop for the past 4 years.</p>
+                </div>
+
+                <div class="bio-pics">
+                    <img src="Pictures/about/ethan-portrait.JPG" alt="A portrait of Ethan Sautto.">
+                    <img src="Pictures/about/my240.JPG" alt="A photo of Ethan's old Nissan that he thinks is cool.">
+                </div>
+
+            </div>
+
+            <div class="work">
+
+                <h2>Work History / Involvement</h2>
+                <div class="work-history">
+
+                    <div class="work-history-item">
+                        <h3>UX Designer @ Cal Poly Iter8</h3>
+                        <p>December 2025 – Current</p>
+                    </div>
+
+                    <div class="horizontal-divider" id="about-divider"></div>   
+
+                    <div class="work-history-item">
+                        <h3>UX Designer @ Hack4Impact</h3>
+                        <p>September 2025 – Current</p>
+                    </div>
+
+                    <div class="horizontal-divider" id="about-divider"></div>   
+
+                    <div class="work-history-item">
+                        <h3>Web Coordinator @ Technical Association of the Graphic Arts (TAGA)</h3>
+                        <p>June 2025 – Current</p>
+                    </div>
+
+                    <div class="horizontal-divider" id="about-divider"></div>   
+                    
+                    <div class="work-history-item">
+                        <h3>Creative Director @ Cal Poly Racing</h3>
+                        <p>August 2024 – Current</p>
+                    </div>
+
+                    <div class="horizontal-divider" id="about-divider"></div>   
+
+                    <div class="work-history-item">
+                        <h3>UX Designer @ Livin</h3>
+                        <p>June 2025 – January 2026</p>
+                    </div>
+
+                    <div class="horizontal-divider" id="about-divider"></div>   
+
+                    <div class="work-history-item">
+                        <h3>Marketing Intern @ Ventura College</h3>
+                        <p>August 2023 – January 2024</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="get-in-touch">
+                <h2>Let's continue the conversation!</h2>
+                <a href="contact.html"><p>Get in touch</p><span class="arrow">→</span></a>
+            </div>
+
+        </div>
+    
+    </div>
+
+
+
+
+    
+    <script>
+        //Slot machine text
+        var wordlist = [
+        'automotive branding.',
+        'mobile interfaces.',
+        'graphic design.',
+        'HTML + CSS + JS.',
+        'user research.',
+        'bridging the gap.',
+        'web design.',
+        'solving puzzles.'
+        ];
+
+        function buildSlotItem(text) {
+        return $('<div>')
+            .addClass('slottt-machine-recipe__item')
+            .text(text);
+        }
+
+        function buildSlotContents($container, words) {
+        $container.append(words.map(buildSlotItem));
+        }
+
+        function popPushNItems($container, n) {
+        const $children = $container.children();
+        $children.slice(0, n).appendTo($container);
+        $container.css({ top: 0 });
+        }
+
+        function randomIndex(max) {
+        let i = Math.floor(Math.random() * max);
+        return i < 2 ? randomIndex(max) : i;
+        }
+
+        function animateSlot() {
+        const index = randomIndex(wordlist.length);
+        const itemHeight = $('#wordbox .slottt-machine-recipe__item').first().outerHeight();
+
+        $('#wordbox').animate(
+            { top: -index * itemHeight },
+            500,
+            'swing',
+            function () {
+            popPushNItems($('#wordbox'), index);
+            }
+        );
+        }
+
+        $(document).ready(function () {
+        const $box = $('#wordbox');
+
+        buildSlotContents($box, wordlist);
+        buildSlotContents($box, wordlist);
+        buildSlotContents($box, wordlist);
+
+        setInterval(animateSlot, 2200);
+        });
+    </script>
+
+</body>
