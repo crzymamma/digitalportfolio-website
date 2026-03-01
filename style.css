@@ -1323,11 +1323,32 @@ body#casestudy {
     .next-project h4, .next-project p {
         margin: 0 auto;
     }
-    
-    /* Carousel adjustments */
-    #research-carousel-dots {
-        justify-content: center;
-        padding-left: 0;
+
+    .next-project h4 a .arrow {
+        display: none;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+    .casestudy-title h2 {
+        font-size: 1.6em;
+        margin-bottom: .5em;
+    }
+
+    .research-container h2, .design-container h2 {
+        font-size: 1.6em;
+    }
+
+    .next-project p {
+        font-size: 1.6em !important;
+    }
+
+    .next-project h4 {
+        font-size: 1em;
+        white-space: nowrap;
+        padding: 1em;
     }
 }
 
@@ -1956,6 +1977,10 @@ body:has(.about-container) {
         text-align: center;
         gap: .5em;
         margin: 2em 0;
+    }
+
+    .work-history-item p {
+        text-align: center;
     }
 
     .work-history h3 {
