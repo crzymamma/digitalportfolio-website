@@ -1332,15 +1332,24 @@ body#casestudy {
 /* Mobile */
 
 @media (max-width: 650px) {
+    /* Container */
+    .casestudy-container {
+        margin-top: 0;
+    }
+
     .casestudy-title h2 {
         font-size: 1.6em;
         margin-bottom: .5em;
     }
 
+    /* Research */
+
     .research-container h2, .design-container h2 {
         font-size: 1.6em;
     }
 
+    /* Next Project */
+    
     .next-project p {
         font-size: 1.6em !important;
     }
