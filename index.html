@@ -156,7 +156,6 @@
             
             // Drag variables
             let isDragging = false;
-            let dragStarted = false; // Add this flag to track if we actually dragged
             let startPos = 0;
             let currentTranslate = 0;
             let prevTranslate = 0;
@@ -229,7 +228,6 @@
                 isDragging = true;
                 dragStartTime = Date.now();
                 startPos = getPositionX(e);
-                dragStarted = false; // Reset the drag flag
                 
                 // Cancel any ongoing transitions
                 track.style.transition = 'none';
@@ -250,11 +248,6 @@
                 e.preventDefault();
                 const currentPosition = getPositionX(e);
                 const slideWidth = slides[0].getBoundingClientRect().width;
-                
-                // Check if we've moved enough to consider this a drag
-                if (Math.abs(currentPosition - startPos) > 10) {
-                    dragStarted = true; // Mark that we actually started dragging
-                }
                 
                 // Calculate new position with boundaries
                 let newTranslate = prevTranslate + (currentPosition - startPos);
@@ -280,22 +273,6 @@
                 
                 const dragDuration = Date.now() - dragStartTime;
                 const slideWidth = slides[0].getBoundingClientRect().width;
-                
-                // If we didn't actually drag (just tapped), let the link handle it
-                if (!dragStarted) {
-                    // Reset position without animation
-                    track.style.transition = 'none';
-                    prevTranslate = -currentIndex * slideWidth;
-                    currentTranslate = prevTranslate;
-                    setSliderPosition();
-                    
-                    // Small timeout to reset transition
-                    setTimeout(() => {
-                        track.style.transition = 'transform 0.5s ease-in-out';
-                    }, 50);
-                    
-                    return; // Exit without changing slide
-                }
                 
                 // Determine if this was a quick flick (fast drag)
                 if (dragDuration < 300 && Math.abs(currentTranslate - prevTranslate) > 30) {
@@ -342,8 +319,6 @@
                 setTimeout(() => {
                     track.style.transition = 'transform 0.5s ease-in-out';
                 }, 300);
-                
-                dragStarted = false; // Reset the flag
             }
             
             // Arrow click navigation
@@ -404,8 +379,7 @@
             
             // Click on container (but not on links) advances slide
             document.querySelector('.carousel-container').addEventListener('click', function(e) {
-                // Only advance if we're not dragging and not clicking on interactive elements
-                if (!dragStarted && !e.target.closest('a') && !e.target.closest('.carousel-arrow') && !e.target.closest('.dot')) {
+                if (!e.target.closest('a') && !e.target.closest('.carousel-arrow') && !e.target.closest('.dot')) {
                     // Advance to next slide
                     if (currentIndex < slideCount - 1) {
                         currentIndex++;
@@ -432,10 +406,6 @@
                         }
                     });
                 }
-                // Reset dragStarted after a short delay
-                setTimeout(() => {
-                    dragStarted = false;
-                }, 100);
             });
             
             // Keyboard navigation
