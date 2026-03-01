@@ -1212,17 +1212,6 @@ body#casestudy {
    #casestudy-logo {
         margin-top: 0;
     }
-   
-    /* Carousel */
-    
-    #research-carousel {
-        margin-left: 0;
-    }
-
-    #research-carousel-dots {
-        justify-content: center;
-        padding-left: 0;
-    }
 }
 
 /* Tablet */
@@ -1304,8 +1293,6 @@ body#casestudy {
     
     .design-process-images img {
         height: auto;
-        max-height: 200px;
-        width: 100%;
         object-fit: contain;
     }
     
@@ -1348,8 +1335,13 @@ body#casestudy {
         font-size: 1.6em;
     }
 
+    /* Design */
+    .design-process-images img {
+        max-width: 100%;
+    }
+
     /* Next Project */
-    
+
     .next-project p {
         font-size: 1.6em !important;
     }
