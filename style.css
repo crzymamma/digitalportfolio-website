@@ -883,6 +883,7 @@ body#casestudy {
 .casestudy-intro img {
     width: 100%;
     margin-bottom: 1em;
+    border-radius: 8px;
 }
 
 /* Case study Overview */
@@ -1031,6 +1032,9 @@ body#casestudy {
 
 .research-images img {
     width: 100%;
+    border-radius: 8px;
+    border: 1px solid #d4d4d4;
+    margin: 0.5em 0;
 }
 
 /* Research Findings */
@@ -1105,17 +1109,15 @@ body#casestudy {
 }
 
 .design-process-images {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 4px;
-    margin: 1.5em 0;
+    margin: 2em 0;
     max-width: 100%;
-    overflow: hidden;
 }
 
 .design-process-images img {
-    max-width: 50%;
+    max-width: 100%;
+    border: 1px solid #d4d4d4;
+    border-radius: 8px;
+    margin: 0.5em 0;
 }
 
 .results {
@@ -1125,7 +1127,7 @@ body#casestudy {
 .results ul {
     list-style-type: disc;
     padding: 1.3em 2em;
-    background-color: #f9f9f9;
+    background-color: #f8f8f8;
     border: 1px solid #d4d4d4;
     border-radius: 8px;
 
@@ -1142,6 +1144,7 @@ body#casestudy {
 #conclusion img {
     width: 100%;
     margin-bottom: 1em;
+    border-radius: 8px;
 }
 
 #conclusion p {
@@ -1160,6 +1163,7 @@ body#casestudy {
     overflow: hidden;
     position: relative;
     margin: 0 auto;
+    background-color: #ffffff;
 }
 
 .figma-prototype iframe {
