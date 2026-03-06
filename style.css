@@ -2210,6 +2210,10 @@ body:has(.about-container) {
     #contact-divider {
         margin: 0 auto;
     }
+
+    .contact-link-icon {
+        display: none;
+    }
 }
 
 /* Mobile */
