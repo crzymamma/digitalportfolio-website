@@ -227,6 +227,25 @@
                     });
                 }
             });
+
+            allLinks.forEach(link => {
+                if (link.getAttribute('href') && 
+                    !link.getAttribute('href').startsWith('#') &&
+                    !link.getAttribute('href').startsWith('http') &&
+                    link.getAttribute('href').endsWith('.html')) {
+                    
+                    link.addEventListener('mouseenter', function() {
+                        const targetUrl = this.getAttribute('href');
+                        fetch(targetUrl).then(res => res.text()).then(html => {
+                            const parser = new DOMParser();
+                            const doc = parser.parseFromString(html, 'text/html');
+                            doc.querySelectorAll('img').forEach(img => {
+                                new Image().src = img.src;
+                            });
+                        });
+                    });
+                }
+            });
         });
 
         // Detect back/forward navigation
