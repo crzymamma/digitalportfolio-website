@@ -1009,17 +1009,18 @@ body#casestudy {
 
 .overviewstat h4, .overview-summary h4 {
     color: #6e6e6e;
-    margin-bottom: .8em;
+    margin-bottom: .2em;
 }
 
 .overviewstat p {
-    margin-bottom: .4em;
+    margin-bottom: 1.2em;
     font-size: 1.3em;
     white-space: nowrap;
 }
 
 .tool-logos {
     display: flex;
+    margin-top: .8em;
     gap: 18px;
 }
 
@@ -2142,12 +2143,37 @@ body:has(.about-container) {
 }
 
 .contact-me ul li {
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 
 .contact-me ul li a {
     font-size: 3em;
     text-decoration: none;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-link-icon {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #d4d4d4;
+    border-radius: 12px;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+    object-fit: contain;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    pointer-events: none;
+}
+
+.contact-link:hover .contact-link-icon {
+    opacity: 1;
+    transform: translateX(0) rotate(8deg);
+    box-shadow: 0 12px 12px rgba(0, 0, 0, 0.15);
 }
 
 .contact-me p {
