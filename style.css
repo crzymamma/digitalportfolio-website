@@ -2211,6 +2211,10 @@ body:has(.about-container) {
         margin: 0 auto;
     }
 
+    .contact-link {
+        text-align: center;
+    }
+
     .contact-link-icon {
         display: none;
     }
