@@ -486,6 +486,11 @@ body {
 
 /* HOME */
 
+#index {
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
 .home {
     width: 1000px;
     height: 90vh;
@@ -500,11 +505,38 @@ body {
 .logo {
     width: fit-content;
     margin: 0 auto 3em;
-    padding-left: 120px;
 }
 
-.logo h1 {
-    text-align: center;
+.logo a {
+    display: block;
+    text-decoration: none;
+}
+
+.logo-img-wrap {
+    position: relative;
+    display: block;
+}
+
+.logo-img-wrap img {
+    display: block;
+    height: 2em;
+    width: auto;
+    transition: opacity 0.3s ease;
+}
+
+.logo-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.logo-img-wrap:hover .logo-default {
+    opacity: 0;
+}
+
+.logo-img-wrap:hover .logo-hover {
+    opacity: 1;
 }
 
 .intro {
@@ -616,11 +648,15 @@ body {
 
 .carousel-slide:not(.visible-title) {
     opacity: 0.5;
+    cursor: pointer;
+}
+
+.carousel-slide:not(.visible-title):hover {
+    opacity: 1;
 }
 
 .carousel-slide img {
     width: 100%;
-    margin-left: -1.5em;
     height: auto;
     max-height: 50vh;
     object-fit: contain;
@@ -639,10 +675,6 @@ body {
     scale: .9;
 } 
 
-#astonmartin-thumbnail img {
-    transform: translateY(-5px);
-}
-
 .carousel-slide h2 {
     opacity: 0;
     visibility: hidden;
@@ -652,6 +684,17 @@ body {
 .carousel-slide.visible-title h2 {
     opacity: 1;
     visibility: visible;
+}
+
+.slide-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.slide-link:hover {
+    color: inherit;
 }
 
 @keyframes titleFadeIn {
@@ -665,47 +708,24 @@ body {
     }
 }
 
-.featured-projects h2 a {
+.featured-projects h2 a,
+.featured-projects .slide-link h2 {
     text-decoration: none;
     white-space: nowrap;
 }
 
-.featured-projects h2 a .arrow {
+.featured-projects h2 .arrow,
+.featured-projects .slide-link h2 .arrow {
     opacity: 0;
     transform: translateX(-8px);
     transition: opacity 0.3s ease, transform 0.3s ease;
     display: inline-block;
 }
 
-.featured-projects h2 a:hover .arrow {
+.featured-projects h2 a:hover .arrow,
+.featured-projects .slide-link:hover h2 .arrow {
     opacity: 1;
     transform: translateX(0);
-}
-
-.carousel-arrow {
-    position: absolute;
-    right: 10px;
-    top: 40%;
-    transform: translateY(-50%);
-    font-size: 3em;
-    cursor: pointer;
-    color: #000000;
-    transition: color 0.2s ease;
-    z-index: 10;
-    background: rgba(255, 255, 255, 0.7);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-    opacity: 0;
-}
-
-.carousel-arrow:hover {
-    color: #6e6e6e;
-    background: rgba(255, 255, 255, 0.9);
 }
 
 .carousel-dots {
@@ -739,7 +759,51 @@ body {
     background-color: #6e6e6e;
 }
 
+.carousel-restart {
+    font-family: sfpro;
+    font-size: .85em;
+    color: #6e6e6e;
+    cursor: pointer;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, color 0.2s ease;
+    margin-top: .6em;
+    margin-left: -.8em;
+    padding-bottom: 1em;
+}
+
+.carousel-restart.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.carousel-restart:hover {
+    color: #000000;
+}
+
 /* Screen Breaks */
+
+/* Featured Project Slides */
+@media (max-width: 1745px) {
+    .featured-projects {
+        width: 90%;
+    }
+
+    .carousel-container {
+        clip-path: inset(-100px -800px -100px 0px);
+    }
+}
+
+@media (max-width: 1600px) {
+    .featured-projects {
+        width: 85%;
+    }
+
+    .carousel-container {
+        clip-path: inset(-100px -800px -100px 0px);
+    }
+}
 
 /* Laptops */
 @media (min-width: 901px) and (max-width: 1280px) {
@@ -747,8 +811,6 @@ body {
     .home {
         margin-left: 0;
         padding-bottom: 1em;
-        overflow-y: hidden;
-        overflow-x: hidden;
     }
 
     .logo {
@@ -756,17 +818,22 @@ body {
     }
 
     .featured-projects {
-        margin-left: 160;
+        position: relative;
+        margin-left: 120px;
+        padding-top: 20px;
+        width: 75%;
+        justify-content: left;
+        text-align: center;
     }
 
     .carousel-container {
-        margin-left: -80px;
-        clip-path: inset(-100px -800px -100px 80px);
+        clip-path: inset(-100px -800px -100px 0px);
     }
 
-    .carousel-dots {
-        justify-content: left;
-        padding-left: 380px;
+    .carousel-restart {
+        position: absolute;
+        top: 30%;
+        left: -13%;
     }
 }
 
@@ -838,6 +905,10 @@ body {
 /* Mobile */
 @media (max-width: 480px) {
     /* Home */
+    .featured-projects {
+        width: 100%;
+    }
+
     .intro p {
         white-space: wrap;
     }
@@ -1420,7 +1491,6 @@ body:has(.side-quests-container) {
 }
 
 #side-quests-logo {
-    padding: 0;
     margin-top: 3em;
 }
 
@@ -1664,7 +1734,7 @@ body:has(.about-container) {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 3em;
+    margin-bottom: 1em;
 }
 
 .greeting {
@@ -1674,7 +1744,7 @@ body:has(.about-container) {
 }
 
 .greeting h2 {
-    font-size: 3.8em;
+    font-size: 2.8em;
     font-weight: bold;
     letter-spacing: -.02em;
 }
@@ -1805,7 +1875,22 @@ body:has(.about-container) {
 .work-history-item {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 2em 0;
+}
+
+.work-item-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.work-item-title img {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    border: 1px solid #d4d4d4;
+    object-fit: contain;
 }
 
 .get-in-touch {
@@ -1978,9 +2063,16 @@ body:has(.about-container) {
         padding: 0;
     }
 
+    .row1 {
+        margin-top: 2em;
+        align-items: center;
+        text-align: center;
+    }
+
     .greeting h2 {
         font-size: 2.6em;
         white-space: nowrap;
+        text-align: center;
     }
 
     /* Bio */
@@ -2020,6 +2112,10 @@ body:has(.about-container) {
         text-align: center;
         gap: .5em;
         margin: 2em 0;
+    }
+
+    .work-item-title {
+        flex-direction: column;
     }
 
     .work-history-item p {
@@ -2133,6 +2229,11 @@ body:has(.about-container) {
 /* Mobile */
 @media (max-width: 650px) {
     /* Contact Me */
+
+    .contact-me {
+        margin-top: 2em;
+    }
+    
     .contact-me h2 {
         font-size: 1.4em;
         margin-bottom: 1em;
