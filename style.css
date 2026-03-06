@@ -2212,6 +2212,8 @@ body:has(.about-container) {
     }
 
     .contact-link {
+        display: flex;
+        justify-content: center;
         text-align: center;
     }
 
