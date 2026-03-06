@@ -234,16 +234,12 @@
             track.addEventListener('touchend', dragEnd);
             track.addEventListener('mouseleave', dragEnd);
             track.addEventListener('mousemove', drag);
-            track.addEventListener('touchmove', drag);
+            track.addEventListener('touchmove', drag, { passive: false });
             
             // Prevent default drag behavior on images
             track.addEventListener('dragstart', (e) => e.preventDefault());
             
             function dragStart(e) {
-                if (e.type === 'touchstart') {
-                    e.preventDefault();
-                }
-                
                 isDragging = true;
                 dragStartTime = Date.now();
                 startPos = getPositionX(e);
@@ -264,9 +260,14 @@
             function drag(e) {
                 if (!isDragging) return;
                 
-                e.preventDefault();
                 const currentPosition = getPositionX(e);
                 const slideWidth = slides[0].getBoundingClientRect().width;
+                const dragDelta = Math.abs(currentPosition - startPos);
+
+                // Only prevent scroll/default once we're sure it's a horizontal drag
+                if (dragDelta > 8) {
+                    e.preventDefault();
+                }
                 
                 // Calculate new position with boundaries
                 let newTranslate = prevTranslate + (currentPosition - startPos);
