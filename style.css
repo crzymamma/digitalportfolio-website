@@ -496,15 +496,18 @@ body {
     height: 90vh;
     display: flex-start;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
+
     padding: 0 2em;
     margin-left: -120px;
 }
 
 .logo {
     width: fit-content;
-    margin: 0 auto 3em;
+    margin: 2em auto 3em;
+}
+
+#home-logo {
+    padding-left: 120px;
 }
 
 .logo a {
@@ -814,7 +817,11 @@ body {
     }
 
     .logo {
-        padding: 0;
+        margin-top: 0;
+    }
+
+    #home-logo {
+        padding-left: 0;
     }
 
     .featured-projects {
@@ -846,7 +853,7 @@ body {
         overflow-x: hidden;
     }
 
-    .logo {
+    #home-logo {
         padding: 0;
         margin-bottom: 1em;
     }
@@ -939,12 +946,6 @@ body#casestudy {
     justify-content: flex-start;
     align-content: center;
     padding: 0 2em;
-}
-
-#casestudy-logo {
-    margin-top: 3em;
-    margin-bottom: 5em;
-    padding: 0;
 }
 
 .casestudy-intro-text {
@@ -1319,13 +1320,6 @@ p.hint a:hover {
 
 /* Screen Breaks */
 
-/* Laptops */
-@media (min-width: 901px) and (max-width: 1280px) {
-   /* Container */
-   #casestudy-logo {
-        margin-top: 0;
-    }
-}
 
 /* Tablet */
 @media (max-width: 900px) {
@@ -1348,10 +1342,6 @@ p.hint a:hover {
     #casestudy-description {
         text-align: left;
         width: 100%;
-    }
-    
-    #casestudy-logo {
-        margin-bottom: 4em;
     }
 
     /* Case Study Overview */
@@ -1488,10 +1478,6 @@ body:has(.side-quests-container) {
     width: fit-content;
     margin: 0 auto;
     padding-bottom: 4em;
-}
-
-#side-quests-logo {
-    margin-top: 3em;
 }
 
 /* Bento Grid */
@@ -1656,14 +1642,6 @@ body:has(.side-quests-container) {
 
 /* Screen Breaks */
 
-/* Laptops */
-@media (min-width: 901px) and (max-width: 1280px) {
-    /* Logo */
-    #side-quests-logo {
-        margin-top: 0;
-    }
-}
-
 /* Small Tablets/Mobile */
 @media (max-width: 700px) {
     .bento-grid {
@@ -1711,11 +1689,6 @@ body:has(.about-container) {
     align-content: center;
     padding: 0 2em;
     overflow: visible;
-}
-
-#about-logo {
-    margin: 3em auto 8em;
-    padding: 0;
 }
 
 #about-intro {
@@ -1939,10 +1912,6 @@ body:has(.about-container) {
 @media (max-width: 1280px) {
     /* Container */
 
-    #about-logo {
-        margin-top: 0;
-    }
-
     .about-container {
         width: 1000px;
     }
@@ -1991,10 +1960,6 @@ body:has(.about-container) {
 /* Small Tablets */
 @media (max-width: 900px) {
     /* Container */
-
-    #about-logo {
-        margin-top: 3em;
-    }
 
     .greeting h2 {
         font-size: 3.2em;
@@ -2056,11 +2021,6 @@ body:has(.about-container) {
     .about-container {
         width: 80%;
         overflow-x: hidden;
-    }
-
-    #about-logo {
-        margin: 3em auto 0;
-        padding: 0;
     }
 
     .row1 {
@@ -2151,11 +2111,6 @@ body:has(.about-container) {
 
 /* Contact */
 
-#contact-logo {
-    margin: 3em auto 8em;
-    padding: 0;
-}
-
 .contact-container {
     width: 1000px;
     display: flex-start;
@@ -2206,10 +2161,6 @@ body:has(.about-container) {
     /* Contact Container */
     .contact-container {
         width: 80%;
-    }
-
-    #contact-logo {
-        margin-top: 0;
     }
 }
 
