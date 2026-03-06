@@ -496,7 +496,6 @@ body {
     height: 90vh;
     display: flex-start;
     flex-direction: column;
-
     padding: 0 2em;
     margin-left: -120px;
 }
@@ -822,6 +821,8 @@ body {
 
     #home-logo {
         padding-left: 0;
+        margin-top: 0;
+        margin-bottom: 1em;
     }
 
     .featured-projects {
@@ -881,7 +882,6 @@ body {
 
     .horizontal-divider {
         margin: 0 auto;
-
     }
 
     .horizontal-divider::before {
@@ -891,6 +891,7 @@ body {
     /* Featured Projects */
     .featured-projects {
         margin: 0;
+        width: 100%;
     }
 
     .featured-projects::before {
