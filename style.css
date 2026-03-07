@@ -230,11 +230,6 @@ body {
     transform: translateY(20px);
 }
 
-#about-logo {
-    animation: elementFadeIn 0.8s ease-out forwards;
-    animation-delay: 0.2s;
-}
-
 .profile-grid {
     animation: elementFadeIn 0.8s ease-out forwards;
     animation-delay: 0.8s;
@@ -1523,12 +1518,14 @@ body:has(.side-quests-container) {
   display: block;
   position: relative;
   z-index: 1;
+  border-radius: 8px;
 }
 
 .bento-video {
   position: absolute;
   inset: 0;
   overflow: hidden;
+  border-radius: 8px;
 }
 
 .bento-video iframe {
@@ -1732,53 +1729,12 @@ body:has(.about-container) {
     letter-spacing: -.02em;
 }
 
-.slotmachine-holder {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-
-.slotmachine-holder h3 {
-    font-size: 1.8em;
-    text-align: right;
-}
-
-.slottt-machine-inline {
-  display: inline-block;
-  vertical-align: middle;
-  text-align: right;
-  height: 1.425em;
-  overflow: hidden;
-}
-
-.slottt-machine-recipe__mask {
-  height: 1.2em;
-  overflow: hidden;
-  display: inline-block;
-  position: relative;
-}
-
-.slottt-machine-recipe__items_container {
-  position: relative;
-  top: 0;
-}
-
-.slottt-machine-recipe__item {
-  height: 1.2em;
-  line-height: 1.2em;
-  font-weight: inherit;
-  font-size: inherit;
-  white-space: nowrap;
-}
-
 /* Bio */
 
 .bio {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 12em;
+    gap: 9em;
     margin: 3em 0 2.5em;
 }
 
@@ -1809,20 +1765,219 @@ body:has(.about-container) {
     margin-bottom: .5em;
 }
 
-.bio-pics {
+.bio-portrait p, .bio-car p, p.musicdesc {
+    font-size: .8em;
+    color: #6e6e6e;
+    margin-top: .5em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Music Player */
+
+.music-player {
+    border-radius: 8px;
+    overflow: hidden;
+    background: #111;
+    transition: background 0.6s ease;
     display: flex;
     flex-direction: column;
-    flex: 0 0 30%;
+    justify-content: stretch;
+    flex: 1;
+    min-height: 0;
 }
 
-.bio-pics img {
+.music-player-inner {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    padding: 1em;
+    box-sizing: border-box;
+    gap: .5em;
+}
+
+.music-album-art {
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.05);
+    transition: background 0.6s ease, border-color 0.6s ease;
+    min-height: 155px;
+}
+
+.music-info {
+    display: flex;
+    flex-direction: column;
+    gap: .15em;
+}
+
+.music-title {
+    font-family: sfpro;
+    font-size: .85em !important;
+    font-weight: bold;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.3em !important;
+    margin-bottom: 0 !important;
+    letter-spacing: .01em !important;
+}
+
+.music-artist {
+    font-family: sfpro;
+    font-size: .72em !important;
+    color: rgba(255,255,255,0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2em !important;
+    margin-bottom: 0 !important;
+}
+
+.music-title, .music-artist {
     width: 100%;
-    height: auto;
 }
 
-.bio-pics img:nth-child(2) {
-    width: 80%;
-    transform: translateX(-3.2em) translateY(-2.5em) rotate(6deg);
+.music-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+}
+
+.music-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgba(255,255,255,0.6);
+    padding: .3em;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease, transform 0.15s ease;
+}
+
+.music-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.music-btn:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.music-btn-play {
+    background: #1db954;
+    color: #fff !important;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    transition: background 0.4s ease, transform 0.15s ease !important;
+}
+
+.music-btn-play:hover {
+    transform: scale(1.12) !important;
+}
+
+.music-progress-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: .25em;
+}
+
+.music-progress-bar {
+    width: 100%;
+    height: 3px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.music-progress-fill {
+    height: 100%;
+    width: 0%;
+    background: #1db954;
+    border-radius: 2px;
+    transition: width 0.5s linear, background 0.4s ease;
+}
+
+.music-times {
+    display: flex;
+    justify-content: space-between;
+    font-family: sfpro;
+    font-size: .6em;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: .03em;
+}
+
+/* Bio Pics */
+
+.bio-pics {
+    display: block;
+    position: relative;
+    width: 100%;
+    min-height: 520px;
+    flex: 0 0 42%;
+}
+
+.bio-pics > * {
+    position: absolute;
+    transition: transform 0.25s ease, z-index 0s;
+}
+
+.bio-portrait {
+    width: 70%;
+    top: 0;
+}
+
+.bio-portrait img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.bio-car {
+    width: 52%;
+    top: 28%;
+    right: -4%;
+}
+
+.bio-car p {
+    text-align: center;
+}
+
+.bio-car img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    object-fit: cover;
+    aspect-ratio: 4/3;
+}
+
+.music {
+    width: 52%;
+    top: 40%;
+    left: -5%;
+}
+
+.music .music-player {
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18), 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.music .musicdesc {
+    text-align: center;
+    margin-top: 6px;
+    font-size: .75em;
+    color: #888;
 }
 
 #about-divider {
@@ -1926,14 +2081,6 @@ body:has(.about-container) {
         width: 1000px;
     }
 
-    .slotmachine-holder h3 {
-        text-align: left;
-    }
-
-    .slottt-machine-inline {
-        text-align: left;
-    }
-
     /* Bio */
     
     .bio {
@@ -1961,9 +2108,13 @@ body:has(.about-container) {
         transform: translateX(-2em);
     }
 
-    .bio-pics img:nth-child(2) {
-        width: 80%;
-        transform: translateX(-2.8em) translateY(-2.5em) rotate(6deg);
+    .bio-portrait {
+        grid-column: 1 / 3;
+    }
+
+    .bio-pics {
+        min-height: 460px;
+        flex: 0 0 44%;
     }
 }
 
@@ -1971,12 +2122,21 @@ body:has(.about-container) {
 @media (max-width: 900px) {
     /* Container */
 
-    .greeting h2 {
-        font-size: 3.2em;
+    .row1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    .slotmachine-holder h3 {
-        visibility: hidden;
+    .greeting {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .greeting h2 {
+        font-size: 3.2em;
+        text-align: center;
     }
 
     #about-divider {
@@ -1987,30 +2147,37 @@ body:has(.about-container) {
 
     .bio {
         flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
+        justify-content: center;
         gap: 2em;
         margin: 3em 0 2.5em;
+        padding: 0 2em;
     }
 
     .bio p {
-        margin-right: 8em;
+        margin-right: 3em;
     }
 
-    .bio-pics {
-        flex-direction: row;
-        width: 80%;
-        margin: 0 0 2em;
-    }
-
-    .bio-pics img {
-        width: 60%;
-        height: 60%;
-    }
-
-    .bio-pics img:nth-child(2) {
+    .bio-portrait {
         width: 40%;
-        transform: translateX(-3.2em) translateY(7em) rotate(6deg);
+        height: auto;
+        left: 10%;
+    }
+
+    .bio-car {
+        width: 38%;
+        top: 48%;
+        right: 0;
+        left: 17%;
+    }
+
+    .music {
+        width: 30%;
+        top: 8%;
+        left: 59%;
+    }
+
+    p.musicdesc, .bio-car p {
+        display: none;
     }
 
     /* Work History */
@@ -2061,17 +2228,61 @@ body:has(.about-container) {
     }
 
     .bio-pics {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: .75em;
+        position: static;
         width: 100%;
-    }
-    
-    .bio-pics img {
-        width: 100%;
-        height: 100%;
+        min-height: unset;
     }
 
-    .bio-pics img:nth-child(2) {
-        width: 80%;
-        transform: translateX(-.5em) translateY(3em) rotate(8deg);
+    .bio-portrait,
+    .bio-car,
+    .music {
+        position: static;
+        width: auto;
+        height: auto;
+        transform: none;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+    }
+
+    .bio-portrait,
+    .bio-car {
+        height: 180px;
+    }
+
+    .bio-portrait img,
+    .bio-car img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: unset;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .bio-portrait {
+        grid-column: auto;
+    }
+
+    .music {
+        grid-column: 1 / 3;
+    }
+
+    p.musicdesc, .bio-car p {
+        display: none;
+    }
+
+    .music-album-art {
+        display: none;
+    }
+
+    p.musicdesc {
+        display: block;
+        margin: 1em 0 0;
+        text-align: left !important;
     }
 
     /* Work History */
