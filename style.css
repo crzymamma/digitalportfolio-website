@@ -2150,7 +2150,6 @@ body:has(.about-container) {
         justify-content: center;
         gap: 2em;
         margin: 3em 0 2.5em;
-        padding: 0 2em;
     }
 
     .bio p {
