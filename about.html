@@ -33,17 +33,6 @@
                     <h2>Hi! I'm Ethan.</h2>
                 </div>
 
-                <!-- <div class="slotmachine-holder">
-                    <h3>
-                        A multi-disciplinary UX designer specializing in
-                        <span class="slottt-machine-inline">
-                            <span class="slottt-machine-recipe__mask">
-                                <span class="slottt-machine-recipe__items_container" id="wordbox"></span>
-                            </span>
-                        </span>
-                    </h3>
-                </div> -->
-
             </div>
 
             <div class="horizontal-divider" id="about-divider"></div>
@@ -55,15 +44,56 @@
                     <h4>How I got into UX.</h4>
                     <p>My journey into UX started with my love for cars, of all things. I've always viewed them as an extremely underrated medium for art — one that combines visual aesthetics with a specifically tuned user experience.</p>
                     <h4>What I've been doing</h4>
-                    <p>After completing two years at my local community college, where I experimented with front end development, sculpting, and architectural drafting, I discovered Cal Poly's Graphic Communication program.</p>
-                    <p>For the past two years, I've been enrolled in a steady 16+ units while maintaining President's honor roll, heavily involved with several student orgs, and pursued personal projects.</p>
+                    <p>After completing two years at my local community college, where I experimented with front end development, sculpting, and industrial design, I discovered Cal Poly's Graphic Communication program.</p>
+                    <p>For the past two years, I've been enrolled in a steady 16+ units while maintaining President's honor roll and staying heavily involved with several student orgs.</p>
                     <h4>Where I'm at now</h4>
                     <p>Now I'm on the hunt for an internship or full time position where I can dedicate the same effort I've been putting in non-stop for the past 4 years.</p>
                 </div>
 
                 <div class="bio-pics">
-                    <img src="Pictures/about/ethan-portrait.JPG" alt="A portrait of Ethan Sautto.">
-                    <img src="Pictures/about/my240.JPG" alt="A photo of Ethan's old Nissan that he thinks is cool.">
+                    <div class="bio-portrait">
+                        <img src="Pictures/about/ethan-portrait.JPG" alt="A portrait of Ethan Sautto.">
+                    </div>
+
+                    <div class="bio-car">
+                        <img src="Pictures/about/my240.JPG" alt="A photo of Ethan's old Nissan that he thinks is cool.">
+                        <p>My old Nissan I like working on</p>
+                    </div>
+
+                    <div class="music">
+                        <div class="music-player" id="musicPlayer">
+                            <div class="music-player-inner">
+                                <div class="music-album-art" id="albumArt">
+                                </div>
+                                <div class="music-info">
+                                    <p class="music-title" id="songTitle">Loading...</p>
+                                    <p class="music-artist" id="songArtist"></p>
+                                </div>
+                                <div class="music-controls">
+                                    <button class="music-btn" id="prevBtn" aria-label="Previous">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg>
+                                    </button>
+                                    <button class="music-btn music-btn-play" id="playBtn" aria-label="Play/Pause">
+                                        <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                                        <svg id="pauseIcon" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                                    </button>
+                                    <button class="music-btn" id="nextBtn" aria-label="Next">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zm2.5-6 5.5 4v-8l-5.5 4zm7.5-6h2v12h-2z"/></svg>
+                                    </button>
+                                </div>
+                                <div class="music-progress-wrap">
+                                    <div class="music-progress-bar">
+                                        <div class="music-progress-fill" id="progressFill"></div>
+                                    </div>
+                                    <div class="music-times">
+                                        <span id="currentTime">0:00</span>
+                                        <span id="totalTime">0:00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="musicdesc">Some of my favorite songs</p>
+                    </div>
                 </div>
 
             </div>
@@ -149,62 +179,144 @@
 
     
     <script>
-        //Slot machine text
-        var wordlist = [
-        'automotive branding.',
-        'mobile interfaces.',
-        'graphic design.',
-        'HTML + CSS + JS.',
-        'user research.',
-        'bridging the gap.',
-        'web design.',
-        'solving puzzles.'
+        const audioPlayer = new Audio();
+
+        // Music Player
+        const songs = [
+            { title: "What's Now Is Now", artist: "CAKE", color: "#236F9E", accent: "#BF3722", image: "Assets_icons/albums/showroomofcompassion.jpg", audio: "Assets_icons/albums/whatsnowisnow.m4a"},
+            { title: "Pogo", artist: "Digitalism", color: "#160926", accent: "#3FC23A", image: "Assets_icons/albums/idealism.jpg", audio: "Assets_icons/albums/pogo.m4a"},
+            { title: "Ever (Foreign Flag)", artist: "Team Sleep", color: "#755B12", accent: "#CF4108", image: "Assets_icons/albums/teamsleep.jpg", audio: "Assets_icons/albums/ever.m4a"},
+            { title: "Collapsing New Buildings", artist: "pennines", color: "#136085", accent: "#0A212B", image: "Assets_icons/albums/fairdos.jpg", audio: "Assets_icons/albums/collapsingnewbuildings.m4a"},
+            { title: "Wither", artist: "Chatterton", color: "#4C639C", accent: "#261B15", image: "Assets_icons/albums/fieldsofthis.jpg", audio: "Assets_icons/albums/wither.m4a"},
+            { title: "Cath...", artist: "Death Cab for Cutie", color: "#752310", accent: "#1C3469", image: "Assets_icons/albums/narrowstairs.jpg", audio: "Assets_icons/albums/cath.m4a"},
+            { title: "The Flower Called Nowhere", artist: "Stereolab", color: "#28706F", accent: "#A3BA3F", image: "Assets_icons/albums/dotsandloops.png", audio: "Assets_icons/albums/theflowercallednowhere.m4a"},
+            { title: "Love Proceeding", artist: "BADBADNOTGOOD", color: "#0D3D66", accent: "#1973C2", image: "Assets_icons/albums/talkmemory.jpg", audio: "Assets_icons/albums/loveproceeding.m4a"}
         ];
 
-        function buildSlotItem(text) {
-        return $('<div>')
-            .addClass('slottt-machine-recipe__item')
-            .text(text);
+        let currentIndex = Math.floor(Math.random() * songs.length);
+        let isPlaying = false;
+        let progressInterval = null;
+        let currentProgress = 0;
+        const totalDuration = 11;
+
+        function formatTime(secs) {
+            const m = Math.floor(secs / 60);
+            const s = Math.floor(secs % 60);
+            return `${m}:${s.toString().padStart(2, '0')}`;
         }
 
-        function buildSlotContents($container, words) {
-        $container.append(words.map(buildSlotItem));
+        function loadSong(index) {
+            const song = songs[index];
+            audioPlayer.src = song.audio || '';
+            document.getElementById('songTitle').textContent = song.title;
+            document.getElementById('songArtist').textContent = song.artist;
+            document.getElementById('totalTime').textContent = formatTime(totalDuration);
+            document.getElementById('currentTime').textContent = '0:00';
+            document.getElementById('progressFill').style.width = '0%';
+            currentProgress = 0;
+
+            const player = document.getElementById('musicPlayer');
+            const albumArt = document.getElementById('albumArt');
+            player.style.background = song.color;
+            albumArt.style.background = `radial-gradient(circle at 30% 30%, ${song.accent}33, ${song.color})`;
+            albumArt.style.borderColor = `${song.accent}44`;
+            document.getElementById('songTitle').style.color = '#ffffff';
+            document.querySelector('.music-btn-play').style.background = song.accent;
+            document.querySelector('.music-progress-fill').style.background = song.accent;
+            albumArt.style.backgroundImage = `url('${song.image}')`;
+            albumArt.style.backgroundSize = 'cover';
+            albumArt.style.backgroundPosition = 'center';
         }
 
-        function popPushNItems($container, n) {
-        const $children = $container.children();
-        $children.slice(0, n).appendTo($container);
-        $container.css({ top: 0 });
-        }
+        audioPlayer.addEventListener('timeupdate', () => {
+                const pct = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+                document.getElementById('progressFill').style.width = pct + '%';
+                document.getElementById('currentTime').textContent = formatTime(audioPlayer.currentTime);
 
-        function randomIndex(max) {
-        let i = Math.floor(Math.random() * max);
-        return i < 2 ? randomIndex(max) : i;
-        }
+                // Fade out 3 seconds before the end
+                const timeLeft = audioPlayer.duration - audioPlayer.currentTime;
+                if (timeLeft <= 2 && timeLeft > 0 && isPlaying && audioPlayer.volume > 0) {
+                    audioPlayer.volume = Math.max(timeLeft / 2, 0);
+                }
+            });
 
-        function animateSlot() {
-        const index = randomIndex(wordlist.length);
-        const itemHeight = $('#wordbox .slottt-machine-recipe__item').first().outerHeight();
+            audioPlayer.addEventListener('loadedmetadata', () => {
+                document.getElementById('totalTime').textContent = formatTime(audioPlayer.duration);
+            });
 
-        $('#wordbox').animate(
-            { top: -index * itemHeight },
-            500,
-            'swing',
-            function () {
-            popPushNItems($('#wordbox'), index);
+            audioPlayer.addEventListener('ended', () => {
+                audioPlayer.volume = 1;
+                nextSong();
+            });
+
+        function tickProgress() {
+            if (currentProgress < totalDuration) {
+                currentProgress += 0.5;
+                const pct = (currentProgress / totalDuration) * 100;
+                document.getElementById('progressFill').style.width = pct + '%';
+                document.getElementById('currentTime').textContent = formatTime(currentProgress);
+            } else {
+                nextSong();
             }
-        );
         }
 
-        $(document).ready(function () {
-        const $box = $('#wordbox');
+        function fadeVolume(from, to, duration, callback) {
+            const steps = 20;
+            const stepTime = duration / steps;
+            const stepSize = (to - from) / steps;
+            let current = from;
+            audioPlayer.volume = from;
+            const fade = setInterval(() => {
+                current += stepSize;
+                audioPlayer.volume = Math.min(Math.max(current, 0), 1);
+                if ((stepSize > 0 && current >= to) || (stepSize < 0 && current <= to)) {
+                    audioPlayer.volume = to;
+                    clearInterval(fade);
+                    if (callback) callback();
+                }
+            }, stepTime);
+        }
 
-        buildSlotContents($box, wordlist);
-        buildSlotContents($box, wordlist);
-        buildSlotContents($box, wordlist);
+        function togglePlay() {
+            isPlaying = !isPlaying;
+            document.getElementById('playIcon').style.display = isPlaying ? 'none' : 'block';
+            document.getElementById('pauseIcon').style.display = isPlaying ? 'block' : 'none';
+            if (isPlaying) {
+                audioPlayer.volume = 0;
+                audioPlayer.play();
+                fadeVolume(0, 1, 600);
+            } else {
+                fadeVolume(1, 0, 600, () => audioPlayer.pause());
+            }
+        }
 
-        setInterval(animateSlot, 2200);
-        });
+        function nextSong() {
+            fadeVolume(1, 0, 600, () => {
+                audioPlayer.pause();
+                isPlaying = false;
+                document.getElementById('playIcon').style.display = 'block';
+                document.getElementById('pauseIcon').style.display = 'none';
+                currentIndex = (currentIndex + 1) % songs.length;
+                loadSong(currentIndex);
+            });
+        }
+
+        function prevSong() {
+            fadeVolume(1, 0, 600, () => {
+                audioPlayer.pause();
+                isPlaying = false;
+                document.getElementById('playIcon').style.display = 'block';
+                document.getElementById('pauseIcon').style.display = 'none';
+                currentIndex = (currentIndex - 1 + songs.length) % songs.length;
+                loadSong(currentIndex);
+            });
+        }
+
+        document.getElementById('playBtn').addEventListener('click', togglePlay);
+        document.getElementById('nextBtn').addEventListener('click', nextSong);
+        document.getElementById('prevBtn').addEventListener('click', prevSong);
+
+        loadSong(currentIndex);
     </script>
 
 </body>
