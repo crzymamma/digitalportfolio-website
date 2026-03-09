@@ -165,6 +165,51 @@
 
             </div>
 
+            <div class="thoughts">
+
+                <h2>Thoughts About UX</h2>
+
+                <div class="thoughts-inner">
+
+                    <div class="thought-item">
+                        <button class="thought-toggle" aria-expanded="false">
+                            <h3>My Perspective On AI and LLM Platforms</h3>
+                            <span class="thought-chevron">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                            </span>
+                        </button>
+                        <div class="thought-body">
+                            <p>With the rapid proliferation of LLMs, its easy to feel like you're missing out if you're not implementing AI into your platform. As a designer, it's my job to know exactly when and where AI tools are effective. This means constantly learning how to use new technology and taking note of which new AI features are actually helpful. I'm of the opinion that the "move fast and break things" motto is no longer the best course of action. Instead, careful consideration must be taken when restructuring your platform or workflow to make room for new AI technology. Users can tell the difference between a rushed AI add-on vs. a thoughtful, seemless integration.</p>
+                        </div>
+                    </div>
+
+                    <div class="thought-item">
+                        <button class="thought-toggle" aria-expanded="false">
+                            <h3>Blending Design and Development</h3>
+                            <span class="thought-chevron">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                            </span>
+                        </button>
+                        <div class="thought-body">
+                            <p>Starting my design journey on a computer science track gave me a special appreciation for how designs actually translate into a product. There are some important considerations I find a lot of beginner designers forget to take in this regard. How will this feature be maintained? Will its implementation bottleneck the development of any other features? Will the feature have to change due to practical limitations? These kind of questions should be asked by designers who want to be more involved in the development process. As someone who started out in computer science, I'm passionate about bringing designers and developers together in a more hybrid workflow.</p>
+                        </div>
+                    </div>
+
+                    <div class="thought-item">
+                        <button class="thought-toggle" aria-expanded="false">
+                            <h3>Long Term Career Goals</h3>
+                            <span class="thought-chevron">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                            </span>
+                        </button>
+                        <div class="thought-body">
+                            <p>User Experience, as a concept, has the unique quality of being so broad that it can be applied to nearly any product or service. So, the question of "what are you doing after college?" can be a bit daunting. Luckily, I have many other design-related interests that I'd love to explore. I'm incredibly interested in Automotive UX, as there's just so much room for exploration in car interiors. As the world goes electric, what differentiates the user experience when the powertrain is no longer a variable? I'm also interested in game design for its unique medium for education and rhetoric. In terms of career structure, I'd love to find a long-term environment that allows me to continue to learn and broaden my design skills.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
             <div class="get-in-touch">
                 <h2>Let's continue the conversation!</h2>
                 <a href="contact.html"><p>Get in touch</p><span class="arrow">→</span></a>
@@ -178,6 +223,31 @@
 
 
     
+    <script>
+        // Thoughts accordion
+        document.querySelectorAll('.thought-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.thought-item');
+                const isOpen = item.classList.contains('open');
+
+                // Close all
+                document.querySelectorAll('.thought-item').forEach(i => {
+                    i.classList.remove('open');
+                    i.querySelector('.thought-toggle').setAttribute('aria-expanded', 'false');
+                    i.querySelector('.thought-body').style.maxHeight = null;
+                });
+
+                // Open clicked if it was closed
+                if (!isOpen) {
+                    item.classList.add('open');
+                    btn.setAttribute('aria-expanded', 'true');
+                    const body = item.querySelector('.thought-body');
+                    body.style.maxHeight = body.scrollHeight + 'px';
+                }
+            });
+        });
+    </script>
+
     <script>
         const audioPlayer = new Audio();
 
