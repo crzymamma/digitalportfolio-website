@@ -1,2452 +1,360 @@
-/*CSS DOCUMENT*/
-
-
-/* Reset */
-
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
-blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
-img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u,
-i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table,
-caption, tbody, tfoot, thead, tr, th, td, article, aside, details, figcaption,
-figure, footer, header, hgroup, menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-body {
-  line-height: 1; 
-}
-
-ol, ul {
-  list-style: none; 
-}
-
-blockquote, q {
-  quotes: none; 
-}
-
-blockquote::before, blockquote::after, q::before, q::after {
-  content: ""; 
-}
-
-table {
-  border-collapse: collapse; border-spacing: 0; 
-}
-
-
-
-/* PAGE TRANSITION */
-
-@-webkit-keyframes elementFadeIn {
-    0% {
-        opacity: 0;
-        -webkit-transform: translateY(20px);
-        transform: translateY(20px);
-        -webkit-filter: blur(5px);
-        filter: blur(5px);
-    }
-    100% {
-        opacity: 1;
-        -webkit-transform: translateY(0) translateZ(0);
-        transform: translateY(0) translateZ(0);
-        -webkit-filter: blur(0px);
-        filter: blur(0px);
-    }
-}
-
-@keyframes elementFadeIn {
-    0% {
-        opacity: 0;
-        -webkit-transform: translateY(20px);
-        transform: translateY(20px);
-        -webkit-filter: blur(5px);
-        filter: blur(5px);
-    }
-    100% {
-        opacity: 1;
-        -webkit-transform: translateY(0) translateZ(0);
-        transform: translateY(0) translateZ(0);
-        -webkit-filter: blur(0px);
-        filter: blur(0px);
-    }
-}
-
-body.fade-out {
-    animation: fuzzyFadeOut .2s ease-out forwards !important;
-}
-
-@keyframes fuzzyFadeOut {
-    0% {
-        opacity: 1;
-        filter: blur(0);
-    }
-    100% {
-        opacity: 0;
-        filter: blur(10px);
-    }
-}
-
-body.animating {
-    overflow: hidden;
-}
-
-body.fade-out a {
-    pointer-events: none;
-}
-
-body {
-    opacity: 1;
-    filter: blur(0);
-    background: white;
-}
-
-.home > * {
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.logo {
-    animation: elementFadeIn 0.8s ease-out forwards;
-    animation-delay: 0.2s;
-}
-
-.intro {
-    animation: elementFadeIn 0.8s ease-out forwards;
-    animation-delay: 0.4s;
-}
-
-.horizontal-divider {
-    animation: elementFadeIn 0.8s ease-out forwards;
-    animation-delay: 0.8s;
-}
-
-.featured-projects {
-    animation: elementFadeIn 1s ease-out forwards;
-    animation-delay: 1s;
-}
-
-.intro ul {
-    opacity: 0;
-    transform: translateY(15px);
-    animation: elementFadeIn 0.6s ease-out forwards;
-    animation-delay: 0.5s;
-}
-
-.intro ul li {
-    opacity: 0;
-    transform: translateY(15px);
-    animation: elementFadeIn 0.6s ease-out forwards;
-}
-
-.intro ul li:nth-child(1) {
-    animation-delay: 0.5s;
-}
-.intro ul li:nth-child(2) {
-    animation-delay: 0.6s;
-}
-.intro ul li:nth-child(3) {
-    animation-delay: 0.7s;
-}
-.intro ul li:nth-child(4) {
-    animation-delay: 0.8s;
-}
-
-.intro .vertical-divider {
-    opacity: 0;
-    transform: translateY(15px);
-    animation: elementFadeIn 1s ease-out forwards;
-    animation-delay: 1s;
-}
-
-.intro .intro-text {
-    opacity: 0;
-    transform: translateY(15px);
-    animation: elementFadeIn 0.6s ease-out forwards;
-    animation-delay: 0.7s;
-}
-
-.intro .intro-text h2 {
-    opacity: 0;
-    transform: translateY(15px);
-    animation: elementFadeIn 0.6s ease-out 0.7s forwards;
-}
-
-.intro .intro-text p {
-    opacity: 0;
-    transform: translateY(15px);
-    animation: elementFadeIn 0.6s ease-out forwards;
-}
-
-.intro .intro-text p:nth-of-type(1) {
-    animation-delay: 0.8s;
-}
-.intro .intro-text p:nth-of-type(2) {
-    animation-delay: 0.9s;
-}
-
-.side-quests-container > * {
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.casestudy-container > * {
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-#casestudy-logo {
-    animation: elementFadeIn 0.8s ease-out forwards;
-    animation-delay: 0.2s;
-}
-
-.casestudy-intro {
-    animation: elementFadeIn 0.8s ease-out forwards;
-    animation-delay: 0.4s;
-}
-
-.casestudy-overview {
-    animation: elementFadeIn 0.8s ease-out forwards;
-    animation-delay: 0.6s;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    isolation: isolate;
-}
-
-.sidequest-item {
-    animation: elementFadeIn 0.8s ease-out forwards;
-    animation-delay: 0.6s;
-}
-
-.about-container > * {
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.profile-grid {
-    animation: elementFadeIn 0.8s ease-out forwards;
-    animation-delay: 0.8s;
-}
-
-.contact-container > * {
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.contact-me {
-    animation: elementFadeIn 0.8s ease-out forwards;
-}
-
-.contact-me {
-    animation: elementFadeIn 0.8s ease-out forwards;
-    animation-delay: 0.4s;
-}
-
-.contact-me h2 {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: elementFadeIn 0.6s ease-out forwards;
-    animation-delay: 0.6s;
-}
-
-#contact-divider {
-    opacity: 0;
-    transform: translateY(15px);
-    animation: elementFadeIn 0.8s ease-out forwards;
-    animation-delay: 0.8s;
-}
-
-.contact-me ul {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: elementFadeIn 0.8s ease-out forwards;
-    animation-delay: 1s;
-}
-
-.contact-me ul li {
-    opacity: 0;
-    transform: translateY(15px);
-    animation: elementFadeIn 0.6s ease-out forwards;
-}
-
-.contact-me ul li:nth-child(1) {
-    animation-delay: 1.1s;
-}
-
-.contact-me ul li:nth-child(2) {
-    animation-delay: 1.2s;
-}
-
-.contact-me ul li:nth-child(3) {
-    animation-delay: 1.3s;
-}
-
-.contact-me p {
-    opacity: 0;
-    transform: translateY(15px);
-    animation: elementFadeIn 0.6s ease-out forwards;
-    animation-delay: 1.1s;
-}
-
-.row1 {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: elementFadeIn 0.8s ease-out forwards;
-    animation-delay: 0.4s;
-}
-
-.greeting h2 {
-    opacity: 0;
-    transform: translateY(15px);
-    animation: elementFadeIn 0.6s ease-out forwards;
-    animation-delay: 0.5s;
-}
-
-.slotmachine-holder h3 {
-    opacity: 0;
-    transform: translateY(15px);
-    animation: elementFadeIn 0.6s ease-out forwards;
-    animation-delay: 0.6s;
-}
-
-.bio {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: elementFadeIn 0.8s ease-out forwards;
-    animation-delay: 1s;
-}
-
-.bio-text h3 {
-    opacity: 0;
-    transform: translateY(15px);
-    animation: elementFadeIn 0.6s ease-out forwards;
-    animation-delay: 1.1s;
-}
-
-.bio-text h4 {
-    opacity: 0;
-    transform: translateY(15px);
-    animation: elementFadeIn 0.6s ease-out forwards;
-}
-
-.bio-text h4:nth-of-type(1) {
-    animation-delay: 1.2s;
-}
-
-.bio-text h4:nth-of-type(2) {
-    animation-delay: 1.5s;
-}
-
-.bio-text h4:nth-of-type(3) {
-    animation-delay: 1.9s;
-}
-
-.bio-text p {
-    opacity: 0;
-    transform: translateY(15px);
-    animation: elementFadeIn 0.6s ease-out forwards;
-}
-
-.bio-text p:nth-of-type(1) {
-    animation-delay: 1.3s;
-}
-
-.bio-text p:nth-of-type(2) {
-    animation-delay: 1.4s;
-}
-
-.bio-text p:nth-of-type(3) {
-    animation-delay: 1.6s;
-}
-
-.bio-text p:nth-of-type(4) {
-    animation-delay: 1.7s;
-}
-
-.bio-text p:nth-of-type(5) {
-    animation-delay: 1.8s;
-}
-
-.bio-text p:nth-of-type(6) {
-    animation-delay: 2.0s;
-}
-
-.bio-pics {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: elementFadeIn 0.8s ease-out forwards;
-    animation-delay: 1.4s;
-}
-
-.bio-pics img:nth-child(1) {
-    animation-delay: 1.5s;
-}
-
-.bio-pics img:nth-child(2) {
-    animation-delay: 1.6s;
-}
-
-
-/* FONTS */
-
-@font-face { 
-    font-family: sfpro; 
-    src: url(Fonts/SF-Pro-Display-Regular\.otf); 
-}
-
-@font-face {
-    font-family: sfproitalic;
-    src: url(Fonts/SF-Pro-Display-RegularItalic.otf);
-}
-
-@font-face {
-    font-family: argentpixel;
-    src: url(Fonts/Argent\ Pixel\ CF\ Regular.ttf);
-}
-
-@font-face {
-    font-family: argentpixelitalic;
-    src: url(Fonts/Argent\ Pixel\ CF\ Italic.ttf);
-}
-
-
-h1 {
-    font-family: argentpixelitalic;
-    font-size: 1.5em;
-}
-
-.logo a {
-    text-decoration: none;
-}
-
-h2, h3 {
-    font-family: sfpro;
-    font-size: 1.2em;
-}
-
-h4, p {
-    font-family: sfpro;
-    letter-spacing: .02em;
-    line-height: 1.2em;
-}
-
-ul li {
-    font-family: sfpro;
-    letter-spacing: .02em;
-    line-height: 1.2em;
-}
-
-a {
-    color: #000000;
-    transition: color 0.2s ease;
-}
-
-a:hover {
-    color: #6e6e6e;
-}
-
-.grey {
-    color: #6e6e6e;
-}
-
-.bold {
-    font-weight: bold;
-}
-
-.italic {
-    font-family: sfproitalic;
-}
-
-
-
-/* BODY */
-
-body {
-    display: flex;
-    justify-content: center;
-    align-content: flex-start;
-    min-height: 100vh;
-    padding: clamp(20px, 5vh, 5em) 0;
-    overflow: hidden;
-}
-
-
-
-/* HOME */
-
-#index {
-    overflow-y: hidden;
-    overflow-x: hidden;
-}
-
-.home {
-    width: 1000px;
-    height: 90vh;
-    display: flex-start;
-    flex-direction: column;
-    padding: 0 2em;
-    margin-left: -120px;
-}
-
-.logo {
-    width: fit-content;
-    margin: 2em auto 3em;
-}
-
-#home-logo {
-    padding-left: 120px;
-}
-
-.logo a {
-    display: block;
-    text-decoration: none;
-}
-
-.logo-img-wrap {
-    position: relative;
-    display: block;
-}
-
-.logo-img-wrap img {
-    display: block;
-    height: 2em;
-    width: auto;
-    transition: opacity 0.3s ease;
-}
-
-.logo-hover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-}
-
-.logo-img-wrap:hover .logo-default {
-    opacity: 0;
-}
-
-.logo-img-wrap:hover .logo-hover {
-    opacity: 1;
-}
-
-.intro {
-    padding: 0;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    white-space: nowrap;
-}
-
-.intro-text {
-    padding: 1em 0;
-}
-
-.intro h2 {
-    margin-bottom: .5em;
-}
-
-.intro ul {
-    padding: 1em 0;
-    text-align: right;
-    white-space: nowrap;
-    align-items: center;
-    width: 100px;
-}
-
-.intro ul li {
-    margin-bottom: .2em;
-}
-
-.intro ul li a {
-    text-decoration: none;
-}
-
-.vertical-divider {
-    align-self: stretch;
-    width: 1px;
-    border-left: 1.5px solid #000000;
-    border-image: linear-gradient(to bottom, #000000 0%, #000000 75%) 1;
-}
-
-.horizontal-divider {
-    width: 90%;
-    margin-left: 3em;
-    position: relative;
-    height: 1px;
-}
-
-.horizontal-divider::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    height: 1px;
-    background: linear-gradient(to right, #000000 0%, transparent 95%);
-}
-
-/* Featured Projects */
-
-.featured-projects {
-    position: relative;
-    margin-left: 120px;
-    padding-top: 20px;
-    width: 100%;
-    justify-content: left;
-    text-align: center;
-}
-
-.featured-projects::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background: linear-gradient(to bottom,#000000 0%, transparent 75%);
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    z-index: 2;
-}
-
-.carousel-container {
-    position: relative;
-    width: 100%;
-    clip-path: inset(-100px -800px -100px 0);
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 100%;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-}
-
-.carousel-slide {
-    flex: 0 0 100%;
-    width: 100%;
-    box-sizing: border-box;
-    opacity: 1;
-    transition: opacity 0.4s ease;
-}
-
-.carousel-slide:not(.visible-title) {
-    opacity: 0.5;
-    cursor: pointer;
-}
-
-.carousel-slide:not(.visible-title):hover {
-    opacity: 1;
-}
-
-.carousel-slide img {
-    width: 100%;
-    height: auto;
-    max-height: 50vh;
-    object-fit: contain;
-    aspect-ratio: 16/9;
-    pointer-events: none;
-    -webkit-user-drag: none;
-}
-
-.carousel-slide a {
-    pointer-events: auto;
-    position: relative;
-    z-index: 10;
-}
-
-#carfolio-thumbnail img, #astonmartin-thumbnail img, #volvo-thumbnail img, #livin-thumbnail img {
-    scale: .9;
-} 
-
-.carousel-slide h2 {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.carousel-slide.visible-title h2 {
-    opacity: 1;
-    visibility: visible;
-}
-
-.slide-link {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-}
-
-.slide-link:hover {
-    color: inherit;
-}
-
-@keyframes titleFadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.featured-projects h2 a,
-.featured-projects .slide-link h2 {
-    text-decoration: none;
-    white-space: nowrap;
-}
-
-.featured-projects h2 .arrow,
-.featured-projects .slide-link h2 .arrow {
-    opacity: 0;
-    transform: translateX(-8px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    display: inline-block;
-}
-
-.featured-projects h2 a:hover .arrow,
-.featured-projects .slide-link:hover h2 .arrow {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 1.5em;
-    padding-bottom: 2em;
-    align-items: center;
-    height: 12px;
-}
-
-.dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 4px;
-    background-color: #ccc;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
-}
-
-.dot.active {
-    width: 20px;
-    height: 8px;
-    background-color: #000000;
-    border-radius: 4px;
-}
-
-.dot:hover {
-    background-color: #6e6e6e;
-}
-
-.carousel-restart {
-    font-family: sfpro;
-    font-size: .85em;
-    color: #6e6e6e;
-    cursor: pointer;
-    text-align: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease, color 0.2s ease;
-    margin-top: .6em;
-    margin-left: -.8em;
-    padding-bottom: 1em;
-}
-
-.carousel-restart.visible {
-    opacity: 1;
-    visibility: visible;
-}
-
-.carousel-restart:hover {
-    color: #000000;
-}
-
-/* Screen Breaks */
-
-/* Featured Project Slides */
-@media (max-width: 1745px) {
-    .featured-projects {
-        width: 90%;
-    }
-
-    .carousel-container {
-        clip-path: inset(-100px -800px -100px 0px);
-    }
-}
-
-@media (max-width: 1600px) {
-    .featured-projects {
-        width: 85%;
-    }
-
-    .carousel-container {
-        clip-path: inset(-100px -800px -100px 0px);
-    }
-}
-
-/* Laptops */
-@media (min-width: 901px) and (max-width: 1280px) {
-    /* Home */
-    .home {
-        margin-left: 0;
-        padding-bottom: 1em;
-    }
-
-    .logo {
-        margin-top: 0;
-    }
-
-    #home-logo {
-        padding-left: 0;
-        margin-top: 0;
-        margin-bottom: 1em;
-    }
-
-    .featured-projects {
-        position: relative;
-        margin-left: 120px;
-        padding-top: 20px;
-        width: 75%;
-        justify-content: left;
-        text-align: center;
-    }
-
-    .carousel-container {
-        clip-path: inset(-100px -800px -100px 0px);
-    }
-
-    .carousel-restart {
-        position: absolute;
-        top: 30%;
-        left: -13%;
-    }
-}
-
-/* Tablet */
-@media (max-width: 900px) {
-    /* Home */
-    .home {
-        margin-left: 0;
-        overflow-y: hidden;
-        overflow-x: hidden;
-    }
-
-    #home-logo {
-        padding: 0;
-        margin-bottom: 1em;
-    }
-
-    .intro {
-        flex-direction: column;
-        gap: 1em;
-    }
-
-    .intro ul {
-        width: fit-content;
-        text-align: center;
-        display: inline-flex;
-        margin: 0 auto;
-        gap: 20px;
-    }
-
-    .intro-text {
-        text-align: center;
-    }
-
-    .vertical-divider {
-        visibility: hidden;
-    }
-
-    .horizontal-divider {
-        margin: 0 auto;
-    }
-
-    .horizontal-divider::before {
-        background: linear-gradient(to right, transparent 0%,#000000 20%, #000000 50%, #000000 70%, transparent 100%);
-    }
-
-    /* Featured Projects */
-    .featured-projects {
-        margin: 0;
-        width: 100%;
-    }
-
-    .featured-projects::before {
-        visibility: hidden;
-    }
-}
-
-
-/* Large Mobile */
-@media (max-width: 700px) {
-    .home {
-        width: 90%;
-        overflow-y: hidden;
-        align-content: stretch;
-        margin-top: 2em;
-    }
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-    /* Home */
-    .featured-projects {
-        width: 100%;
-    }
-
-    .logo {
-        margin-top: 0;
-    }
-
-    #home-logo {
-        margin-top: 0;
-    }
-
-    .intro p {
-        white-space: wrap;
-    }
-}
-
-
-
-/* CASE STUDIES */
-
-/* Case Study Hero */
-
-body#casestudy {
-    display: flex-start;
-    flex-direction: column;
-    align-items: center;
-    padding: clamp(20px, 5vh, 5em) 0;
-}
-
-#casestudy {
-    overflow: visible;
-    flex-direction: column;
-}
-
-.casestudy-container {
-    width: 1000px;
-    display: flex-start;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: center;
-    padding: 0 2em;
-}
-
-.casestudy-intro-text {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 8em;
-    margin-bottom: 1em;
-}
-
-.casestudy-title {
-  display: block;
-  min-width: fit-content;
-  justify-content: left;
-  text-align: left;
-}
-
-.casestudy-title h2 {
-    font-size: 2em;
-}
-
-.casestudy-title p {
-    color: #6e6e6e;
-    text-align: left;
-}
-
-#casestudy-description {
-    text-align: right;
-}
-
-.casestudy-intro img {
-    width: 100%;
-    margin-bottom: 1em;
-    border-radius: 8px;
-}
-
-/* Case study Overview */
-
-.casestudy-overview {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    gap: 10vw;
-    height: fit-content;
-}
-
-.overview-stats {
-    display: flex;
-    flex-direction: column;
-    gap: 3em;
-}
-
-.overviewstat h4, .overview-summary h4 {
-    color: #6e6e6e;
-    margin-bottom: .2em;
-}
-
-.overviewstat p {
-    margin-bottom: 1.2em;
-    font-size: 1.3em;
-    white-space: nowrap;
-}
-
-.tool-logos {
-    display: flex;
-    margin-top: .8em;
-    gap: 18px;
-}
-
-.tool-logos :nth-child(1) {
-    transform: rotate(-7deg);
-}
-
-.tool-logos :nth-child(2) {
-    transform: rotate(6deg);
-}
-
-.tool-logos img {
-    max-width: 45px;
-    height: 100%;
-    border: 1px solid #000000;
-    border-radius: 12px;
-    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
-}
-
-.tool-item {
-    position: relative;
-    display: inline-block;
-}
-
-.tool-logos img {
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.tool-logos .tool-item:hover img {
-    transform: rotate(0deg) translateY(-2px);
-}
-
-.tool-logos img:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 12px rgba(0, 0, 0, 0.15);
-}
-
-.popup {
-    position: absolute;
-    top: -35px;
-    transform: translateX(-50%);
-    background-color: #000000;
-    color: white;
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 0.8em;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s ease, visibility 0.2s ease;
-    z-index: 100;
-    pointer-events: none;
-    font-family: sfpro;
-}
-
-.popup::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 5px;
-    border-style: solid;
-    border-color: #000000 transparent transparent transparent;
-}
-
-.tool-item:hover .popup {
-    opacity: 1;
-    visibility: visible;
-}
-
-.overview-summary {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.overview-summary p {
-    font-size: 1.3em;
-    margin-bottom: .4em;
-}
-
-p.hint {
-    color: #6e6e6e;
-    font-size: .9em;
-}
-
-p.hint a {
-    color: #6e6e6e;
-    transition: color 0.2s ease-in;
-}
-
-p.hint a:hover {
-    color: #000000;
-}
-
-/* Research */
-
-.research-container {
-    width: 1000px;
-    position: relative;
-    display: flex-start;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: flex-start;
-    padding: 0 2em;
-    margin-top: 10em;
-}
-
-.research-container h2 {
-    font-size: 2em;
-    margin-bottom: 1em;
-    color: #6e6e6e;
-}
-
-.research-text {
-    max-width: 90%;
-}
-
-.research-text p {
-    margin-bottom: .8em;
-    font-size: 1.3em;
-}
-
-.research-images {
-    margin: 2em 0;
-}
-
-.research-images img {
-    width: 100%;
-    border-radius: 8px;
-    border: 1px solid #d4d4d4;
-    margin: 0.5em 0;
-}
-
-/* Research Findings */
-
-.research-findings {
-    display: flex;
-    justify-content: space-between;
-    gap: 2vw;
-    height: fit-content;
-}
-
-.painpoints h4, .solution h4 {
-    color: #6e6e6e;
-    margin-bottom: .8em;
-}
-
-.painpoints ul {
-    list-style-type: disc;
-    padding: 1.3em 2em;
-    background-color: #f8f8f8;
-    border: 1px solid #d4d4d4;
-    border-radius: 8px;
-
-}
-
-.painpoints ul li {
-    font-size: 1.3em;
-    margin-bottom: .8em;
-    white-space: nowrap;
-}
-
-.solution {
-    max-width: 50%;
-}
-
-.solution p {
-    font-size: 1.3em;
-    padding: 1.2em 2em 1.2em;
-    background-color: #f8f8f8;
-    border: 1px solid #d4d4d4;
-    height: 7.75em;
-    border-radius: 8px;
-}
-
-/* Design Process */
-
-.design-container {
-    width: 1000px;
-    position: relative;
-    display: flex-start;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: flex-start;
-    padding: 0 2em;
-    margin-top: 10em;
-}
-
-.design-container h2 {
-    font-size: 2em;
-    margin-bottom: 1em;
-    color: #6e6e6e;
-}
-
-.design-process {
-    display: flex;
-    flex-direction: column;
-}
-
-.design-process p {
-    margin-bottom: .8em;
-    font-size: 1.3em;
-}
-
-.design-process-images {
-    margin: 2em 0;
-    max-width: 100%;
-}
-
-.design-process-images img {
-    max-width: 100%;
-    border: 1px solid #d4d4d4;
-    border-radius: 8px;
-    margin: 0.5em 0;
-}
-
-.results {
-    margin-top: 1em;
-}
-
-.results ul {
-    list-style-type: disc;
-    padding: 1.3em 2em;
-    background-color: #f8f8f8;
-    border: 1px solid #d4d4d4;
-    border-radius: 8px;
-
-}
-
-.results ul li {
-    margin-bottom: .8em;
-    font-size: 1.3em;
-
-}
-
-/* Final Product + Takeaways */
-
-#conclusion img {
-    width: 100%;
-    margin-bottom: 1em;
-    border-radius: 8px;
-}
-
-#conclusion p {
-    margin-bottom: .8em;
-    font-size: 1.3em;
-}
-
-.finalproduct-inner {
-    display: flex;
-    align-items: center;
-}
-
-.figma-prototype {
-    min-width: 55%;
-    height: 450px;
-    overflow: hidden;
-    position: relative;
-    margin: 0 auto;
-    background-color: #ffffff;
-}
-
-.figma-prototype iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 111%;
-}
-
-.next-project {
-    margin-top: 8em;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.next-project p {
-    font-size: 3em !important;
-}
-
-.next-project h4 {
-    padding: 1em 2em;
-    background-color: #f8f8f8;
-    border: 1px solid #d4d4d4;
-    font-size: 1.3em;
-    border-radius: 8px;
-}
-
-.next-project h4 a {
-    text-decoration: none;
-}
-
-.next-project h4 a .arrow {
-  opacity: 0;
-  transform: translateX(-8px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.next-project h4 a:hover .arrow {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Screen Breaks */
-
-
-/* Tablet */
-@media (max-width: 900px) {
-    /* Case Study Hero */
-    .casestudy-container,
-    .research-container,
-    .design-container {
-        width: 100%;
-        padding: 0 2em;
-        margin-top: 5em;
-        box-sizing: border-box;
-    }
-
-    .casestudy-intro-text {
-        flex-direction: column;
-        gap: 2em;
-        align-items: flex-start;
-    }
+<!doctype html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Ethan Sautto</title>
+    <link rel="icon" href="Assets_icons/favicon.png" type="image/icon type">
+</head>
+
+<body id="casestudy">
+
+    <!-- Case Study -->
+    <div class="casestudy-container">
+
+        <div class="logo">
+            <a href="index.html" data-target="home">
+                <div class="logo-img-wrap">
+                    <img src="Assets_icons/ethansautto-logo.png" alt="Ethan Sautto" class="logo-default">
+                    <img src="Assets_icons/ethansautto-logo-hover.png" alt="" class="logo-hover">
+                </div>
+            </a>
+        </div>
+        
+        <div class="casestudy-intro">
+            <div class="casestudy-intro-text">
+                <div class="casestudy-title">
+                    <h2>Volvo Infotainment Redesign</h2>
+                    <p>Design Exercise</p>
+                </div>
+                <p id="casestudy-description">Redesigned Volvo's current gauge cluster and infotainment screens to offer more functionality and accessibility.</p>
+            </div>
+            <img src="Pictures/casestudy_volvo/volvo_heroimage.png" alt="A collection of screens from the final product.">
+        </div> 
+
+        <div class="casestudy-overview">
+
+            <div class="overview-stats">
+                <div class="overviewstat">
+                    <h4>Role</h4>
+                    <p>UX Designer</p>
+                </div>
+                <div class="overviewstat">
+                    <h4>Tools</h4>
+                    <div class="tool-logos">
+                        <div class="tool-item">
+                            <img src="Assets_icons/figma-logo.png" alt="Figma logo.">
+                            <div class="popup" id="figma">Figma</div>
+                        </div>
+                        <div class="tool-item">
+                            <img src="Assets_icons/figjam-logo.webp" alt="Figjam logo.">
+                            <div class="popup" id="figjam">Figjam</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="overviewstat">
+                    <h4>Timeline</h4>
+                    <p>4 weeks</p>
+                </div>
+            </div>
+
+            <div class="overview-summary">
+                <div id="overviewdescription">
+                    <h4>Description</h4>
+                    <p>Improved center infotainment screen and redesigned gauge cluster with greater functionality including full screen and split screen displays.</p>
+                </div>
+                <div id="overviewcontext">
+                    <h4>Context</h4>
+                    <p>I watch a lot of car reviews to keep up on the latest design trends in infotainment. When watching a review on the <a href="https://www.youtube.com/watch?v=Yq2BxAmOScM">2025 XC60</a>, I was surprised at the limited functionality of their interior screens. I wanted to see what I could do to improve functionality in both the gauge cluster and center infotainment screens without adding complexity to physical controls.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="research-container">
+        
+        <h2>Research</h2>
+
+        <div class="research-text">
+            <p>One of the primary goals for any infotainment system should be to convey information to the user in a way that does not interfere with their driving. In order to create a hierarchy of information to guide my design, I started with mapping the user journey.</p>
+            <p>Additionally, I did competitive research to determine what other brands prioritized in their screens. My research gave me some great initial goals.</p>
+        </div>
+
+
+        <div class="research-images">
+            <img src="Pictures/casestudy_volvo/research.png" alt="Journey map and competitor research exercise.">
+            <img src="Pictures/casestudy_volvo/steeringwheelcontrols.png" alt="A photo of a Volvo steering wheel with annotations describing the new control scheme.">
+        </div>
+
+        <div class="research-findings">
+
+            <div class="painpoints">
+                <h4>Pain Points</h4>
+                <ul>
+                    <li>Gauge cluster screen can only display map/no map</li>
+                    <li>Critical driver and climate controls hidden in menus</li>
+                    <li>Simple options and settings are not immediately clear</li>
+                    <li>Lack of customization/dual screen functionality</li>
+                </ul>
+            </div>
+
+            <div class="solution">
+                <h4>Solution</h4>
+                <p>Redesign cluster and infotainment layouts to display information for Volvo drivers so that they are able to immediately and accurately access information and change settings while driving.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="design-container">
+
+        <h2>Design Process</h2>
+
+        <div class="design-process">
+            <div class="design-process-text">
+                <p>After preliminary sketches, I started by recreating the current gauge cluster.</p>
+                <p>Since I planned to give users the ability to display two things at once, I needed to make sure space wasn't going to be an issue. I created multiple versions of each screen element to see what it would look like inside the gauge cluster. I also created the more liminal elements that would be viewed by a driver when modifying their display.</p>
+                <div class="design-process-images">
+                    <img src="Pictures/casestudy_volvo/gaugeclusterelements.png" alt="Elements and iterations of the gauge cluster screen.">
+                </div>
+                <p>It was very important to me that I represented not only the different display types, but the menus a driver would need to navigate to get there. A driver should be able to scroll through a menu almost subconciously; the driver should not have to split their attention between the road and the interior screens.</p>
+                <p>Users would also be able to pick up apps and drag them to their homescreen widget or just reorganize them in a style similar to a smart phone. In my opinion, car interiors with large center screens (especially those oriented vertically) should follow the UX of mobile devices since it's already what a user will expect from a touchscreen.</p>
+                <div class="design-process-images">
+                    <img src="Pictures/casestudy_volvo/allscreens.png" alt="Iterations of the new infotainment and gauge cluster screens.">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="design-container">
+
+        <h2>Getting Creative with User Testing</h2>
+
+        <div class="design-process">
+            <div class="design-process-text">
+                <p>After iterating on my designs for a week, I was happy with my solution. But what does that matter? I needed to put my design to the test with user research.</p>
+                <p>In order to properly simulate the operation of a gauge cluster screen, I made a digital version of the steering wheel controls. I had my participants use these controls to navigate the gauge cluster, which I positioned relative to the wheel. I also recreated Volvo's current infotainment system to compare to my own.</p>
+                <div class="design-process-images">
+                    <img src="Pictures/casestudy_volvo/usertesting.png" alt="The prototype flow of the gauge cluster and sticky notes with quotes from survey and interview respondents.">
+                </div>
+                <p>With everything in place, I was able to test whether my changes had benefited or detracted from the overal user experience. I used A/B testing to determine which gauge cluster was the most favorable regarding useablility and aesthetics, tested 10 different subjects on their ability to execute basic tasks, then conducted a survey on user's likes and dislikes of the new system. In the end, these were the results:</p>
+            </div>
+            
+            <div class="results">
+                <ul>
+                    <li>8/10 of users were able to identify and toggle between two gauge cluster displays with no mistakes</li>
+                    <li>Users overwhelmingly favored the ability to display two things at once in the gauge cluster</li>
+                    <li>Users performed basic climate control tasks on my screen 4 seconds faster than with Volvo's infotainment screen on average</li>
+                    <li>While initially unsure about the steering wheel controls, 9/10 users favored them compared to Volvo's</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="design-container" id="conclusion">
+
+        <h2>Final Product + Takeaways</h2>
     
-    #casestudy-description {
-        text-align: left;
-        width: 100%;
-    }
-
-    /* Case Study Overview */
-    .casestudy-overview {
-        flex-direction: column;
-        gap: 3em;
-    }
+        <img src="Pictures/casestudy_volvo/endproduct.png" alt="A gallery of end product screens.">
+        <p>I was very pleased with the outcome of this project. It's a smaller case study, but it has to do with an area of UX that I'm particularly passionate about.</p>
+        <p>It was fun to try and navigate user testing for multiple screens that had to be navigated by a separate set of controls. Having to design screens that can be controlled in multiple ways adds a layer of complexity that I appreciate. I also just loved designing the small details of each screen.</p>
+        <p>Even though Volvo has updated their infotainment screen since the start of this project, I still think I made some very important tweaks, and I certainly improved the functionality of the gauge cluster. As more cars move towards fully digital dashes, I'm excited to see what innovations will look like.</p>
+        <p>Just from this project alone, I can say I really do enjoy watching people's initial reactions to controls/screen layouts. It's extremely satisfying to see your decisions change how users interact with their car.</p>
     
-    .overview-stats {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 2em;
-        justify-content: space-between;
-    }
+        <div class="next-project">
+            <p>Thanks for viewing.</p>
+            <h4><a href="casestudy-livin.html">Next Project | Livin <span class="arrow">→</span></a></h4>
+        </div>
+    </div>
+
     
-    .overviewstat {
-        flex: 1;
-        min-width: 150px;
-    }
     
-    .overview-summary {
-        gap: 2em;
-    }
-    
-    /* Research */
-    .research-text {
-        max-width: 100%;
-    }
-    
-    .research-findings {
-        flex-direction: column;
-        gap: 2em;
-    }
-    
-    .solution {
-        max-width: 100%;
-    }
-    
-    .solution p {
-        height: auto;
-    }
-    
-    .painpoints ul li {
-        white-space: normal;
-    }
-    
-    /* Design Process */
-    .design-process-images {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .design-process-images img {
-        height: auto;
-        object-fit: contain;
-    }
-    
-    /* Final Product + Takeaways */
-    .next-project {
-        flex-direction: column;
-        gap: 2em;
-        align-items: flex-start;
-    }
-    
-    .next-project {
-        flex-direction: column;
-    }
 
-    .next-project h4, .next-project p {
-        margin: 0 auto;
-    }
 
-    .next-project h4 a .arrow {
-        display: none;
-    }
-}
 
-/* Mobile */
-
-@media (max-width: 650px) {
-    /* Container */
-    .casestudy-container {
-        margin-top: 0;
-    }
-
-    .casestudy-title h2 {
-        font-size: 1.6em;
-        margin-bottom: .5em;
-    }
-
-    /* Research */
-
-    .research-container h2, .design-container h2 {
-        font-size: 1.6em;
-    }
-
-    /* Design */
-    .design-process-images img {
-        max-width: 100%;
-    }
-
-    /* Next Project */
-
-    .next-project p {
-        font-size: 1.6em !important;
-    }
-
-    .next-project h4 {
-        font-size: 1em;
-        white-space: nowrap;
-        padding: 1em;
-    }
-}
-
-
-
-/* SIDE QUESTS */
-
-body:has(.side-quests-container) {
-    overflow: visible;
-}
-
-.side-quests-container {
-    max-width: 1500px;
-    position: relative;
-    display: flex-start;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 2em;
-}
-
-#side-quests-intro {
-    text-align: center;
-    width: fit-content;
-    margin: 0 auto;
-    padding-bottom: 4em;
-}
-
-/* Bento Grid */
-
-.bento-wrap {
-  padding: 0;
-  background-color: #ffffff;
-}
-
-.bento-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-  margin: 0;
-  padding: 0;
-}
-
-.bento-item {
-  position: relative;
-  display: block;
-  overflow: visible;
-  text-decoration: none;
-  color: inherit;
-  background: #f8f8f8;
-  padding: 0;
-  margin: 0;
-}
-
-.bento-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  position: relative;
-  z-index: 1;
-  border-radius: 8px;
-}
-
-.bento-video {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.bento-video iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  position: relative;
-  z-index: 1;
-}
-
-.bento-item:hover img,
-.bento-item:hover iframe {
-  z-index: 4;
-}
-
-.bento-description {
-    position: absolute;
-    z-index: 2;
-    pointer-events: none;
-    background: linear-gradient(145deg,rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.88) 50%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%);
-    backdrop-filter: blur(2px);  
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.bento-description h4 {
-  font-size: 1.2em;
-  color: #000000;
-  margin: 0 0 .5em;
-  white-space: nowrap;
-}
-
-.bento-description p {
-    color: #6e6e6e;
-    margin-bottom: 1em;
-}
-
-/* Item gradient variations */
-
-#livery:hover ~ #livery-description {
-    opacity: 1;
-}
-
-#livery-description {
-    padding-left: 51%;
-}
-
-#livery-description p {
-    max-width: 75%;
-}
-
-#grassroots:hover ~ #grassroots-description {
-    opacity: 1;
-}
-
-#grassroots-description {
-    background: linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.88) 40%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%);
-    text-align: right;
-    padding: 0 51% 0 9%;
-}
-
-#pixelart:hover ~ #pixelart-description {
-    opacity: 1;
-}
-
-#pixelart-description {
-    background: linear-gradient(200deg,rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.88) 40%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%);
-    text-align: right;
-    padding: 0 25% 0;
-}
-
-#fontposters:hover ~ #poster-description {
-    opacity: 1;
-}
-
-#poster-description {
-    background: radial-gradient(circle,rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.88) 46%, rgba(255, 255, 255, 0) 81%, rgba(255, 255, 255, 0) 100%);
-    text-align: right;
-    padding: 15% 51% 0 30%;
-}
-
-#logoanimation:hover ~ #logo-description {
-    opacity: 1;
-}
-
-#logo-description {
-    background: linear-gradient(10deg,rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.88) 65%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%);
-    padding: 34% 10% 0 51%;
-}
-
-#blog:hover ~ #blog-description {
-    opacity: 1;
-}
-
-#blog-description {
-    background: linear-gradient(350deg,rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.88) 65%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%);
-    padding: 34% 25% 0 0;
-    text-align: right;
-}
-
-/* Grid sizing variations */
-
-.bento-large { 
-  grid-column: span 2; grid-row: span 2; 
-}
-
-.bento-tall { 
-  grid-column: span 1; grid-row: span 2; 
-}
-
-.bento-wide { 
-  grid-column: span 2; grid-row: span 1; 
-}
-
-.bento-medium, .bento-small { 
-  grid-column: span 1; grid-row: span 1; 
-}
-
-/* Screen Breaks */
-
-/* Small Tablets/Mobile */
-@media (max-width: 700px) {
-    .bento-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .bento-item {
-    width: 100%;
-  }
-
-  .bento-large,
-  .bento-tall,
-  .bento-wide,
-  .bento-medium,
-  .bento-small {
-    grid-column: auto;
-    grid-row: auto;
-  }
-
-  .bento-item img,
-  .bento-video iframe {
-    height: 250px;
-  }
-
-  .bento-description {
-    display: none;
-  }
-}
-
-
-
-/* ABOUT */
-
-body:has(.about-container) {
-    overflow: visible;
-}
-
-.about-container {
-    width: 1200px;
-    display: flex-start;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: center;
-    padding: 0 2em;
-    overflow: visible;
-}
-
-#about-intro {
-    padding-bottom: 4em;
-    width: fit-content;
-}
-
-/* Profile Grid */
-
-.profile-grid {
-    display: flex;
-    flex-direction: column;
-}
-
-.row1 {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 1em;
-}
-
-.greeting {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-
-.greeting h2 {
-    font-size: 2.8em;
-    font-weight: bold;
-    letter-spacing: -.02em;
-}
-
-/* Bio */
-
-.bio {
-    display: flex;
-    align-items: center;
-    gap: 9em;
-    margin: 3em 0 2.5em;
-}
-
-.bio-text {
-    flex: 1;
-}
-
-.bio-text h3 {
-    font-size: 2em;
-    line-height: 1.1em;
-    margin-bottom: 1em;
-    font-weight: bold;
-    color: #6e6e6e;
-}
-
-.bio-text h4 {
-    margin-top: 1.5em;
-    font-size: .9em;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #6e6e6e;
-}
-
-.bio-text p {
-    font-size: 1.2em;
-    line-height: 1.4em;
-    letter-spacing: .03em;
-    margin-bottom: .5em;
-}
-
-.bio-portrait p, .bio-car p, p.musicdesc {
-    font-size: .8em;
-    color: #6e6e6e;
-    margin-top: .5em;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-/* Music Player */
-
-.music-player {
-    border-radius: 8px;
-    overflow: hidden;
-    background: #111;
-    transition: background 0.6s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: stretch;
-    flex: 1;
-    min-height: 0;
-}
-
-.music-player-inner {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    min-height: 0;
-    padding: 1em;
-    box-sizing: border-box;
-    gap: .5em;
-}
-
-.music-album-art {
-    border-radius: 6px;
-    border: 1px solid rgba(255,255,255,0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255,255,255,0.05);
-    transition: background 0.6s ease, border-color 0.6s ease;
-    min-height: 155px;
-}
-
-.music-info {
-    display: flex;
-    flex-direction: column;
-    gap: .15em;
-}
-
-.music-title {
-    font-family: sfpro;
-    font-size: .85em !important;
-    font-weight: bold;
-    color: #fff;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    line-height: 1.3em !important;
-    margin-bottom: 0 !important;
-    letter-spacing: .01em !important;
-}
-
-.music-artist {
-    font-family: sfpro;
-    font-size: .72em !important;
-    color: rgba(255,255,255,0.5);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    line-height: 1.2em !important;
-    margin-bottom: 0 !important;
-}
-
-.music-title, .music-artist {
-    width: 100%;
-}
-
-.music-controls {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: .5em;
-}
-
-.music-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: rgba(255,255,255,0.6);
-    padding: .3em;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: color 0.2s ease, transform 0.15s ease;
-}
-
-.music-btn svg {
-    width: 16px;
-    height: 16px;
-}
-
-.music-btn:hover {
-    color: #fff;
-    transform: scale(1.1);
-}
-
-.music-btn-play {
-    background: #1db954;
-    color: #fff !important;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    transition: background 0.4s ease, transform 0.15s ease !important;
-}
-
-.music-btn-play:hover {
-    transform: scale(1.12) !important;
-}
-
-.music-progress-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: .25em;
-}
-
-.music-progress-bar {
-    width: 100%;
-    height: 3px;
-    background: rgba(255,255,255,0.15);
-    border-radius: 2px;
-    overflow: hidden;
-}
-
-.music-progress-fill {
-    height: 100%;
-    width: 0%;
-    background: #1db954;
-    border-radius: 2px;
-    transition: width 0.5s linear, background 0.4s ease;
-}
-
-.music-times {
-    display: flex;
-    justify-content: space-between;
-    font-family: sfpro;
-    font-size: .6em;
-    color: rgba(255,255,255,0.35);
-    letter-spacing: .03em;
-}
-
-/* Bio Pics */
-
-.bio-pics {
-    display: block;
-    position: relative;
-    width: 100%;
-    min-height: 520px;
-    flex: 0 0 42%;
-}
-
-.bio-pics > * {
-    position: absolute;
-    transition: transform 0.25s ease, z-index 0s;
-}
-
-.bio-portrait {
-    width: 70%;
-    top: 0;
-}
-
-.bio-portrait img {
-    width: 100%;
-    display: block;
-    border-radius: 8px;
-    object-fit: cover;
-}
-
-.bio-car {
-    width: 52%;
-    top: 28%;
-    right: -4%;
-}
-
-.bio-car p {
-    text-align: center;
-}
-
-.bio-car img {
-    width: 100%;
-    display: block;
-    border-radius: 8px;
-    object-fit: cover;
-    aspect-ratio: 4/3;
-}
-
-.music {
-    width: 52%;
-    top: 40%;
-    left: -5%;
-}
-
-.music .music-player {
-    border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.18), 0 1px 4px rgba(0,0,0,0.1);
-}
-
-.music .musicdesc {
-    text-align: center;
-    margin-top: 6px;
-    font-size: .75em;
-    color: #888;
-}
-
-#about-divider {
-    margin-left: 0;
-}
-
-/* Work */
-
-.work {
-    margin: 2em 0;
-}
-
-.work h2 {
-    font-size: 1.6em;
-    font-weight: bold;
-    margin-bottom: 1em;
-}
-
-.work-history {
-    grid-column: span 3;
-    padding: 2em 3em 1em;
-    background-color: #f8f8f8;
-    border: 1px solid #d4d4d4;
-    border-radius: 8px;
-}
-
-.work-history p {
-    font-size: 1.2em;
-    color: #6e6e6e;
-    text-align: right;
-}
-
-.work-history-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 2em 0;
-}
-
-.work-item-title {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.work-item-title img {
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
-    border: 1px solid #d4d4d4;
-    object-fit: contain;
-}
-
-.get-in-touch {
-    margin: 4em 0;
-    display: flex;
-    justify-content: space-between;
-}
-
-.get-in-touch h2 {
-    font-size: 2em;
-}
-
-.get-in-touch p {
-    font-size: 1.4em;
-    color: #6e6e6e;
-    margin-right: .5em;
-    transition: color 0.3s ease;
-    text-align: right;
-}
-
-.get-in-touch a {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-}
-
-.get-in-touch a .arrow {
-  opacity: 0;
-  transform: translateX(-8px);
-  color: #000000;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.get-in-touch p:hover {
-    color: #000000;
-}
-
-.get-in-touch a:hover .arrow {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Responsive Changes */
-
-/* Laptops */
-@media (max-width: 1280px) {
-    /* Container */
-
-    .about-container {
-        width: 1000px;
-    }
-
-    /* Bio */
-    
-    .bio {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 8em;
-        margin: 3em 0 2.5em;
-    }
-
-    .bio-text h3 {
-        font-size: 1.8em;
-    }
-
-    .bio-text h4 {
-        font-size: .8em;
-    }
-
-    .bio-text p {
-        font-size: 1.1em;
-    }
-
-    .bio-pics {
-        flex: 0 0 40%;
-        transform: translateX(-2em);
-    }
-
-    .bio-portrait {
-        grid-column: 1 / 3;
-    }
-
-    .bio-pics {
-        min-height: 460px;
-        flex: 0 0 44%;
-    }
-}
-
-/* Small Tablets */
-@media (max-width: 900px) {
-    /* Container */
-
-    .row1 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .greeting {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .greeting h2 {
-        font-size: 3.2em;
-        text-align: center;
-    }
-
-    #about-divider {
-        margin: 0 auto;
-    }
-
-    /* Bio */
-
-    .bio {
-        flex-direction: column;
-        justify-content: center;
-        gap: 2em;
-        margin: 3em 0 2.5em;
-    }
-
-    .bio p {
-        margin-right: 3em;
-    }
-
-    .bio-portrait {
-        width: 40%;
-        height: auto;
-        left: 10%;
-    }
-
-    .bio-car {
-        width: 38%;
-        top: 48%;
-        right: 0;
-        left: 17%;
-    }
-
-    .music {
-        width: 30%;
-        top: 8%;
-        left: 59%;
-    }
-
-    p.musicdesc, .bio-car p {
-        display: none;
-    }
-
-    /* Work History */
-
-    .work-history h3 {
-        margin-right: 4em;
-    }
-
-    .work-history p {
-        white-space: nowrap;
-    }
-}
-
-/* Mobile */
-@media (max-width: 650px) {
-    /* Container */
-    
-    .about-container {
-        width: 80%;
-        overflow-x: hidden;
-    }
-
-    .row1 {
-        margin-top: 2em;
-        align-items: center;
-        text-align: center;
-    }
-
-    .greeting h2 {
-        font-size: 2.6em;
-        white-space: nowrap;
-        text-align: center;
-    }
-
-    /* Bio */
-
-    .bio-text h3 {
-        font-size: 1.4em;
-    }
-
-    .bio-text h4 {
-        font-size: .8em;
-    }
-
-    .bio-text p {
-        font-size: 1em;
-        margin-right: 0;
-    }
-
-    .bio-pics {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: .75em;
-        position: static;
-        width: 100%;
-        min-height: unset;
-    }
-
-    .bio-portrait,
-    .bio-car,
-    .music {
-        position: static;
-        width: auto;
-        height: auto;
-        transform: none;
-        top: auto;
-        left: auto;
-        right: auto;
-        bottom: auto;
-    }
-
-    .bio-portrait,
-    .bio-car {
-        height: 180px;
-    }
-
-    .bio-portrait img,
-    .bio-car img {
-        width: 100%;
-        height: 100%;
-        aspect-ratio: unset;
-        object-fit: cover;
-        border-radius: 8px;
-    }
-
-    .bio-portrait {
-        grid-column: auto;
-    }
-
-    .music {
-        grid-column: 1 / 3;
-    }
-
-    p.musicdesc, .bio-car p {
-        display: none;
-    }
-
-    .music-album-art {
-        display: none;
-    }
-
-    p.musicdesc {
-        display: block;
-        margin: 1em 0 0;
-        text-align: left !important;
-    }
-
-    /* Work History */
-
-    .work-history-item {
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        gap: .5em;
-        margin: 2em 0;
-    }
-
-    .work-item-title {
-        flex-direction: column;
-    }
-
-    .work-history-item p {
-        text-align: center;
-    }
-
-    .work-history h3 {
-        margin-right: 0;
-    }
-
-    /* Get In Touch */
-
-    .get-in-touch {
-        margin: 4em 0;
-        flex-direction: column;
-        gap: 2em;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .get-in-touch h2 {
-        font-size: 1.4em;
-    }
-
-    .get-in-touch p {
-        font-size: 1em;
-        margin: 0 auto;
-    }
-
-}
-
-
-
-/* Contact */
-
-.contact-container {
-    width: 1000px;
-    display: flex-start;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 2em;
-}
-
-.contact-me h2 {
-    font-size: 2em;
-    margin-bottom: .5em;
-}
-
-#contact-divider {
-    margin-left: 0;
-}
-
-.contact-me ul {
-    margin-top: 4em;
-}
-
-.contact-me ul li {
-    margin-bottom: 1em;
-}
-
-.contact-me ul li a {
-    font-size: 3em;
-    text-decoration: none;
-}
-
-.contact-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.contact-link-icon {
-    width: 50px;
-    height: 50px;
-    border: 1px solid #d4d4d4;
-    border-radius: 12px;
-    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
-    object-fit: contain;
-    opacity: 0;
-    transform: translateX(-6px);
-    transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    pointer-events: none;
-}
-
-.contact-link:hover .contact-link-icon {
-    opacity: 1;
-    transform: translateX(0) rotate(8deg);
-    box-shadow: 0 12px 12px rgba(0, 0, 0, 0.15);
-}
-
-.contact-me p {
-    margin-top: 1em;
-}
-
-.contact-me p a {
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.contact-me p a:hover {
-    color: #6e6e6e;
-}
-
-/* Responsive Changes */
-
-/* Laptops */
-@media (max-width: 1280px) {
-    /* Contact Container */
-    .contact-container {
-        width: 80%;
-    }
-}
-
-/* Small Tablets */
-@media (max-width: 900px) {
-    /* Contact Container */
-    .contact-container {
-        align-items: center;
-        text-align: center;
-    }
-
-    #contact-divider {
-        margin: 0 auto;
-    }
-
-    .contact-link {
-        display: flex;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .contact-link-icon {
-        display: none;
-    }
-}
-
-/* Mobile */
-@media (max-width: 650px) {
-    /* Contact Me */
-
-    .contact-me {
-        margin-top: 2em;
-    }
-    
-    .contact-me h2 {
-        font-size: 1.4em;
-        margin-bottom: 1em;
-    }
-
-    .contact-me ul li a {
-        font-size: 2em;
-    }
-
-}
+    <script>
+        // Set a flag
+        let isNavigatingAway = false;
+
+        // Page Transition
+        document.addEventListener('DOMContentLoaded', function() {
+            // If we're coming from back/forward navigation, skip animations
+            if (sessionStorage.getItem('isBackNavigation') === 'true') {
+                document.body.style.animation = 'none';
+                document.body.style.opacity = '1';
+                document.body.style.filter = 'blur(0)';
+                sessionStorage.removeItem('isBackNavigation');
+            }
+            
+            const allLinks = document.querySelectorAll('a[href]');
+            
+            allLinks.forEach(link => {
+                // Skip external links, anchors, emails, and phones
+                if (link.getAttribute('href').startsWith('#') || 
+                    link.getAttribute('href').startsWith('http') ||
+                    link.getAttribute('href').startsWith('mailto:') ||
+                    link.getAttribute('href').startsWith('tel:')) {
+                    return;
+                }
+                
+                // Get current page filename
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                const linkPage = link.getAttribute('href');
+                
+                // Apply transition only to internal HTML page links
+                if (linkPage !== currentPage && 
+                    (linkPage.endsWith('.html') || linkPage === '/' || linkPage === '')) {
+                    
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const targetUrl = this.getAttribute('href');
+                        isNavigatingAway = true;
+                        
+                        // Add fade-out animation classes
+                        document.body.classList.add('fade-out', 'animating');
+                        
+                        // Navigate after animation completes
+                        setTimeout(() => {
+                            window.location.href = targetUrl;
+                        }, 200); // Match CSS animation duration of .2s
+                    });
+                }
+            });
+
+            allLinks.forEach(link => {
+                if (link.getAttribute('href') && 
+                    !link.getAttribute('href').startsWith('#') &&
+                    !link.getAttribute('href').startsWith('http') &&
+                    link.getAttribute('href').endsWith('.html')) {
+                    
+                    link.addEventListener('mouseenter', function() {
+                        const targetUrl = this.getAttribute('href');
+                        fetch(targetUrl).then(res => res.text()).then(html => {
+                            const parser = new DOMParser();
+                            const doc = parser.parseFromString(html, 'text/html');
+                            doc.querySelectorAll('img').forEach(img => {
+                                new Image().src = img.src;
+                            });
+                        });
+                    });
+                }
+            });
+        });
+
+        // Detect back/forward navigation
+        window.addEventListener('beforeunload', function() {
+            if (!isNavigatingAway) {
+                sessionStorage.setItem('isBackNavigation', 'true');
+            }
+        });
+
+        // Reset flag after page loads
+        window.addEventListener('pageshow', function(event) {
+            isNavigatingAway = false;
+            if (event.persisted) {
+                document.body.classList.remove('fade-out', 'animating');
+            }
+        });
+    </script>
+
+    <script>
+        // Carousel
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const dots = document.querySelectorAll('.dot');
+            const nextArrow = document.querySelector('.carousel-arrow.next');
+            const carouselContainer = document.querySelector('.carousel-container');
+            
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+            
+            function updateSlide(index) {
+
+                const videos = document.querySelectorAll('.carousel-video');
+                videos.forEach(video => {
+                    if (video.tagName === 'VIDEO') {
+                        video.pause();
+                        video.classList.remove('playing');
+                        video.classList.add('paused');
+                    }
+                });
+                
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                    slide.style.opacity = '0';
+                    slide.style.transform = 'none';
+                });
+                
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                slides[index].classList.add('active');
+                slides[index].style.opacity = '1';
+                
+                const video = slides[index].querySelector('.carousel-video');
+                if (video && video.tagName === 'VIDEO') {
+                    video.play().then(() => {
+                        video.classList.add('playing');
+                        video.classList.remove('paused');
+                    }).catch(error => {
+                        console.log('Video autoplay prevented:', error);
+                    });
+                }
+                
+                dots[index].classList.add('active');
+                currentSlide = index;
+            }
+            
+            function nextSlide() {
+                const nextIndex = (currentSlide + 1) % totalSlides;
+                updateSlide(nextIndex);
+            }
+
+            nextArrow.addEventListener('click', function(e) {
+                e.stopPropagation();
+                nextSlide();
+            });
+            
+            carouselContainer.addEventListener('click', function(e) {
+                if (!e.target.closest('.carousel-arrow') && !e.target.closest('.carousel-dots')) {
+                    nextSlide();
+                }
+            });
+            
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    updateSlide(index);
+                });
+            });
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowRight') {
+                    nextSlide();
+                }
+            });
+            
+            const videos = document.querySelectorAll('.carousel-video');
+            videos.forEach(video => {
+                video.addEventListener('ended', function() {
+                    this.currentTime = 0;
+                    this.play();
+                });
+                
+                video.muted = true;
+                
+                video.setAttribute('playsinline', '');
+                video.setAttribute('webkit-playsinline', '');
+            });
+            
+            updateSlide(0);
+        });
+    </script>
+
+</body>
