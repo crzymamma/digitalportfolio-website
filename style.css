@@ -2031,6 +2031,95 @@ body:has(.about-container) {
     object-fit: contain;
 }
 
+.thoughts {
+    margin: 2em 0;
+}
+
+.thoughts h2 {
+    font-size: 1.6em;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+.thoughts-inner {
+    grid-column: span 3;
+    padding: 2em 3em;
+    background-color: #f8f8f8;
+    border: 1px solid #d4d4d4;
+    border-radius: 8px;
+}
+
+.thought-item {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.thought-item:first-child {
+    border-top: 1px solid #e5e5e5;
+}
+
+.thought-toggle {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1.2em 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    gap: 1em;
+    text-align: left;
+}
+
+.thought-toggle h3 {
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #6e6e6e;
+    transition: color 0.2s ease;
+    margin: 0;
+}
+
+.thought-toggle:hover h3 {
+    color: #000;
+}
+
+.thought-chevron {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    color: #6e6e6e;
+    transition: transform 0.3s ease, color 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.thought-chevron svg {
+    width: 100%;
+    height: 100%;
+}
+
+.thought-item.open .thought-chevron {
+    transform: rotate(180deg);
+    color: #000;
+}
+
+.thought-item.open .thought-toggle h3 {
+    color: #000;
+}
+
+.thought-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+
+.thought-body p {
+    font-size: 1.2em;
+    line-height: 1.4em;
+    letter-spacing: .03em;
+    padding-bottom: 1.4em;
+}
+
 .get-in-touch {
     margin: 4em 0;
     display: flex;
