@@ -2414,9 +2414,14 @@ body:has(.about-container) {
         margin: 0 auto;
     }
 
+    .get-in-touch a .arrow {
+        display: none;
+    }
+
     .get-in-touch a:hover .arrow {
         opacity: 0;
-        }
+        display: none;
+    }
 
 }
 
