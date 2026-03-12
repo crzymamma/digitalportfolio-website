@@ -658,8 +658,13 @@ body {
     max-height: 50vh;
     object-fit: contain;
     aspect-ratio: 16/9;
-    pointer-events: none;
     -webkit-user-drag: none;
+    transform: scale(.9);
+    transition: transform 0.2s ease;
+}
+
+.carousel-slide.visible-title img:hover {
+    transform: scale(.89) !important;
 }
 
 .carousel-slide a {
@@ -667,10 +672,6 @@ body {
     position: relative;
     z-index: 10;
 }
-
-#carfolio-thumbnail img, #astonmartin-thumbnail img, #volvo-thumbnail img, #livin-thumbnail img {
-    scale: .9;
-} 
 
 .carousel-slide h2 {
     opacity: 0;
