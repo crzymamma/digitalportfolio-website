@@ -1489,45 +1489,56 @@ body:has(.side-quests-container) {
 /* Bento Grid */
 
 .bento-wrap {
-  padding: 0;
-  background-color: #ffffff;
+    padding: 0;
+    background-color: #ffffff;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .bento-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-  margin: 0;
-  padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.bento-cell {
+    position: relative;
 }
 
 .bento-item {
-  position: relative;
-  display: block;
-  overflow: visible;
-  text-decoration: none;
-  color: inherit;
-  background: #f8f8f8;
-  padding: 0;
-  margin: 0;
-  border-radius: 8px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background: #f8f8f8;
+    padding: 0;
+    margin: 0;
+    border-radius: 8px;
+    z-index: 2;
 }
 
 .bento-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  position: relative;
-  z-index: 1;
-  border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: relative;
+    z-index: 1;
+    border-radius: 8px;
 }
 
 .bento-video {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  border-radius: 8px;
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: 8px;
 }
 
 .bento-video video {
@@ -1540,12 +1551,12 @@ body:has(.side-quests-container) {
 }
 
 .bento-video iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 8px;
-  position: relative;
-  z-index: 1;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+    position: relative;
+    z-index: 1;
 }
 
 .bento-item img, .bento-item iframe, .bento-item video {
@@ -1555,16 +1566,16 @@ body:has(.side-quests-container) {
 .bento-item:hover img,
 .bento-item:hover iframe,
 .bento-item:hover video {
-  z-index: 4;
-  transform: scale(.99);
+    z-index: 4;
+    transform: scale(.99);
 }
 
 .bento-description {
     position: absolute;
-    z-index: 2;
+    z-index: 3;
+    top: 0;
+    left: 0;
     pointer-events: none;
-    background: linear-gradient(145deg,rgba(255, 255, 255, 1) 22%, rgba(255, 255, 255, 0.88) 70%, rgba(255, 255, 255, 0) 85%, rgba(255, 255, 255, 0) 100%);
-    backdrop-filter: blur(2px);  
     opacity: 0;
     transition: opacity 0.3s ease;
     height: 100%;
@@ -1572,11 +1583,33 @@ body:has(.side-quests-container) {
     box-sizing: border-box;
 }
 
+.bento-description-bg {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.bento-cell:hover .bento-description {
+    opacity: 1;
+}
+
+.bento-cell:hover + .bento-description-bg {
+    opacity: 1;
+}
+
 .bento-description h4 {
-  font-size: 1.2em;
-  color: #000000;
-  margin: 0 0 .5em;
-  white-space: nowrap;
+    font-size: 1.2em;
+    color: #000000;
+    margin: 0 0 .5em;
+    white-space: nowrap;
 }
 
 .bento-description p {
@@ -1584,150 +1617,202 @@ body:has(.side-quests-container) {
     margin-bottom: 1em;
 }
 
-/* Item gradient variations */
+/* Overrides */
 
-#livery:hover ~ #livery-description {
-    opacity: 1;
-}
-
+/* Cal Poly Racing Livery */
 #livery-description {
-    padding-left: 50.5%;
+    padding: 0 0 0 102%;
+    width: 200%;
 }
 
-#livery-description p {
-    max-width: 75%;
+#livery-description-bg {
+    background: linear-gradient(145deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.88) 70%, rgba(255,255,255,0) 85%, rgba(255,255,255,0) 100%);
 }
 
+/* Highway Racers */
 #highwayracers {
     height: 300px;
 }
 
-#highwayracers:hover ~ #highwayracers-description {
-    opacity: 1;
-}
-
 #highwayracers-description {
-    background: linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.88) 40%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%);
     text-align: right;
-    padding: 0 50.5% 0 12%;
+    left: auto;
+    right: 0;
+    width: 200%;
+    padding: 0 102% 0 0;
 }
 
+#highwayracers-description-bg {
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.88) 40%, rgba(255,255,255,0) 80%, rgba(255,255,255,0) 100%);
+}
+
+/* TAGA */
 #TAGA {
     height: 250px;
 }
 
-#TAGA:hover ~ #TAGA-description {
-    opacity: 1;
-}
-
 #TAGA-description {
-    background: linear-gradient(75deg,rgba(255, 255, 255, 0.54) 22%, rgba(255, 255, 255, 1) 61%, rgba(255, 255, 255, 1) 40%);
     text-align: left;
-    padding: 14% 1% 0 51%;
+    top: auto;
+    bottom: 0;
+    height: 200%;
+    padding: 9em 0 0 0;
 }
 
+#TAGA-description-bg {
+    background: linear-gradient(75deg, rgba(255,255,255,0.54) 22%, rgba(255,255,255,1) 61%, rgba(255,255,255,1) 40%);
+}
+
+/* CPR Logo Animation */
 #logoanimation {
     height: 300px;
 }
 
-#logoanimation:hover ~ #logo-description {
-    opacity: 1;
-}
-
 #logo-description {
-    background: linear-gradient(145deg,rgba(255, 255, 255, 0.54) 22%, rgba(255, 255, 255, 1) 61%, rgba(255, 255, 255, 1) 40%);
-    padding: 39% 10% 0 51%;
+    width: 200%;
+    padding: 0 0 0 102%;
 }
 
-#grassroots:hover ~ #grassroots-description {
-    opacity: 1;
+#logoanimation-description-bg {
+    background: linear-gradient(145deg, rgba(255,255,255,0.54) 22%, rgba(255,255,255,1) 61%, rgba(255,255,255,1) 40%);
 }
 
+/* Grassroots */
 #grassroots-description {
-    background: linear-gradient(145deg,rgba(255, 255, 255, 0.54) 22%, rgba(255, 255, 255, 1) 61%, rgba(255, 255, 255, 1) 40%);
-    text-align: left;
-    padding: 39% 0 0 76.5%;
-}
-
-#fontposters:hover ~ #poster-description {
-    opacity: 1;
-}
-
-#poster-description {
-    background: linear-gradient(145deg,rgba(255, 255, 255, 0.54) 22%, rgba(255, 255, 255, 1) 61%, rgba(255, 255, 255, 1) 40%);
     text-align: right;
-    padding: 39% 25% 0 50%;
+    left: auto;
+    right: 0;
+    width: 220%;
+    padding: 0 104% 0 0;
 }
 
-#pixelart:hover ~ #pixelart-description {
-    opacity: 1;
+#grassroots-description-bg {
+    background: radial-gradient(circle,rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 19%, rgba(255, 255, 255, 0.8) 70%, rgba(255, 255, 255, 0) 100%);
 }
 
-#pixelart-description {
-    background: linear-gradient(180deg,rgba(255, 255, 255, 0.76) 10%, rgba(255, 255, 255, 1) 71%, rgba(255, 255, 255, 1) 0%);
-    text-align: left;
-    padding: 52% 29% 0 25.5%;
+/* Font Posters */
+#poster-description {
+    text-align: right;
+    left: auto;
+    right: 0;
+    width: 200%;
+    padding: 0 104% 0 0;
 }
 
-#blog:hover ~ #blog-description {
-    opacity: 1;
+#poster-description-bg {
+    background: linear-gradient(145deg, rgba(255,255,255,0.54) 22%, rgba(255,255,255,1) 61%, rgba(255,255,255,1) 40%);
 }
 
+/* Blog */
 #blog-description {
-    background: linear-gradient(350deg,rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.88) 65%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%);
-    padding: 60.5% 25% 0 26%;
     text-align: left;
+    width: 200%;
+    padding: 0 0 0 104%;
 }
 
-/* Grid sizing variations */
-
-.bento-large { 
-  grid-column: span 2; grid-row: span 2; 
+#blog-description-bg {
+    background: linear-gradient(350deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.88) 65%, rgba(255,255,255,0) 80%, rgba(255,255,255,0) 100%);
 }
 
-.bento-tall { 
-  grid-column: span 1; grid-row: span 2; 
+/* Pixel Art — wide (2×1): description left half */
+#pixelart-description {
+    text-align: left;
+    top: auto;
+    bottom: 0;
+    height: 200%;
+    padding: 13em 0 0 0;
 }
 
-.bento-wide { 
-  grid-column: span 2; grid-row: span 1; 
+#pixelart-description-bg {
+    background: linear-gradient(180deg, rgba(255,255,255,0.76) 10%, rgba(255,255,255,1) 71%, rgba(255,255,255,1) 0%);
 }
 
-.bento-small { 
-  grid-column: span 1; grid-row: span 1; 
+/* Grid sizing variations*/
+
+.bento-large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.bento-tall {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.bento-wide {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.bento-medium {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.bento-small {
+    grid-column: span 1;
+    grid-row: span 1;
 }
 
 /* Screen Breaks */
 
-/* Small Tablets/Mobile */
+/* Tablet */
+@media (max-width: 900px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bento-large {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .bento-wide {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .bento-tall {
+        grid-column: span 1;
+        grid-row: span 2;
+    }
+
+    .bento-medium,
+    .bento-small {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
+
+/* Mobile */
 @media (max-width: 700px) {
     .bento-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
 
-  .bento-item {
-    width: 100%;
-  }
+    .bento-cell {
+        width: 100%;
+    }
 
-  .bento-large,
-  .bento-tall,
-  .bento-wide,
-  .bento-medium,
-  .bento-small {
-    grid-column: auto;
-    grid-row: auto;
-  }
+    .bento-large,
+    .bento-tall,
+    .bento-wide,
+    .bento-medium,
+    .bento-small {
+        grid-column: auto;
+        grid-row: auto;
+    }
 
-  .bento-item img,
-  .bento-video iframe {
-    height: 250px;
-  }
+    .bento-item img,
+    .bento-video iframe {
+        height: 250px;
+    }
 
-  .bento-description {
-    display: none;
-  }
+    .bento-description {
+        display: none;
+    }
 }
 
 
