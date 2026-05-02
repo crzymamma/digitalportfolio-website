@@ -913,6 +913,10 @@ body {
         width: 100%;
     }
 
+    .featured-projects h2 {
+        font-size: 1em;
+    }
+
     .logo {
         margin-top: 0;
     }
@@ -1030,7 +1034,7 @@ body#casestudy {
 
 .tool-logos img {
     max-width: 45px;
-    height: 100%;
+    height: 45px;
     border: 1px solid #000000;
     border-radius: 12px;
     box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
@@ -1324,8 +1328,91 @@ p.hint a:hover {
   transform: translateX(0);
 }
 
+/* WIP Blur Overlay */
+
+.wip-overlay-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.wip-blur-content {
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 20%, transparent 60%);
+    mask-image: linear-gradient(to bottom, black 0%, black 20%, transparent 60%);
+    filter: blur(3px);
+    pointer-events: none;
+    user-select: none;
+}
+
+.wip-prompt {
+    position: absolute;
+    bottom: 20%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3rem;
+    pointer-events: auto;
+    z-index: 10;
+}
+
+.wip-prompt-inner {
+    background: #ffffff;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 16px;
+    padding: 2rem 2.8rem;
+    text-align: center;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.10), 0 1.5px 6px rgba(0,0,0,0.06);
+    max-width: 440px;
+    width: 90%;
+}
+
+.wip-icon {
+    display: block;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    color: #aaa;
+    letter-spacing: 0.1em;
+}
+
+.wip-sorry {
+    font-size: 1.05rem;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.wip-cta {
+    font-size: 0.92rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.wip-cta a {
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+}
+
+.wip-cta a:hover {
+    opacity: 0.7;
+}
+
 /* Screen Breaks */
 
+/* WIP Overlay */
+@media (max-width: 768px) {
+    .wip-prompt-inner {
+        padding: 1.5rem 1.6rem;
+    }
+
+    .wip-sorry {
+        font-size: 0.97rem;
+    }
+
+    .wip-cta {
+        font-size: 0.87rem;
+    }
+}
 
 /* Tablet */
 @media (max-width: 900px) {
@@ -1436,6 +1523,19 @@ p.hint a:hover {
     .casestudy-title h2 {
         font-size: 1.6em;
         margin-bottom: .5em;
+    }
+
+    .tool-logos img {
+        max-width: 38px;
+        height: 38px;
+    }
+
+    .wip-prompt {
+        bottom: 12%;
+    }
+
+    .wip-prompt-inner {
+        margin: 1.5rem 1.6rem;
     }
 
     /* Research */
