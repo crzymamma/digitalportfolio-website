@@ -1918,6 +1918,39 @@ body:has(.side-quests-container) {
     .bento-description {
         display: none;
     }
+
+    /* Disable all side-quests hover effects on mobile */
+
+    /* Logo swap */
+    .logo-img-wrap:hover .logo-default {
+        opacity: 1;
+    }
+
+    .logo-img-wrap:hover .logo-hover {
+        opacity: 0;
+    }
+
+    /* Bento cell: image/video scale */
+    .bento-item:hover img,
+    .bento-item:hover iframe,
+    .bento-item:hover video {
+        transform: none;
+    }
+
+    /* Bento description overlay */
+    .bento-cell:hover .bento-description {
+        opacity: 0;
+    }
+
+    /* Bento background blur overlay */
+    .bento-cell:hover + .bento-description-bg {
+        opacity: 0;
+    }
+
+    /* Generic link colour shift */
+    a:hover {
+        color: #000000;
+    }
 }
 
 
