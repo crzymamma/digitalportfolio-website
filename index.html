@@ -14,22 +14,42 @@
 <body id="index">
     
     <!-- Home -->
+    <!-- Mobile nav overlay & drawer (fixed, outside flow) -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <div class="mobile-nav-drawer" id="mobileNavDrawer">
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close navigation">✕</button>
+        <ul class="mobile-nav-list">
+            <li><a href="#" data-panel="side-quests">Side Quests</a></li>
+            <li><a href="#" data-panel="about">About</a></li>
+            <li><a href="#" data-panel="contact">Contact</a></li>
+            <li><a href="Assets_icons/ethan-sautto-resume.pdf" target="_blank">Resume</a></li>
+        </ul>
+    </div>
+
     <div class="home" id="home">
 
-        <div class="logo" id="home-logo">
-            <a href="index.html" data-target="home">
-                <div class="logo-img-wrap">
-                    <img src="Assets_icons/ethansautto-logo.png" alt="Ethan Sautto" class="logo-default">
-                    <img src="Assets_icons/ethansautto-logo-hover.png" alt="" class="logo-hover">
-                </div>
-            </a>
+        <!-- Mobile header: logo left, hamburger right -->
+        <div class="mobile-header">
+            <div class="logo" id="home-logo">
+                <a href="#" data-panel="work">
+                    <div class="logo-img-wrap">
+                        <img src="Assets_icons/ethansautto-logo.png" alt="Ethan Sautto" class="logo-default">
+                        <img src="Assets_icons/ethansautto-logo-hover.png" alt="" class="logo-hover">
+                    </div>
+                </a>
+            </div>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation" aria-expanded="false">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
         </div>
         
         <div class="intro">
             <ul>
-                <li><a href="side-quests.html">Side Quests</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#" data-panel="side-quests">Side Quests</a></li>
+                <li><a href="#" data-panel="about">About</a></li>
+                <li><a href="#" data-panel="contact">Contact</a></li>
                 <li><a href="Assets_icons/ethan-sautto-resume.pdf" target="_blank">Resume</a></li>
             </ul>
 
@@ -44,149 +64,530 @@
 
         <div class="horizontal-divider"></div>
 
+        <!-- PANEL HOST -->
         <div class="featured-projects">
-            <div class="carousel-container">
-                <div class="carousel-track">
-                    <!-- Slide 1 -->
-                    <div class="carousel-slide" id="volvo-thumbnail">
-                        <a href="casestudy-clc.html" class="slide-link">
-                            <img src="Pictures/home/clc-thumbnail.png" alt="A physical sign and mobile game interface mockup.">
-                            <h2>Meet The Creek: AR Educational Mobile Game</h2>
-                        </a>
-                    </div>
 
-                    <!-- Slide 2 -->
-                    <div class="carousel-slide" id="volvo-thumbnail">
-                        <a href="casestudy-volvo.html" class="slide-link">
-                            <img src="Pictures/home/volvo-thumbnail.png" alt="Two gauge cluster screen mockups.">
-                            <h2>Volvo Infotainment Redesign</h2>
-                        </a>
-                    </div>
+            <!-- Scrollable wrapper -->
+            <div class="panel-scroll-wrap" id="panelScrollWrap">
 
-                    <!-- Slide 3 -->
-                    <div class="carousel-slide" id="livin-thumbnail">
-                        <a href="casestudy-livin.html" class="slide-link">
-                            <img src="Pictures/home/livin-thumbnail.png" alt="Laptop showing the landing page for Livin.">
-                            <h2>Livin: College Sublet Platform</h2>
-                        </a>
+                <!-- Work -->
+                <div class="fp-panel active" id="panel-work">
+                    <div class="carousel-container">
+                        <div class="carousel-track">
+                            <!-- Slide 1 -->
+                            <div class="carousel-slide" id="clc-thumbnail">
+                                <a href="casestudy-clc.html" class="slide-link">
+                                    <img src="Pictures/home/clc-thumbnail.png" alt="A physical sign and mobile game interface mockup.">
+                                    <h2>Meet The Creek: AR Educational Mobile Game</h2>
+                                </a>
+                            </div>
+                            <!-- Slide 2 -->
+                            <div class="carousel-slide" id="volvo-thumbnail">
+                                <a href="casestudy-volvo.html" class="slide-link">
+                                    <img src="Pictures/home/volvo-thumbnail.png" alt="Two gauge cluster screen mockups.">
+                                    <h2>Volvo Infotainment Redesign</h2>
+                                </a>
+                            </div>
+                            <!-- Slide 3 -->
+                            <div class="carousel-slide" id="livin-thumbnail">
+                                <a href="casestudy-livin.html" class="slide-link">
+                                    <img src="Pictures/home/livin-thumbnail.png" alt="Laptop showing the landing page for Livin.">
+                                    <h2>Livin: College Sublet Platform</h2>
+                                </a>
+                            </div>
+                            <!-- Slide 4 -->
+                            <div class="carousel-slide" id="astonmartin-thumbnail">
+                                <a href="casestudy-astonmartin.html" class="slide-link">
+                                    <img src="Pictures/home/astonmartin-thumbnail.png" alt="Laptop showing the Aston Martin website.">
+                                    <h2>Aston Martin Web Facelift</h2>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     
-                    <!-- Slide 4 -->
-                    <div class="carousel-slide" id="astonmartin-thumbnail">
-                        <a href="casestudy-astonmartin.html" class="slide-link">
-                            <img src="Pictures/home/astonmartin-thumbnail.png" alt="Laptop showing the Aston Martin website.">
-                            <h2>Aston Martin Web Facelift</h2>
-                        </a>
+                    <div class="carousel-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
                     </div>
-                    
+                    <div class="carousel-restart" id="carouselRestart">← Back to start</div>
                 </div>
-            </div>
-            
-            <div class="carousel-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
+
+
+                <!-- Side Quests -->
+                <div class="fp-panel" id="panel-side-quests">
+                    <div class="side-quests-inner">
+
+                        <section class="bento-wrap sidequest-item">
+                            <div class="bento-grid">
+
+                                <!-- Large tile - Cal Poly Racing -->
+                                <div class="bento-cell bento-large">
+                                    <a class="bento-item" id="livery" href="https://dribbble.com/shots/25996323-Cal-Poly-Racing-FSAE-Car-Livery" target="_blank" rel="noopener">
+                                        <img src="Pictures/side-quests/cpr_livery.jpg" alt="Cal Poly Racing FSAE Car Livery">
+                                    </a>
+                                    <div class="bento-description" id="livery-description">
+                                        <h4>Cal Poly Racing — FSAE Livery</h4>
+                                        <p>For the 2024-2025 season, I planned, designed, and executed the livery for our Formula racecar.</p>
+                                        <p>This was my first foray into vinyl wrap design, and proved to be a challenging and exciting iterative process. With the help of several graphic designers, I was able to consolidate different approaches to the livery into a flowing, modern design.</p>
+                                    </div>
+                                </div>
+                                <div class="bento-description-bg" id="livery-description-bg"></div>
+
+                                <!-- Wide tile - Highway Racers -->
+                                <div class="bento-cell bento-wide">
+                                    <a class="bento-item" id="highwayracers" href="https://editor.p5js.org/ethansautto/full/DX0Q8plLD" target="_blank" rel="noopener">
+                                        <div class="bento-video">
+                                            <video autoplay muted loop playsinline>
+                                                <source src="Pictures/side-quests/highway_racers_gameplay.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                    </a>
+                                    <div class="bento-description" id="highwayracers-description">
+                                        <h4>Highway Racers</h4>
+                                        <p>For a quarter-long project in a computer science class at Cal Poly, I worked with 4 other students to create a simple videogame in p5.js.</p>
+                                        <p>This was the first game any of us had ever made, so there was a steep learning curve. In the end, we were able to create a two-player "drive-to-survive" endless scroller that was super fun to play!</p>
+                                    </div>
+                                </div>
+                                <div class="bento-description-bg" id="highwayracers-description-bg"></div>
+
+                                <!-- Wide tile - TAGA Logo Animation -->
+                                <div class="bento-cell bento-wide">
+                                    <a class="bento-item" id="TAGA" href="https://dribbble.com/shots/27249653-TAGA-Logo-Animation" target="_blank" rel="noopener">
+                                        <div class="bento-video">
+                                            <video autoplay muted loop playsinline>
+                                                <source src="Pictures/side-quests/taga_logo_animation.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                    </a>
+                                    <div class="bento-description" id="TAGA-description">
+                                        <h4>TAGA Logo Animation</h4>
+                                        <p>After the 2026 TAGA conference moved from in-person to online, each team had to restructure their presentation to be played as a video. Taking advantage of the new format, I created a simple logo animation in After Effects to include in our video.</p>
+                                    </div>
+                                </div>
+                                <div class="bento-description-bg" id="TAGA-description-bg"></div>
+
+                                <!-- Wide tile - CPR Logo Animation -->
+                                <div class="bento-cell bento-wide">
+                                    <a class="bento-item" id="logoanimation" href="https://dribbble.com/shots/25986666-Logo-Animation-built-with-After-Effects" target="_blank" rel="noopener">
+                                        <div class="bento-video">
+                                            <video autoplay muted loop playsinline>
+                                                <source src="Pictures/side-quests/cpr_logo_animation.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                    </a>
+                                    <div class="bento-description" id="logo-description">
+                                        <h4>CPR Logo Animation</h4>
+                                        <p>Wanting to practice my After Effects skills, I created this logo animation for Cal Poly Racing.</p>
+                                        <p>Motion graphics have always been a cool area of design that I haven't explored as much as I'd like to. Whenever I get the chance, small projects like these help to improve my skills in the medium.</p>
+                                    </div>
+                                </div>
+                                <div class="bento-description-bg" id="logoanimation-description-bg"></div>
+
+                                <!-- Medium tile - Grassroots Mag Covers -->
+                                <div class="bento-cell bento-medium">
+                                    <a class="bento-item" id="grassroots" href="https://dribbble.com/shots/25996637-Grassroots-Magazine-Cover-Art" target="_blank" rel="noopener">
+                                        <img src="Pictures/side-quests/grassroots_mag_covers.png" alt="Grassroots Magazine Cover Art">
+                                    </a>
+                                    <div class="bento-description" id="grassroots-description">
+                                        <h4>Grassroots Magazine</h4>
+                                        <p>Like any designer, I've always had an idea for a magazine.</p>
+                                        <p>At some point, I'd love to start formally interviewing the car enthusiasts I meet at events and ask them about their cars, the culture, etc. In the meantime, I created some concept cover art for the series using Adobe Photoshop and Illustrator.</p>
+                                        <p>I wanted to capture the nostalgic feeling many have for car culture while keeping things new-age, as the articles would mostly focus on current events in the car world.</p>
+                                    </div>
+                                </div>
+                                <div class="bento-description-bg" id="grassroots-description-bg"></div>
+
+                                <!-- Tall tile - Font Posters -->
+                                <div class="bento-cell bento-tall">
+                                    <a class="bento-item" id="fontposters" href="https://dribbble.com/shots/26878321-Font-Posters-made-in-Adobe-Illustrator" target="_blank" rel="noopener">
+                                        <img src="Pictures/side-quests/font_poster.jpeg" alt="Font poster for Adobe Arabic.">
+                                    </a>
+                                    <div class="bento-description" id="poster-description">
+                                        <h4>Font Posters</h4>
+                                        <p>I made a couple of these font posters for a class in community college.</p>
+                                        <p>They were actually pretty fun to make, and I enjoyed learning about the font I chose and thinking of striking ways I could represent it.</p>
+                                    </div>
+                                </div>
+                                <div class="bento-description-bg" id="poster-description-bg"></div>
+
+                                <!-- Small Tile - Blog -->
+                                <div class="bento-cell bento-small">
+                                    <a class="bento-item" id="blog" href="404.html" target="_blank" rel="noopener">
+                                        <img src="Pictures/side-quests/my_e30.jpg" alt="White BMW E30 in a driveway.">
+                                    </a>
+                                    <div class="bento-description" id="blog-description">
+                                        <h4>My blog</h4>
+                                        <p>I write down my thoughts about car stuff here.</p>
+                                    </div>
+                                </div>
+                                <div class="bento-description-bg" id="blog-description-bg"></div>
+
+                                <!-- Wide tile - Pixel Art -->
+                                <div class="bento-cell bento-wide">
+                                    <a class="bento-item" id="pixelart" href="https://dribbble.com/shots/26878309-Pixel-Cars-for-Cal-Poly-Racing-made-in-Illustrator" target="_blank" rel="noopener">
+                                        <img src="Pictures/side-quests/cpr_pixelart.png" alt="Cal Poly Racing pixel art thumbnail">
+                                    </a>
+                                    <div class="bento-description" id="pixelart-description">
+                                        <h4>Pixel Art</h4>
+                                        <p>As part of a merch series for Cal Poly Racing, I created some pixelized racers.</p>
+                                        <p>Both were created in Adobe Illustrator, and represent the organization's Baja SAE and Formula SAE teams. Making pixel art can be tedious, but it was satisfying to see them on our shirts at the end.</p>
+                                    </div>
+                                </div>
+                                <div class="bento-description-bg" id="pixelart-description-bg"></div>
+
+                            </div>
+                        </section>
+
+                    </div>
+                </div>
+
+
+                <!-- About -->
+                <div class="fp-panel" id="panel-about">
+                    <div class="about-inner">
+
+                        <!-- BIO -->
+                        <div class="bio">
+                            <div class="bio-pics">
+                                <div class="bio-portrait">
+                                    <img src="Pictures/about/ethan-portrait.JPG" alt="A portrait of Ethan Sautto.">
+                                    <p>That's me!</p>
+                                </div>
+
+                                <div class="bio-car">
+                                    <img src="Pictures/about/my240.JPG" alt="A photo of Ethan's old Nissan that he thinks is cool.">
+                                    <p>My old Nissan I like working on.</p>
+                                </div>
+
+                                <div class="music">
+                                    <div class="music-player" id="musicPlayer">
+                                        <div class="music-player-inner">
+                                            <div class="music-album-art" id="albumArt"></div>
+                                            <div class="music-info">
+                                                <p class="music-title" id="songTitle">Loading...</p>
+                                                <p class="music-artist" id="songArtist"></p>
+                                            </div>
+                                            <div class="music-controls">
+                                                <button class="music-btn" id="prevBtn" aria-label="Previous">
+                                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg>
+                                                </button>
+                                                <button class="music-btn music-btn-play" id="playBtn" aria-label="Play/Pause">
+                                                    <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                                                    <svg id="pauseIcon" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                                                </button>
+                                                <button class="music-btn" id="nextBtn" aria-label="Next">
+                                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zm2.5-6 5.5 4v-8l-5.5 4zm7.5-6h2v12h-2z"/></svg>
+                                                </button>
+                                            </div>
+                                            <div class="music-progress-wrap">
+                                                <div class="music-progress-bar">
+                                                    <div class="music-progress-fill" id="progressFill"></div>
+                                                </div>
+                                                <div class="music-times">
+                                                    <span id="currentTime">0:00</span>
+                                                    <span id="totalTime">0:00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="musicdesc">Some of my favorite songs (Try it!)</p>
+                                </div>
+                            </div>
+
+                            <div class="bio-text">
+                                <h3>I think design gets <span class="italic">really</span> interesting when the creator's personality shines through.</h3>
+                                <span class="about-label">How I got into UX.</span>
+                                <p>My journey into UX started with my love for cars, of all things. I've always viewed them as an extremely underrated medium for art — one that combines visual aesthetics with a specifically tuned user experience.</p>
+                                <span class="about-label">What I've been doing</span>
+                                <p>After completing two years at my local community college, where I experimented with front end development, sculpting, and industrial design, I discovered Cal Poly's Graphic Communication program.</p>
+                                <p>For the past two years, I've been enrolled in a steady 16+ units while maintaining President's honor roll and staying heavily involved with several student orgs.</p>
+                                <span class="about-label">Where I'm at now</span>
+                                <p>Now I'm working in a full time position at Yardi, where I'm dedicating the same effort I've been putting in non-stop for the past 4 years.</p>
+                            </div>
+                        </div>
+
+                        <!-- WORK HISTORY -->
+                        <div class="work">
+                            <h2 class="about-section-title">Work History</h2>
+                            <div class="work-history">
+
+                                <div class="work-history-item">
+                                    <div class="work-item-title">
+                                        <img src="Assets_icons/yardi-logo.png" alt="Yardi logo.">
+                                        <h3>Associate Marketing Specialist @ Yardi</h3>
+                                    </div>
+                                    <span class="work-date-pill">June 2026 – Current</span>
+                                </div>
+
+                                <div class="work-history-item">
+                                    <div class="work-item-title">
+                                        <img src="Assets_icons/calpolyiter8-logo.jpg" alt="Iter8 logo.">
+                                        <h3>UX Designer @ Cal Poly Iter8</h3>
+                                    </div>
+                                    <span class="work-date-pill">Dec 2025 – Jun 2026</span>
+                                </div>
+
+                                <div class="work-history-item">
+                                    <div class="work-item-title">
+                                        <img src="Assets_icons/hack4impact-logo.png" alt="Hack 4 Impact logo.">
+                                        <h3>UX Designer @ Hack4Impact</h3>
+                                    </div>
+                                    <span class="work-date-pill">Sep 2025 – Jun 2026</span>
+                                </div>
+
+                                <div class="work-history-item">
+                                    <div class="work-item-title">
+                                        <img src="Assets_icons/taga-logo.png" alt="TAGA logo.">
+                                        <h3>Web Coordinator @ TAGA</h3>
+                                    </div>
+                                    <span class="work-date-pill">Jun 2025 – Jun 2026</span>
+                                </div>
+
+                                <div class="work-history-item">
+                                    <div class="work-item-title">
+                                        <img src="Assets_icons/calpolyracing-logo.png" alt="Cal Poly Racing logo.">
+                                        <h3>Creative Director @ Cal Poly Racing</h3>
+                                    </div>
+                                    <span class="work-date-pill">Aug 2024 – Jun 2026</span>
+                                </div>
+
+                                <div class="work-history-item">
+                                    <div class="work-item-title">
+                                        <img src="Assets_icons/livin-logo.png" alt="Livin logo.">
+                                        <h3>UX Designer @ Livin</h3>
+                                    </div>
+                                    <span class="work-date-pill">Jun 2025 – Jan 2026</span>
+                                </div>
+
+                                <div class="work-history-item">
+                                    <div class="work-item-title">
+                                        <img src="Assets_icons/vc-logo.png" alt="Ventura College logo.">
+                                        <h3>Marketing Intern @ Ventura College</h3>
+                                    </div>
+                                    <span class="work-date-pill">Aug 2023 – Jan 2024</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- THOUGHTS -->
+                        <div class="thoughts">
+                            <h2 class="about-section-title">Thoughts About UX</h2>
+                            <div class="thoughts-inner">
+
+                                <div class="thought-item">
+                                    <button class="thought-toggle" aria-expanded="false">
+                                        <h3>My Perspective On AI and LLM Platforms</h3>
+                                        <span class="thought-chevron">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                                        </span>
+                                    </button>
+                                    <div class="thought-body">
+                                        <p>With the rapid proliferation of LLMs, it's easy to feel like you're missing out if you're not implementing AI into your platform. As a designer, it's my job to know exactly when and where AI tools are effective. This means constantly learning how to use new technology and taking note of which new AI features are actually helpful. I'm of the opinion that the "move fast and break things" motto is no longer the best course of action. Instead, careful consideration must be taken when restructuring your platform or workflow to make room for new AI technology. Users can tell the difference between a rushed AI add-on vs. a thoughtful, seemless integration.</p>
+                                    </div>
+                                </div>
+
+                                <div class="thought-item">
+                                    <button class="thought-toggle" aria-expanded="false">
+                                        <h3>Blending Design and Development</h3>
+                                        <span class="thought-chevron">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                                        </span>
+                                    </button>
+                                    <div class="thought-body">
+                                        <p>Starting my design journey on a computer science track gave me a special appreciation for how designs actually translate into a product. There are some important considerations I find a lot of beginner designers forget to take in this regard. How will this feature be maintained? Will its implementation bottleneck the development of any other features? Will the feature have to change due to practical limitations? These kind of questions should be asked by designers who want to be more involved in the development process. As someone who has experience with a broad set of design mediums, I'm passionate about bringing designers and developers together in a more hybrid workflow.</p>
+                                    </div>
+                                </div>
+
+                                <div class="thought-item">
+                                    <button class="thought-toggle" aria-expanded="false">
+                                        <h3>Long Term Career Goals</h3>
+                                        <span class="thought-chevron">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                                        </span>
+                                    </button>
+                                    <div class="thought-body">
+                                        <p>User Experience, as a concept, has the unique quality of being so broad that it can be applied to nearly any product or service. So, the question of "what are you doing after college?" can be a bit daunting. Luckily, I have many other design-related interests that I'd love to explore in tandem with UX. I'm incredibly interested in automotive design, as there's just so much room for innovation when thinking about car interiors. As the world goes electric, what differentiates the user experience when the powertrain is no longer a variable? I'm also interested in game design for its unique medium for education and rhetoric. In terms of career structure, I'd love to find a long-term environment that allows me to continue to learn and broaden my design skills.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- GET IN TOUCH -->
+                        <div class="get-in-touch">
+                            <h2 class="about-section-title">Let's continue the conversation.</h2>
+                            <a href="#" data-panel="contact" class="cf-submit git-btn">Get in touch →</a>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- Contact -->
+                <div class="fp-panel" id="panel-contact">
+                    <div class="contact-inner">
+                        <div class="contact-form-wrap">
+
+                            <div class="contact-header">
+                                <h2>Say hello.</h2>
+                                <p class="grey">Fill out the form and I'll get back to you.</p>
+                            </div>
+
+                            <div class="contact-links-row">
+                                <a href="https://www.linkedin.com/in/ethansautto/" target="_blank" class="contact-pill">
+                                    <img src="Assets_icons/linkedin-logo.png" alt="" class="contact-pill-icon">
+                                    LinkedIn
+                                </a>
+                                <a href="Assets_icons/ethan-sautto-resume.pdf" target="_blank" class="contact-pill">
+                                    <img src="Assets_icons/ethansautto-logo.png" alt="" class="contact-pill-icon">
+                                    Resume
+                                </a>
+                            </div>
+
+                            <div class="cf-field-row">
+                                <div class="cf-field">
+                                    <label for="cf-name">Name</label>
+                                    <input type="text" id="cf-name" placeholder="Your name" autocomplete="name">
+                                </div>
+                                <div class="cf-field">
+                                    <label for="cf-email">Email</label>
+                                    <input type="email" id="cf-email" placeholder="your@email.com" autocomplete="email">
+                                </div>
+                            </div>
+
+                            <div class="cf-field">
+                                <label for="cf-subject">Subject</label>
+                                <input type="text" id="cf-subject" placeholder="What's this about?">
+                            </div>
+
+                            <div class="cf-field">
+                                <label for="cf-message">Message</label>
+                                <textarea id="cf-message" rows="5" placeholder="Tell me more..."></textarea>
+                            </div>
+
+                            <div class="cf-actions">
+                                <button class="cf-submit" id="cf-submit-btn" type="button">Send message →</button>
+                                <p class="cf-status" id="cf-status" aria-live="polite"></p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="carousel-restart" id="carouselRestart">← Back to start</div>
+            <!-- Bottom fade mask -->
+            <div class="panel-fade-mask" id="panelFadeMask"></div>
+
         </div>
 
     </div>
 
 
 
-
-
     <script>
-        // Set a flag
-        let isNavigatingAway = false;
+        // PANEL SWITCHER
+        (function() {
+            const scrollWrap = document.getElementById('panelScrollWrap');
+            const fadeMask   = document.getElementById('panelFadeMask');
+            const navLinks   = document.querySelectorAll('[data-panel]');
 
-        // Page Transition
-        document.addEventListener('DOMContentLoaded', function() {
-            // If we're coming from back/forward navigation, skip animations
-            if (sessionStorage.getItem('isBackNavigation') === 'true') {
-                document.body.style.animation = 'none';
-                document.body.style.opacity = '1';
-                document.body.style.filter = 'blur(0)';
-                sessionStorage.removeItem('isBackNavigation');
+            // Check whether content overflows and show/hide the fade mask
+            function checkOverflow() {
+                // For panels with their own inner scroll container, check that instead
+                const activePanel = document.querySelector('.fp-panel.active');
+                const innerScroll = activePanel && activePanel.querySelector('.side-quests-inner, .about-inner, .contact-inner');
+                const target = innerScroll || scrollWrap;
+                const overflows = target.scrollHeight > target.clientHeight + 2;
+                const atBottom  = target.scrollTop + target.clientHeight >= target.scrollHeight - 4;
+                fadeMask.classList.toggle('visible', overflows && !atBottom);
             }
-            
-            const allLinks = document.querySelectorAll('a[href]');
-            
-            allLinks.forEach(link => {
-                // Skip external links, anchors, emails, and phones
-                if (link.getAttribute('href').startsWith('#') || 
-                    link.getAttribute('href').startsWith('http') ||
-                    link.getAttribute('href').startsWith('mailto:') ||
-                    link.getAttribute('href').startsWith('tel:')) {
-                    return;
-                }
-                
-                // Get current page filename
-                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-                const linkPage = link.getAttribute('href');
-                
-                // Apply transition only to internal HTML page links
-                if (linkPage !== currentPage && 
-                    (linkPage.endsWith('.html') || linkPage === '/' || linkPage === '')) {
-                    
-                    link.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        const targetUrl = this.getAttribute('href');
-                        isNavigatingAway = true;
-                        
-                        // Add fade-out animation classes
-                        document.body.classList.add('fade-out', 'animating');
-                        
-                        // Navigate after animation completes
-                        setTimeout(() => {
-                            window.location.href = targetUrl;
-                        }, 200); // Match CSS animation duration of .2s
+
+            scrollWrap.addEventListener('scroll', checkOverflow);
+            // Also listen on inner scrollable containers
+            document.querySelectorAll('.side-quests-inner, .about-inner, .contact-inner').forEach(function(el) {
+                el.addEventListener('scroll', checkOverflow);
+            });
+            window.addEventListener('resize', checkOverflow);
+
+            // How long the fade-out animation runs (must match CSS)
+            const FADE_OUT_MS = 180;
+            const FADE_IN_CLEANUP_MS = 950;
+
+            function switchPanel(targetId) {
+                const current = document.querySelector('.fp-panel.active');
+                const next    = document.getElementById('panel-' + targetId);
+                if (!next || next === current) return;
+
+                // Update active nav link immediately
+                navLinks.forEach(l => {
+                    l.classList.toggle('nav-active', l.dataset.panel === targetId);
+                });
+
+                function showNext() {
+                    // Scroll back to top
+                    scrollWrap.scrollTop = 0;
+                    window.scrollTo(0, 0);
+
+                    // Let body scroll for tall panels
+                    const scrollablePanels = ['side-quests', 'about', 'contact'];
+                    document.body.classList.toggle('panel-scrollable', scrollablePanels.includes(targetId));
+
+                    // Activate next panel
+                    next.classList.remove('panel-animating');
+                    next.classList.add('active');
+
+                    // Trigger entrance animations on next frame so display:block
+                    // is committed before the animation class is added
+                    requestAnimationFrame(() => {
+                        next.classList.add('panel-animating');
                     });
+
+                    // Strip panel-animating after animations finish so
+                    // revisiting the panel re-runs them cleanly
+                    setTimeout(() => {
+                        next.classList.remove('panel-animating');
+                    }, FADE_IN_CLEANUP_MS);
+
+                    // Re-check overflow
+                    requestAnimationFrame(() => requestAnimationFrame(checkOverflow));
                 }
+
+                if (current) {
+                    // Play fade-out on current panel, then swap
+                    current.classList.add('panel-fading-out');
+                    setTimeout(() => {
+                        current.classList.remove('active', 'panel-fading-out', 'panel-animating');
+                        showNext();
+                    }, FADE_OUT_MS);
+                } else {
+                    showNext();
+                }
+            }
+
+            // Attach click handlers
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    switchPanel(this.dataset.panel);
+                });
             });
 
-            allLinks.forEach(link => {
-                if (link.getAttribute('href') && 
-                    !link.getAttribute('href').startsWith('#') &&
-                    !link.getAttribute('href').startsWith('http') &&
-                    link.getAttribute('href').endsWith('.html')) {
-                    
-                    link.addEventListener('mouseenter', function() {
-                        const targetUrl = this.getAttribute('href');
-                        fetch(targetUrl).then(res => res.text()).then(html => {
-                            const parser = new DOMParser();
-                            const doc = parser.parseFromString(html, 'text/html');
-                            doc.querySelectorAll('img').forEach(img => {
-                                new Image().src = img.src;
-                            });
-                        });
-                    });
-                }
+            // Logo goes to work panel
+            document.querySelector('.logo a[data-panel="work"]')?.addEventListener('click', function(e) {
+                e.preventDefault();
+                switchPanel('work');
             });
-        });
+
+            // Initial overflow check after page loads
+            window.addEventListener('load', checkOverflow);
+        })();
 
 
-
-        // Detect back/forward navigation
-        window.addEventListener('beforeunload', function() {
-            if (!isNavigatingAway) {
-                sessionStorage.setItem('isBackNavigation', 'true');
-            }
-        });
-
-        // Reset flag after page loads
-        window.addEventListener('pageshow', function(event) {
-            isNavigatingAway = false;
-            if (event.persisted) {
-                document.body.classList.remove('fade-out', 'animating');
-            }
-        });
-    </script>
-
-    <script>
-        // Carousel
+        // CAROUSEL (work panel)
         document.addEventListener('DOMContentLoaded', function() {
             const track = document.querySelector('.carousel-track');
             const slides = document.querySelectorAll('.carousel-slide');
@@ -497,6 +898,232 @@
             currentTranslate = prevTranslate;
             setSliderPosition();
         });
+
+
+        // THOUGHTS ACCORDION
+        document.addEventListener('click', function(e) {
+            const btn = e.target.closest('.thought-toggle');
+            if (!btn) return;
+            const item   = btn.closest('.thought-item');
+            const isOpen = item.classList.contains('open');
+
+            document.querySelectorAll('.thought-item').forEach(i => {
+                i.classList.remove('open');
+                i.querySelector('.thought-toggle').setAttribute('aria-expanded', 'false');
+                i.querySelector('.thought-body').style.maxHeight = null;
+            });
+
+            if (!isOpen) {
+                item.classList.add('open');
+                btn.setAttribute('aria-expanded', 'true');
+                const body = item.querySelector('.thought-body');
+                body.style.maxHeight = body.scrollHeight + 'px';
+            }
+        });
+
+
+        // MUSIC PLAYER
+        (function() {
+            const audioPlayer = new Audio();
+
+            const songs = [
+                { title: "What's Now Is Now", artist: "CAKE",             color: "#236F9E", accent: "#BF3722", image: "Assets_icons/albums/showroomofcompassion.jpg", audio: "Assets_icons/albums/whatsnowisnow.m4a" },
+                { title: "Pogo",               artist: "Digitalism",       color: "#160926", accent: "#3FC23A", image: "Assets_icons/albums/idealism.jpg",              audio: "Assets_icons/albums/pogo.m4a" },
+                { title: "Ever (Foreign Flag)",artist: "Team Sleep",       color: "#755B12", accent: "#CF4108", image: "Assets_icons/albums/teamsleep.jpg",             audio: "Assets_icons/albums/ever.m4a" },
+                { title: "Collapsing New Buildings", artist: "pennines",   color: "#136085", accent: "#0A212B", image: "Assets_icons/albums/fairdos.jpg",               audio: "Assets_icons/albums/collapsingnewbuildings.m4a" },
+                { title: "Wither",             artist: "Chatterton",       color: "#4C639C", accent: "#261B15", image: "Assets_icons/albums/fieldsofthis.jpg",          audio: "Assets_icons/albums/wither.m4a" },
+                { title: "Cath...",            artist: "Death Cab for Cutie", color: "#752310", accent: "#1C3469", image: "Assets_icons/albums/narrowstairs.jpg",     audio: "Assets_icons/albums/cath.m4a" },
+                { title: "The Flower Called Nowhere", artist: "Stereolab", color: "#28706F", accent: "#A3BA3F", image: "Assets_icons/albums/dotsandloops.png",         audio: "Assets_icons/albums/theflowercallednowhere.m4a" },
+                { title: "Love Proceeding",    artist: "BADBADNOTGOOD",    color: "#0D3D66", accent: "#1973C2", image: "Assets_icons/albums/talkmemory.jpg",            audio: "Assets_icons/albums/loveproceeding.m4a" }
+            ];
+
+            let currentSongIndex = Math.floor(Math.random() * songs.length);
+            let isPlaying = false;
+
+            function formatTime(secs) {
+                const m = Math.floor(secs / 60);
+                const s = Math.floor(secs % 60);
+                return `${m}:${s.toString().padStart(2, '0')}`;
+            }
+
+            function loadSong(index) {
+                const song = songs[index];
+                audioPlayer.src = song.audio || '';
+                document.getElementById('songTitle').textContent  = song.title;
+                document.getElementById('songArtist').textContent = song.artist;
+                document.getElementById('totalTime').textContent   = '0:00';
+                document.getElementById('currentTime').textContent = '0:00';
+                document.getElementById('progressFill').style.width = '0%';
+
+                const player   = document.getElementById('musicPlayer');
+                const albumArt = document.getElementById('albumArt');
+                player.style.background   = song.color;
+                albumArt.style.background = `radial-gradient(circle at 30% 30%, ${song.accent}33, ${song.color})`;
+                albumArt.style.borderColor = `${song.accent}44`;
+                albumArt.style.backgroundImage    = `url('${song.image}')`;
+                albumArt.style.backgroundSize     = 'cover';
+                albumArt.style.backgroundPosition = 'center';
+                document.getElementById('songTitle').style.color = '#ffffff';
+                document.querySelector('.music-btn-play').style.background = song.accent;
+                document.querySelector('.music-progress-fill').style.background = song.accent;
+            }
+
+            audioPlayer.addEventListener('timeupdate', () => {
+                const pct = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+                document.getElementById('progressFill').style.width = pct + '%';
+                document.getElementById('currentTime').textContent = formatTime(audioPlayer.currentTime);
+                const timeLeft = audioPlayer.duration - audioPlayer.currentTime;
+                if (timeLeft <= 2 && timeLeft > 0 && isPlaying && audioPlayer.volume > 0) {
+                    audioPlayer.volume = Math.max(timeLeft / 2, 0);
+                }
+            });
+
+            audioPlayer.addEventListener('loadedmetadata', () => {
+                document.getElementById('totalTime').textContent = formatTime(audioPlayer.duration);
+            });
+
+            audioPlayer.addEventListener('ended', () => {
+                audioPlayer.volume = 1;
+                nextSong();
+            });
+
+            function fadeVolume(from, to, duration, callback) {
+                const steps = 20, stepTime = duration / steps, stepSize = (to - from) / steps;
+                let current = from;
+                audioPlayer.volume = from;
+                const fade = setInterval(() => {
+                    current += stepSize;
+                    audioPlayer.volume = Math.min(Math.max(current, 0), 1);
+                    if ((stepSize > 0 && current >= to) || (stepSize < 0 && current <= to)) {
+                        audioPlayer.volume = to;
+                        clearInterval(fade);
+                        if (callback) callback();
+                    }
+                }, stepTime);
+            }
+
+            function togglePlay() {
+                isPlaying = !isPlaying;
+                document.getElementById('playIcon').style.display  = isPlaying ? 'none'  : 'block';
+                document.getElementById('pauseIcon').style.display = isPlaying ? 'block' : 'none';
+                if (isPlaying) {
+                    audioPlayer.volume = 0;
+                    audioPlayer.play();
+                    fadeVolume(0, 1, 600);
+                } else {
+                    fadeVolume(1, 0, 600, () => audioPlayer.pause());
+                }
+            }
+
+            function nextSong() {
+                fadeVolume(1, 0, 600, () => {
+                    audioPlayer.pause();
+                    isPlaying = false;
+                    document.getElementById('playIcon').style.display  = 'block';
+                    document.getElementById('pauseIcon').style.display = 'none';
+                    currentSongIndex = (currentSongIndex + 1) % songs.length;
+                    loadSong(currentSongIndex);
+                });
+            }
+
+            function prevSong() {
+                fadeVolume(1, 0, 600, () => {
+                    audioPlayer.pause();
+                    isPlaying = false;
+                    document.getElementById('playIcon').style.display  = 'block';
+                    document.getElementById('pauseIcon').style.display = 'none';
+                    currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+                    loadSong(currentSongIndex);
+                });
+            }
+
+            document.getElementById('playBtn').addEventListener('click', togglePlay);
+            document.getElementById('nextBtn').addEventListener('click', nextSong);
+            document.getElementById('prevBtn').addEventListener('click', prevSong);
+
+            loadSong(currentSongIndex);
+        })();
+
+
+        // CONTACT FORM
+        (function() {
+            const btn    = document.getElementById('cf-submit-btn');
+            const status = document.getElementById('cf-status');
+
+            btn.addEventListener('click', function() {
+                const name    = document.getElementById('cf-name').value.trim();
+                const email   = document.getElementById('cf-email').value.trim();
+                const subject = document.getElementById('cf-subject').value.trim();
+                const message = document.getElementById('cf-message').value.trim();
+
+                if (!name || !email || !message) {
+                    status.textContent = 'Please fill in your name, email, and message.';
+                    status.className   = 'cf-status cf-error';
+                    return;
+                }
+
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    status.textContent = 'That email doesn\'t look right.';
+                    status.className   = 'cf-status cf-error';
+                    return;
+                }
+
+                const mailtoSubject = encodeURIComponent(subject || 'Message from ' + name);
+                const mailtoBody    = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
+                window.location.href = 'mailto:ethansautto@gmail.com?subject=' + mailtoSubject + '&body=' + mailtoBody;
+
+                status.textContent = 'Opening your mail client...';
+                status.className   = 'cf-status cf-success';
+            });
+
+            // Clear status on input
+            ['cf-name','cf-email','cf-subject','cf-message'].forEach(function(id) {
+                document.getElementById(id).addEventListener('input', function() {
+                    status.textContent = '';
+                    status.className   = 'cf-status';
+                });
+            });
+        })();
+
+
+        // PAGE LOAD ANIMATION
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+        });
+
+
+        // HAMBURGER MENU
+        (function() {
+            const btn     = document.getElementById('hamburgerBtn');
+            const drawer  = document.getElementById('mobileNavDrawer');
+            const overlay = document.getElementById('mobileNavOverlay');
+            const close   = document.getElementById('mobileNavClose');
+
+            function openMenu() {
+                drawer.classList.add('open');
+                overlay.classList.add('open');
+                btn.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMenu() {
+                drawer.classList.remove('open');
+                overlay.classList.remove('open');
+                btn.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
+
+            btn.addEventListener('click', openMenu);
+            close.addEventListener('click', closeMenu);
+            overlay.addEventListener('click', closeMenu);
+
+            // Close on panel link tap
+            drawer.querySelectorAll('a[data-panel]').forEach(function(link) {
+                link.addEventListener('click', closeMenu);
+            });
+        })();
     </script>
 
 </body>
+</html>
