@@ -2376,8 +2376,13 @@ p.musicdesc {
     }
 }
 
-@media (max-width: 400px) {
+@media (min-width: 381px) and (max-width: 410px) {
+    .bio-portrait, .bio-car {
+        margin: 1.5em 0 -2.5em;
+    }
+}
 
+@media (max-width: 380px) {
     .bio {
         margin-bottom: 6.5em;
     }
