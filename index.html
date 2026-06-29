@@ -3,9 +3,7 @@
     <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
+
     <link rel="stylesheet" href="style.css">
     <title>Ethan Sautto</title>
     <link rel="icon" href="Assets_icons/favicon.png" type="image/icon type">
@@ -125,7 +123,7 @@
                                 <!-- Large tile - Cal Poly Racing -->
                                 <div class="bento-cell bento-large">
                                     <a class="bento-item" id="livery" href="https://dribbble.com/shots/25996323-Cal-Poly-Racing-FSAE-Car-Livery" target="_blank" rel="noopener">
-                                        <img src="Pictures/side-quests/cpr_livery.jpg" alt="Cal Poly Racing FSAE Car Livery">
+                                        <img src="Pictures/side-quests/cpr_livery.jpg" alt="Cal Poly Racing FSAE Car Livery" loading="lazy">
                                     </a>
                                     <div class="bento-description" id="livery-description">
                                         <h4>Cal Poly Racing — FSAE Livery</h4>
@@ -188,7 +186,7 @@
                                 <!-- Medium tile - Grassroots Mag Covers -->
                                 <div class="bento-cell bento-medium">
                                     <a class="bento-item" id="grassroots" href="https://dribbble.com/shots/25996637-Grassroots-Magazine-Cover-Art" target="_blank" rel="noopener">
-                                        <img src="Pictures/side-quests/grassroots_mag_covers.png" alt="Grassroots Magazine Cover Art">
+                                        <img src="Pictures/side-quests/grassroots_mag_covers.png" alt="Grassroots Magazine Cover Art" loading="lazy">
                                     </a>
                                     <div class="bento-description" id="grassroots-description">
                                         <h4>Grassroots Magazine</h4>
@@ -202,7 +200,7 @@
                                 <!-- Tall tile - Font Posters -->
                                 <div class="bento-cell bento-tall">
                                     <a class="bento-item" id="fontposters" href="https://dribbble.com/shots/26878321-Font-Posters-made-in-Adobe-Illustrator" target="_blank" rel="noopener">
-                                        <img src="Pictures/side-quests/font_poster.jpeg" alt="Font poster for Adobe Arabic.">
+                                        <img src="Pictures/side-quests/font_poster.jpeg" alt="Font poster for Adobe Arabic." loading="lazy">
                                     </a>
                                     <div class="bento-description" id="poster-description">
                                         <h4>Font Posters</h4>
@@ -215,7 +213,7 @@
                                 <!-- Small Tile - Blog -->
                                 <div class="bento-cell bento-small">
                                     <a class="bento-item" id="blog" href="index.html" rel="noopener">
-                                        <img src="Pictures/side-quests/my_e30.jpg" alt="White BMW E30 in a driveway.">
+                                        <img src="Pictures/side-quests/my_e30.jpg" alt="White BMW E30 in a driveway." loading="lazy">
                                     </a>
                                     <div class="bento-description" id="blog-description">
                                         <h4>My blog</h4>
@@ -227,7 +225,7 @@
                                 <!-- Wide tile - Pixel Art -->
                                 <div class="bento-cell bento-wide">
                                     <a class="bento-item" id="pixelart" href="https://dribbble.com/shots/26878309-Pixel-Cars-for-Cal-Poly-Racing-made-in-Illustrator" target="_blank" rel="noopener">
-                                        <img src="Pictures/side-quests/cpr_pixelart.png" alt="Cal Poly Racing pixel art thumbnail">
+                                        <img src="Pictures/side-quests/cpr_pixelart.png" alt="Cal Poly Racing pixel art thumbnail" loading="lazy">
                                     </a>
                                     <div class="bento-description" id="pixelart-description">
                                         <h4>Pixel Art</h4>
@@ -252,12 +250,12 @@
                         <div class="bio">
                             <div class="bio-pics">
                                 <div class="bio-portrait">
-                                    <img src="Pictures/about/ethan-portrait.JPG" alt="A portrait of Ethan Sautto.">
+                                    <img src="Pictures/about/ethan-portrait.JPG" alt="A portrait of Ethan Sautto." loading="lazy">
                                     <p>That's me!</p>
                                 </div>
 
                                 <div class="bio-car">
-                                    <img src="Pictures/about/my240.JPG" alt="A photo of Ethan's old Nissan that he thinks is cool.">
+                                    <img src="Pictures/about/my240.JPG" alt="A photo of Ethan's old Nissan that he thinks is cool." loading="lazy">
                                     <p>My old Nissan I like working on.</p>
                                 </div>
 
@@ -1090,6 +1088,13 @@
         // PAGE LOAD ANIMATION
         window.addEventListener('load', function() {
             document.body.classList.add('loaded');
+        });
+
+        // Release will-change after animations complete to free GPU memory
+        document.querySelectorAll('.home > *, .intro ul li, .intro .vertical-divider, .intro .intro-text, .intro .intro-text h2, .intro .intro-text p').forEach(function(el) {
+            el.addEventListener('animationend', function() {
+                this.style.willChange = 'auto';
+            }, { once: true });
         });
 
 
