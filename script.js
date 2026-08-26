@@ -56,19 +56,18 @@
         }).observe(section, { attributes: true });
     });
 
-    // In case the default tab is already active on load
     document.querySelectorAll(".tab-content.is-active").forEach((section) => {
         startDeferredVideos(section);
     });
 })();
 
 const DEFAULT_TAB = "work";
-const TAB_FADE_OUT_MS = 180; // keep in sync with .tab-content.is-leaving duration in style.css
+const TAB_FADE_OUT_MS = 180;
 
 function activateTab(sections, target) {
     sections.forEach((section) => {
         section.classList.toggle("is-active", section === target);
-        section.style.display = ""; // clear any leftover inline fallback
+        section.style.display = "";
     });
 }
 
@@ -87,13 +86,11 @@ function showTab(id) {
     const current = document.querySelector(".tab-content.is-active");
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    // Nothing to fade out (first load) or already on this tab: switch immediately
     if (!current || current === resolvedTarget || prefersReducedMotion) {
         activateTab(sections, resolvedTarget);
         return;
     }
 
-    // Fade the current tab out, then swap once the animation finishes
     current.classList.remove("is-active");
     current.classList.add("is-leaving");
 
@@ -106,7 +103,7 @@ function showTab(id) {
     };
 
     current.addEventListener("animationend", finish, { once: true });
-    // Safety net in case the animationend event doesn't fire (e.g. display toggled elsewhere)
+
     setTimeout(finish, TAB_FADE_OUT_MS + 50);
 }
 
@@ -188,16 +185,18 @@ if (overlay) {
 
         if (overlayReturnTab) {
             showTab(overlayReturnTab);
-            if (window.location.hash.replace("#", "") !== overlayReturnTab) {
-                history.replaceState(history.state, "", `#${overlayReturnTab}`);
-            }
             overlayReturnTab = null;
         }
     }
 
     function requestCloseOverlay() {
         if (!overlay.classList.contains("is-open")) return;
-        history.back();
+
+        const returnTab = overlayReturnTab || DEFAULT_TAB;
+        closeOverlay();
+        if (history.state && history.state.sideQuestOverlay) {
+            history.replaceState(null, "", `#${returnTab}`);
+        }
     }
 
     document.querySelectorAll(".side-quests-item").forEach((item) => {
