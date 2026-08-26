@@ -181,14 +181,14 @@ if (overlay) {
     const audioPlayer = new Audio();
 
     const songs = [
-        { title: "What's Now Is Now", artist: "CAKE",             color: "#236F9E", accent: "#BF3722", image: "assets-icons/music-tracks-coverart/showroomofcompassion.jpg", audio: "assets-icons/music-tracks-coverart/whatsnowisnow.m4a" },
-        { title: "Pogo",               artist: "Digitalism",       color: "#160926", accent: "#3FC23A", image: "assets-icons/music-tracks-coverart/idealism.jpg",              audio: "assets-icons/music-tracks-coverart/pogo.m4a" },
-        { title: "Ever (Foreign Flag)",artist: "Team Sleep",       color: "#755B12", accent: "#CF4108", image: "assets-icons/music-tracks-coverart/teamsleep.jpg",             audio: "assets-icons/music-tracks-coverart/ever.m4a" },
-        { title: "Collapsing New Buildings", artist: "pennines",   color: "#136085", accent: "#0A212B", image: "assets-icons/music-tracks-coverart/fairdos.jpg",               audio: "assets-icons/music-tracks-coverart/collapsingnewbuildings.m4a" },
-        { title: "Wither",             artist: "Chatterton",       color: "#4C639C", accent: "#261B15", image: "assets-icons/music-tracks-coverart/fieldsofthis.jpg",          audio: "assets-icons/music-tracks-coverart/wither.m4a" },
-        { title: "Cath...",            artist: "Death Cab for Cutie", color: "#752310", accent: "#1C3469", image: "assets-icons/music-tracks-coverart/narrowstairs.jpg",     audio: "assets-icons/music-tracks-coverart/cath.m4a" },
-        { title: "The Flower Called Nowhere", artist: "Stereolab", color: "#28706F", accent: "#A3BA3F", image: "assets-icons/music-tracks-coverart/dotsandloops.png",         audio: "assets-icons/music-tracks-coverart/theflowercallednowhere.m4a" },
-        { title: "Love Proceeding",    artist: "BADBADNOTGOOD",    color: "#0D3D66", accent: "#1973C2", image: "assets-icons/music-tracks-coverart/talkmemory.jpg",            audio: "assets-icons/music-tracks-coverart/loveproceeding.m4a" }
+        { title: "What's Now Is Now", artist: "CAKE",             color: "#236F9E", accent: "#BF3722", image: "Assets-icons/music-tracks-coverart/showroomofcompassion.jpg", audio: "Assets-icons/music-tracks-coverart/whatsnowisnow.m4a" },
+        { title: "Pogo",               artist: "Digitalism",       color: "#160926", accent: "#3FC23A", image: "Assets-icons/music-tracks-coverart/idealism.jpg",              audio: "Assets-icons/music-tracks-coverart/pogo.m4a" },
+        { title: "Ever (Foreign Flag)",artist: "Team Sleep",       color: "#755B12", accent: "#CF4108", image: "Assets-icons/music-tracks-coverart/teamsleep.jpg",             audio: "Assets-icons/music-tracks-coverart/ever.m4a" },
+        { title: "Collapsing New Buildings", artist: "pennines",   color: "#136085", accent: "#0A212B", image: "Assets-icons/music-tracks-coverart/fairdos.jpg",               audio: "Assets-icons/music-tracks-coverart/collapsingnewbuildings.m4a" },
+        { title: "Wither",             artist: "Chatterton",       color: "#4C639C", accent: "#261B15", image: "Assets-icons/music-tracks-coverart/fieldsofthis.jpg",          audio: "Assets-icons/music-tracks-coverart/wither.m4a" },
+        { title: "Cath...",            artist: "Death Cab for Cutie", color: "#752310", accent: "#1C3469", image: "Assets-icons/music-tracks-coverart/narrowstairs.jpg",     audio: "Assets-icons/music-tracks-coverart/cath.m4a" },
+        { title: "The Flower Called Nowhere", artist: "Stereolab", color: "#28706F", accent: "#A3BA3F", image: "Assets-icons/music-tracks-coverart/dotsandloops.png",         audio: "Assets-icons/music-tracks-coverart/theflowercallednowhere.m4a" },
+        { title: "Love Proceeding",    artist: "BADBADNOTGOOD",    color: "#0D3D66", accent: "#1973C2", image: "Assets-icons/music-tracks-coverart/talkmemory.jpg",            audio: "Assets-icons/music-tracks-coverart/loveproceeding.m4a" }
     ];
 
     let currentSongIndex = Math.floor(Math.random() * songs.length);
