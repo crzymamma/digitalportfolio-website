@@ -117,6 +117,7 @@ if (overlay) {
     const overlayTitle = overlay.querySelector(".side-quest-overlay-title");
     const overlayDescription = overlay.querySelector(".side-quest-overlay-description");
     let lastFocusedElement = null;
+    let overlayReturnTab = null;
 
     function openOverlay(item) {
         const sourceMedia = item.querySelector("img, video");
@@ -146,13 +147,46 @@ if (overlay) {
         overlay.classList.add("is-open");
         document.body.style.overflow = "hidden";
         overlay.querySelector(".side-quest-overlay-close").focus();
+
+        // Remember which tab was showing so we can force it back into
+        // view on close, regardless of how the browser resolves the
+        // hash during back/forward navigation.
+        overlayReturnTab = window.location.hash.replace("#", "") || DEFAULT_TAB;
+
+        // Push a history entry so the browser/hardware back button closes
+        // the overlay instead of navigating away from the page.
+        history.pushState({ sideQuestOverlay: true }, "", window.location.href);
     }
 
     function closeOverlay() {
+        if (!overlay.classList.contains("is-open")) return;
         overlay.classList.remove("is-open");
         document.body.style.overflow = "";
         overlayMedia.innerHTML = "";
         if (lastFocusedElement) lastFocusedElement.focus();
+
+        // Force the tab that was active when the overlay opened back into
+        // view, and quietly sync the URL to match (without adding a new
+        // history entry), so the back button always lands the user back
+        // on Side Quests rather than wherever the hash happens to resolve.
+        if (overlayReturnTab) {
+            showTab(overlayReturnTab);
+            if (window.location.hash.replace("#", "") !== overlayReturnTab) {
+                history.replaceState(history.state, "", `#${overlayReturnTab}`);
+            }
+            overlayReturnTab = null;
+        }
+    }
+
+    // Requests to close the overlay (X button, backdrop, Escape) all go
+    // through history.back(). This keeps a single source of truth: the
+    // overlay only ever actually closes in the popstate handler below,
+    // whether that's triggered by the browser's back button or by our
+    // own history.back() call. That way the history stack never gets
+    // left with a stale "overlay open" entry.
+    function requestCloseOverlay() {
+        if (!overlay.classList.contains("is-open")) return;
+        history.back();
     }
 
     document.querySelectorAll(".side-quests-item").forEach((item) => {
@@ -166,11 +200,17 @@ if (overlay) {
     });
 
     overlay.querySelectorAll("[data-overlay-close]").forEach((el) => {
-        el.addEventListener("click", closeOverlay);
+        el.addEventListener("click", requestCloseOverlay);
     });
 
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && overlay.classList.contains("is-open")) {
+            requestCloseOverlay();
+        }
+    });
+
+    window.addEventListener("popstate", () => {
+        if (overlay.classList.contains("is-open")) {
             closeOverlay();
         }
     });
