@@ -148,13 +148,8 @@ if (overlay) {
         document.body.style.overflow = "hidden";
         overlay.querySelector(".side-quest-overlay-close").focus();
 
-        // Remember which tab was showing so we can force it back into
-        // view on close, regardless of how the browser resolves the
-        // hash during back/forward navigation.
         overlayReturnTab = window.location.hash.replace("#", "") || DEFAULT_TAB;
 
-        // Push a history entry so the browser/hardware back button closes
-        // the overlay instead of navigating away from the page.
         history.pushState({ sideQuestOverlay: true }, "", window.location.href);
     }
 
@@ -165,10 +160,6 @@ if (overlay) {
         overlayMedia.innerHTML = "";
         if (lastFocusedElement) lastFocusedElement.focus();
 
-        // Force the tab that was active when the overlay opened back into
-        // view, and quietly sync the URL to match (without adding a new
-        // history entry), so the back button always lands the user back
-        // on Side Quests rather than wherever the hash happens to resolve.
         if (overlayReturnTab) {
             showTab(overlayReturnTab);
             if (window.location.hash.replace("#", "") !== overlayReturnTab) {
@@ -178,12 +169,6 @@ if (overlay) {
         }
     }
 
-    // Requests to close the overlay (X button, backdrop, Escape) all go
-    // through history.back(). This keeps a single source of truth: the
-    // overlay only ever actually closes in the popstate handler below,
-    // whether that's triggered by the browser's back button or by our
-    // own history.back() call. That way the history stack never gets
-    // left with a stale "overlay open" entry.
     function requestCloseOverlay() {
         if (!overlay.classList.contains("is-open")) return;
         history.back();
@@ -336,7 +321,6 @@ if (overlay) {
     document.getElementById('nextBtn').addEventListener('click', nextSong);
     document.getElementById('prevBtn').addEventListener('click', prevSong);
 
-    // Load UI/art immediately but skip fetching the audio file until the user hits play
     loadSong(currentSongIndex, false);
 })();
 
