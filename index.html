@@ -3,1132 +3,407 @@
     <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <script>
+    (function () {
+        try {
+            var isChrome = false;
+            if (navigator.userAgentData && navigator.userAgentData.brands) {
+                isChrome = navigator.userAgentData.brands.some(function (b) {
+                    return b.brand === "Google Chrome";
+                });
+            } else {
+                var ua = navigator.userAgent;
+                isChrome = /Chrome\//.test(ua) && /Google Inc/.test(navigator.vendor) && !/Edg\//.test(ua) && !/OPR\//.test(ua);
+            }
+            if (isChrome) document.documentElement.classList.add("is-chrome");
+        } catch (e) {}
+    })();
+    </script>
 
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Ethan Sautto</title>
-    <link rel="icon" href="Assets_icons/favicon.png" type="image/icon type">
+    <link rel="icon" href="assets-icons/favicon.png" type="image/icon type">
 </head>
 
-<body id="index">
-    
-    <!-- Home -->
-    <!-- Mobile nav overlay & drawer (fixed, outside flow) -->
-    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
-    <div class="mobile-nav-drawer" id="mobileNavDrawer">
-        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close navigation">✕</button>
-        <ul class="mobile-nav-list">
-            <li><a href="#" data-panel="side-quests">Side Quests</a></li>
-            <li><a href="#" data-panel="about">About</a></li>
-            <li><a href="#" data-panel="contact">Contact</a></li>
-            <li><a href="Assets_icons/ethan-sautto-resume.pdf" target="_blank">Resume</a></li>
-        </ul>
+<body>
+    <div class="logo-banner">
+        <div class="logo">
+            <a href="index.html">
+                <div class="logo-img-wrap">
+                    <img src="assets-icons/ethansautto-logo.png" alt="Ethan Sautto" class="logo-default">
+                    <img src="assets-icons/ethansautto-logo-hover.png" alt="" class="logo-hover">
+                </div>
+            </a>
+        </div>
     </div>
 
-    <div class="home" id="home">
+    <div class="nav">
+        <div class="nav-header">
+            <h2>Ethan Sautto</h2>
+            <p><span class="grey">Currently </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"> <g fill="none"> <path d="M8.75 4.75C9.85457 4.75 10.75 5.64543 10.75 6.75C10.75 7.50339 10.3331 8.15896 9.71777 8.5H23V14.6064C23 16.8421 23 17.9616 22.5645 18.8164C22.181 19.5689 21.5689 20.181 20.8164 20.5645C19.9616 21 18.8421 21 16.6064 21H7.39355C5.1579 21 4.03837 21 3.18359 20.5645C2.43109 20.181 1.81902 19.5689 1.43555 18.8164C1.00002 17.9616 1 16.8421 1 14.6064V8.5H3.78223C3.16686 8.15896 2.75 7.50339 2.75 6.75C2.75 5.64543 3.64543 4.75 4.75 4.75C5.85457 4.75 6.75 5.64543 6.75 6.75C6.75 7.50339 6.33314 8.15896 5.71777 8.5H7.78223C7.16686 8.15896 6.75 7.50339 6.75 6.75C6.75 5.64543 7.64543 4.75 8.75 4.75Z" fill="url(#1752500502813-4375736_window_existing_0_km3agb0oo)" data-glass="origin" mask="url(#1752500502813-4375736_window_mask_ecvsj2ugk)"></path> <path d="M8.75 4.75C9.85457 4.75 10.75 5.64543 10.75 6.75C10.75 7.50339 10.3331 8.15896 9.71777 8.5H23V14.6064C23 16.8421 23 17.9616 22.5645 18.8164C22.181 19.5689 21.5689 20.181 20.8164 20.5645C19.9616 21 18.8421 21 16.6064 21H7.39355C5.1579 21 4.03837 21 3.18359 20.5645C2.43109 20.181 1.81902 19.5689 1.43555 18.8164C1.00002 17.9616 1 16.8421 1 14.6064V8.5H3.78223C3.16686 8.15896 2.75 7.50339 2.75 6.75C2.75 5.64543 3.64543 4.75 4.75 4.75C5.85457 4.75 6.75 5.64543 6.75 6.75C6.75 7.50339 6.33314 8.15896 5.71777 8.5H7.78223C7.16686 8.15896 6.75 7.50339 6.75 6.75C6.75 5.64543 7.64543 4.75 8.75 4.75Z" fill="url(#1752500502813-4375736_window_existing_0_km3agb0oo)" data-glass="clone" filter="url(#1752500502813-4375736_window_filter_j6h086cyb)" clip-path="url(#1752500502813-4375736_window_clipPath_098b19irf)"></path> <path d="M16.6003 3C18.8403 3 19.9606 2.99962 20.8162 3.43555C21.5687 3.81899 22.1807 4.43108 22.5642 5.18359C23.0002 6.03924 22.9998 7.16018 22.9998 9.40039V10H0.999756V9.40039C0.999756 7.16018 1.00031 6.03924 1.43628 5.18359C1.81979 4.43115 2.43183 3.81896 3.18433 3.43555C4.03993 2.99975 5.16025 3 7.40015 3H16.6003ZM4.74976 5.5C4.05951 5.50013 3.49976 6.05973 3.49976 6.75C3.49976 7.44027 4.05951 7.99987 4.74976 8C5.44011 8 5.99976 7.44036 5.99976 6.75C5.99976 6.05964 5.44011 5.5 4.74976 5.5ZM8.74976 5.5C8.05951 5.50013 7.49976 6.05973 7.49976 6.75C7.49976 7.44027 8.05951 7.99987 8.74976 8C9.44011 8 9.99976 7.44036 9.99976 6.75C9.99976 6.05964 9.44011 5.5 8.74976 5.5Z" fill="url(#1752500502813-4375736_window_existing_1_279zbccz2)" data-glass="blur"></path> <path d="M16.6006 3C18.8404 3 19.9608 2.99964 20.8164 3.43555C21.5689 3.819 22.181 4.43115 22.5645 5.18359C23.0004 6.03923 23 7.16027 23 9.40039V10H22.25V9H22.248C22.2474 8.07419 22.2433 7.38672 22.1982 6.83398C22.1477 6.21337 22.0514 5.82868 21.8965 5.52441C21.5849 4.91301 21.0869 4.41504 20.4756 4.10352C20.1714 3.9486 19.7871 3.85237 19.167 3.80176C18.8523 3.7761 18.4934 3.76338 18.0723 3.75684L16.6006 3.75H7.40039L5.92871 3.75684C5.50756 3.76338 5.14863 3.7761 4.83398 3.80176C4.21394 3.85236 3.82964 3.94869 3.52539 4.10352C2.91411 4.41498 2.41614 4.91301 2.10449 5.52441C1.94944 5.82888 1.85355 6.21343 1.80273 6.83398C1.75748 7.38666 1.75269 8.07417 1.75195 9H1.75V10H1V9.40039C1 7.16018 1.00055 6.03924 1.43652 5.18359C1.82003 4.4312 2.4321 3.81895 3.18457 3.43555C4.04015 2.99985 5.16066 3 7.40039 3H16.6006Z" fill="url(#1752500502813-4375736_window_existing_2_8xuyecuxl)"></path> <defs> <linearGradient id="1752500502813-4375736_window_existing_0_km3agb0oo" x1="12" y1="4.75" x2="12" y2="21" gradientUnits="userSpaceOnUse"> <stop stop-color="#575757"></stop> <stop offset="1" stop-color="#151515"></stop> </linearGradient> <linearGradient id="1752500502813-4375736_window_existing_1_279zbccz2" x1="12" y1="3" x2="12" y2="10" gradientUnits="userSpaceOnUse"> <stop stop-color="#E3E3E5" stop-opacity=".6"></stop> <stop offset="1" stop-color="#BBBBC0" stop-opacity=".6"></stop> </linearGradient> <linearGradient id="1752500502813-4375736_window_existing_2_8xuyecuxl" x1="12" y1="3" x2="12" y2="7.5" gradientUnits="userSpaceOnUse"> <stop stop-color="#fff" stop-opacity="1"></stop> <stop offset="1" stop-color="#fff" stop-opacity="0"></stop> </linearGradient> <filter id="1752500502813-4375736_window_filter_j6h086cyb" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse"> <feGaussianBlur stdDeviation="2" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur> </filter> <clipPath id="1752500502813-4375736_window_clipPath_098b19irf"> <path d="M16.6003 3C18.8403 3 19.9606 2.99962 20.8162 3.43555C21.5687 3.81899 22.1807 4.43108 22.5642 5.18359C23.0002 6.03924 22.9998 7.16018 22.9998 9.40039V10H0.999756V9.40039C0.999756 7.16018 1.00031 6.03924 1.43628 5.18359C1.81979 4.43115 2.43183 3.81896 3.18433 3.43555C4.03993 2.99975 5.16025 3 7.40015 3H16.6003ZM4.74976 5.5C4.05951 5.50013 3.49976 6.05973 3.49976 6.75C3.49976 7.44027 4.05951 7.99987 4.74976 8C5.44011 8 5.99976 7.44036 5.99976 6.75C5.99976 6.05964 5.44011 5.5 4.74976 5.5ZM8.74976 5.5C8.05951 5.50013 7.49976 6.05973 7.49976 6.75C7.49976 7.44027 8.05951 7.99987 8.74976 8C9.44011 8 9.99976 7.44036 9.99976 6.75C9.99976 6.05964 9.44011 5.5 8.74976 5.5Z" fill="url(#1752500502813-4375736_window_existing_1_279zbccz2)"></path> </clipPath> <mask id="1752500502813-4375736_window_mask_ecvsj2ugk"> <rect width="100%" height="100%" fill="#FFF"></rect> <path d="M16.6003 3C18.8403 3 19.9606 2.99962 20.8162 3.43555C21.5687 3.81899 22.1807 4.43108 22.5642 5.18359C23.0002 6.03924 22.9998 7.16018 22.9998 9.40039V10H0.999756V9.40039C0.999756 7.16018 1.00031 6.03924 1.43628 5.18359C1.81979 4.43115 2.43183 3.81896 3.18433 3.43555C4.03993 2.99975 5.16025 3 7.40015 3H16.6003ZM4.74976 5.5C4.05951 5.50013 3.49976 6.05973 3.49976 6.75C3.49976 7.44027 4.05951 7.99987 4.74976 8C5.44011 8 5.99976 7.44036 5.99976 6.75C5.99976 6.05964 5.44011 5.5 4.74976 5.5ZM8.74976 5.5C8.05951 5.50013 7.49976 6.05973 7.49976 6.75C7.49976 7.44027 8.05951 7.99987 8.74976 8C9.44011 8 9.99976 7.44036 9.99976 6.75C9.99976 6.05964 9.44011 5.5 8.74976 5.5Z" fill="#000"></path> </mask> </defs> </g> </svg>
+                Web Designer @ Yardi<span class="grey">, graduated from </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"> <g fill="none"> <path d="M19.8 7C20.9201 7 21.4802 7 21.908 7.21799C22.2843 7.40973 22.5903 7.7157 22.782 8.09202C23 8.51984 23 9.0799 23 10.2V14.6C23 16.8402 23 17.9603 22.564 18.816C22.1805 19.5686 21.5686 20.1805 20.816 20.564C19.9603 21 18.8402 21 16.6 21C16.0003 21 15.3477 20.9253 14.7546 21.031C14.3513 21.1029 14.0296 21.3136 13.6938 21.5374C13.4363 21.7091 13.1783 21.93 12.8727 21.9845C12.7857 22 12.6956 22 12.5156 22H11.4844C11.3044 22 11.2143 22 11.1273 21.9845C10.8217 21.93 10.5637 21.7091 10.3062 21.5374C9.97044 21.3136 9.64872 21.1029 9.24542 21.031C8.65232 20.9253 7.99966 21 7.4 21C5.15979 21 4.03968 21 3.18404 20.564C2.43139 20.1805 1.81947 19.5686 1.43597 18.816C1 17.9603 1 16.8402 1 14.6L1 10.2C1 9.07989 1 8.51984 1.21799 8.09202C1.40973 7.71569 1.7157 7.40973 2.09202 7.21799C2.51984 7 3.0799 7 4.2 7L19.8 7Z" fill="url(#1752500502767-6164915_book-open_existing_0_icxw9y0nx)" data-glass="origin" mask="url(#1752500502767-6164915_book-open_mask_0lsha4amw)"></path> <path d="M19.8 7C20.9201 7 21.4802 7 21.908 7.21799C22.2843 7.40973 22.5903 7.7157 22.782 8.09202C23 8.51984 23 9.0799 23 10.2V14.6C23 16.8402 23 17.9603 22.564 18.816C22.1805 19.5686 21.5686 20.1805 20.816 20.564C19.9603 21 18.8402 21 16.6 21C16.0003 21 15.3477 20.9253 14.7546 21.031C14.3513 21.1029 14.0296 21.3136 13.6938 21.5374C13.4363 21.7091 13.1783 21.93 12.8727 21.9845C12.7857 22 12.6956 22 12.5156 22H11.4844C11.3044 22 11.2143 22 11.1273 21.9845C10.8217 21.93 10.5637 21.7091 10.3062 21.5374C9.97044 21.3136 9.64872 21.1029 9.24542 21.031C8.65232 20.9253 7.99966 21 7.4 21C5.15979 21 4.03968 21 3.18404 20.564C2.43139 20.1805 1.81947 19.5686 1.43597 18.816C1 17.9603 1 16.8402 1 14.6L1 10.2C1 9.07989 1 8.51984 1.21799 8.09202C1.40973 7.71569 1.7157 7.40973 2.09202 7.21799C2.51984 7 3.0799 7 4.2 7L19.8 7Z" fill="url(#1752500502767-6164915_book-open_existing_0_icxw9y0nx)" data-glass="clone" filter="url(#1752500502767-6164915_book-open_filter_dric4oey8)" clip-path="url(#1752500502767-6164915_book-open_clipPath_99y0rffwb)"></path> <path d="M17.1058 2.86537C18.4374 2.56947 19.1032 2.42152 19.6257 2.59361C20.0838 2.74451 20.472 3.05589 20.7187 3.47039C21 3.94312 21 4.62513 21 5.98917L21 14.4331C21 15.349 21 15.807 20.8377 16.1849C20.6945 16.5182 20.4634 16.8063 20.1691 17.0184C19.8354 17.2588 19.3883 17.3582 18.4942 17.5568L12.3471 18.9229C12.2176 18.9517 12.1528 18.966 12.0874 18.9718C12.0292 18.9769 11.9708 18.9769 11.9126 18.9718C11.8472 18.966 11.7824 18.9517 11.6529 18.9229L5.50582 17.5568C4.6117 17.3582 4.16464 17.2588 3.83093 17.0184C3.53658 16.8063 3.30545 16.5182 3.1623 16.1849C3 15.8069 3 15.349 3 14.4331L3 5.98917C3 4.62513 3 3.94312 3.28134 3.47039C3.52803 3.05589 3.9162 2.74451 4.37434 2.59361C4.89684 2.42152 5.56262 2.56947 6.89418 2.86537L11.6529 3.92287C11.7824 3.95165 11.8472 3.96604 11.9126 3.97178C11.9708 3.97688 12.0292 3.97688 12.0874 3.97178C12.1528 3.96604 12.2176 3.95165 12.3471 3.92287L17.1058 2.86537Z" fill="url(#1752500502767-6164915_book-open_existing_1_gwnxwxu1a)" data-glass="blur"></path> <path d="M20.25 5.98921C20.25 5.29355 20.2494 4.82046 20.2178 4.46088C20.1867 4.10809 20.1309 3.94983 20.0742 3.85443C19.92 3.59536 19.677 3.3999 19.3906 3.3056C19.2852 3.27098 19.1185 3.25158 18.7676 3.29778C18.4097 3.34493 17.9476 3.44668 17.2686 3.59759L12.5098 4.65521C12.3988 4.67988 12.2789 4.70764 12.1533 4.71869C12.0516 4.72761 11.9484 4.72761 11.8467 4.71869C11.7211 4.70764 11.6012 4.67988 11.4902 4.65521L6.73145 3.59759C6.05237 3.44668 5.59029 3.34493 5.23242 3.29778C4.88146 3.25158 4.71479 3.27098 4.60938 3.3056C4.32304 3.3999 4.07996 3.59536 3.92578 3.85443C3.86911 3.94983 3.81326 4.10809 3.78223 4.46088C3.75062 4.82046 3.75 5.29355 3.75 5.98921V14.4336C3.75 14.9022 3.75076 15.2137 3.76855 15.4561C3.78565 15.6887 3.81605 15.8059 3.85156 15.8887C3.94103 16.097 4.08556 16.2776 4.26953 16.4102C4.34261 16.4628 4.45054 16.5178 4.67383 16.585C4.90661 16.6549 5.21124 16.7235 5.66895 16.8252L11.8154 18.1905C11.8836 18.2056 11.9214 18.2141 11.9502 18.2198C11.9732 18.2242 11.9794 18.2247 11.9785 18.2246C11.9928 18.2259 12.0072 18.2259 12.0215 18.2246C12.0206 18.2247 12.0268 18.2242 12.0498 18.2198C12.0786 18.2141 12.1164 18.2056 12.1846 18.1905L18.3311 16.8252C18.7888 16.7235 19.0934 16.6549 19.3262 16.585C19.5495 16.5178 19.6574 16.4628 19.7305 16.4102C19.9144 16.2776 20.059 16.097 20.1484 15.8887C20.1839 15.8059 20.2143 15.6887 20.2314 15.4561C20.2492 15.2137 20.25 14.9022 20.25 14.4336V5.98921ZM21 14.4336L20.9971 15.04C20.9895 15.5728 20.9595 15.9012 20.8379 16.1846L20.7803 16.3076C20.6361 16.5891 20.4266 16.833 20.1689 17.0186L20.0381 17.1026C19.7167 17.2854 19.2765 17.3828 18.4941 17.5567L12.3467 18.9229C12.2174 18.9516 12.1523 18.966 12.0869 18.9717C12.058 18.9742 12.029 18.9756 12 18.9756L11.9131 18.9717C11.8803 18.9688 11.8473 18.964 11.8066 18.9561L11.6533 18.9229L5.50586 17.5567C4.72347 17.3828 4.28327 17.2854 3.96191 17.1026L3.83105 17.0186C3.53671 16.8065 3.30526 16.5179 3.16211 16.1846C3.04052 15.9012 3.01053 15.5728 3.00293 15.04L3 14.4336V5.98921C3 4.71045 2.99965 4.0309 3.23145 3.56146L3.28125 3.47064C3.49715 3.10787 3.82136 2.82349 4.20605 2.65715L4.37402 2.59368C4.89653 2.42158 5.56298 2.56926 6.89453 2.86516L11.6533 3.92279C11.7826 3.95152 11.8477 3.96588 11.9131 3.97162C11.9709 3.97666 12.0291 3.97666 12.0869 3.97162C12.1523 3.96588 12.2174 3.95152 12.3467 3.92279L17.1055 2.86516C18.437 2.56926 19.1035 2.42158 19.626 2.59368C20.084 2.74461 20.4721 3.05623 20.7188 3.47064C21 3.94336 21 4.62538 21 5.98921V14.4336Z" fill="url(#1752500502767-6164915_book-open_existing_2_8znynyepl)"></path> <defs> <linearGradient id="1752500502767-6164915_book-open_existing_0_icxw9y0nx" x1="12" y1="7" x2="12" y2="22" gradientUnits="userSpaceOnUse"> <stop stop-color="#575757"></stop> <stop offset="1" stop-color="#151515"></stop> </linearGradient> <linearGradient id="1752500502767-6164915_book-open_existing_1_gwnxwxu1a" x1="21" y1="10.5" x2="3" y2="10.5" gradientUnits="userSpaceOnUse"> <stop stop-color="#E3E3E5" stop-opacity=".6"></stop> <stop offset="1" stop-color="#BBBBC0" stop-opacity=".6"></stop> </linearGradient> <linearGradient id="1752500502767-6164915_book-open_existing_2_8znynyepl" x1="12" y1="2.52" x2="12" y2="12.05" gradientUnits="userSpaceOnUse"> <stop stop-color="#fff"></stop> <stop offset="1" stop-color="#fff" stop-opacity="0"></stop> </linearGradient> <filter id="1752500502767-6164915_book-open_filter_dric4oey8" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse"> <feGaussianBlur stdDeviation="2" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur> </filter> <clipPath id="1752500502767-6164915_book-open_clipPath_99y0rffwb"> <path d="M17.1058 2.86537C18.4374 2.56947 19.1032 2.42152 19.6257 2.59361C20.0838 2.74451 20.472 3.05589 20.7187 3.47039C21 3.94312 21 4.62513 21 5.98917L21 14.4331C21 15.349 21 15.807 20.8377 16.1849C20.6945 16.5182 20.4634 16.8063 20.1691 17.0184C19.8354 17.2588 19.3883 17.3582 18.4942 17.5568L12.3471 18.9229C12.2176 18.9517 12.1528 18.966 12.0874 18.9718C12.0292 18.9769 11.9708 18.9769 11.9126 18.9718C11.8472 18.966 11.7824 18.9517 11.6529 18.9229L5.50582 17.5568C4.6117 17.3582 4.16464 17.2588 3.83093 17.0184C3.53658 16.8063 3.30545 16.5182 3.1623 16.1849C3 15.8069 3 15.349 3 14.4331L3 5.98917C3 4.62513 3 3.94312 3.28134 3.47039C3.52803 3.05589 3.9162 2.74451 4.37434 2.59361C4.89684 2.42152 5.56262 2.56947 6.89418 2.86537L11.6529 3.92287C11.7824 3.95165 11.8472 3.96604 11.9126 3.97178C11.9708 3.97688 12.0292 3.97688 12.0874 3.97178C12.1528 3.96604 12.2176 3.95165 12.3471 3.92287L17.1058 2.86537Z" fill="url(#1752500502767-6164915_book-open_existing_1_gwnxwxu1a)"></path> </clipPath> <mask id="1752500502767-6164915_book-open_mask_0lsha4amw"> <rect width="100%" height="100%" fill="#FFF"></rect> <path d="M17.1058 2.86537C18.4374 2.56947 19.1032 2.42152 19.6257 2.59361C20.0838 2.74451 20.472 3.05589 20.7187 3.47039C21 3.94312 21 4.62513 21 5.98917L21 14.4331C21 15.349 21 15.807 20.8377 16.1849C20.6945 16.5182 20.4634 16.8063 20.1691 17.0184C19.8354 17.2588 19.3883 17.3582 18.4942 17.5568L12.3471 18.9229C12.2176 18.9517 12.1528 18.966 12.0874 18.9718C12.0292 18.9769 11.9708 18.9769 11.9126 18.9718C11.8472 18.966 11.7824 18.9517 11.6529 18.9229L5.50582 17.5568C4.6117 17.3582 4.16464 17.2588 3.83093 17.0184C3.53658 16.8063 3.30545 16.5182 3.1623 16.1849C3 15.8069 3 15.349 3 14.4331L3 5.98917C3 4.62513 3 3.94312 3.28134 3.47039C3.52803 3.05589 3.9162 2.74451 4.37434 2.59361C4.89684 2.42152 5.56262 2.56947 6.89418 2.86537L11.6529 3.92287C11.7824 3.95165 11.8472 3.96604 11.9126 3.97178C11.9708 3.97688 12.0292 3.97688 12.0874 3.97178C12.1528 3.96604 12.2176 3.95165 12.3471 3.92287L17.1058 2.86537Z" fill="#000"></path> </mask> </defs> </g> </svg>
+                California Polytechnic University, San Luis Obispo.
+            </p>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#side-quests">Side Quests</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </div>
+    </div>
 
-        <!-- Mobile header: logo left, hamburger right -->
-        <div class="mobile-header">
-            <div class="logo" id="home-logo">
-                <a href="#" data-panel="work">
-                    <div class="logo-img-wrap">
-                        <img src="Assets_icons/ethansautto-logo.png" alt="Ethan Sautto" class="logo-default">
-                        <img src="Assets_icons/ethansautto-logo-hover.png" alt="" class="logo-hover">
+    <hr>
+
+    <div class="tab">
+
+        <section id="work" class="tab-content">
+            <div class="work-content">
+                <a href="casestudy-clc.html">
+                    <div class="work-item">
+                        <div class="work-item-thumbnail">
+                            <img loading="lazy" src="Pictures/work/clc-thumbnail.webp" alt="A physical sign and mobile game interface mockup.">
+                        </div>
+                        <h3>Meet The Creek: AR Educational Mobile Game</h3>
+                    </div>
+                </a>
+
+                <a href="casestudy-volvo.html">
+                    <div class="work-item">
+                        <div class="work-item-thumbnail">
+                            <img loading="lazy" src="Pictures/work/volvo-thumbnail.webp" alt="Two gauge cluster screen mockups.">
+                        </div>
+                        <h3>Volvo Infotainment Redesign</h3>
+                    </div>
+                </a>
+
+                <a href="casestudy-livin.html">
+                    <div class="work-item">
+                        <div class="work-item-thumbnail">
+                            <img loading="lazy" src="Pictures/work/livin-thumbnail.webp" alt="Laptop showing the landing page for Livin.">
+                        </div>
+                        <h3>Livin: College Sublet Platform</h3>
+                    </div>
+                </a>
+
+                <a href="casestudy-astonmartin.html">
+                    <div class="work-item">
+                        <div class="work-item-thumbnail">
+                            <img loading="lazy" src="Pictures/work/astonmartin-thumbnail.webp" alt="Laptop showing the Aston Martin website.">
+                        </div>
+                        <h3>Aston Martin Web Facelift</h3>
                     </div>
                 </a>
             </div>
-            <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation" aria-expanded="false">
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-            </button>
-        </div>
-        
-        <div class="intro">
-            <ul>
-                <li><a href="#" data-panel="side-quests">Side Quests</a></li>
-                <li><a href="#" data-panel="about">About</a></li>
-                <li><a href="#" data-panel="contact">Contact</a></li>
-                <li><a href="Assets_icons/ethan-sautto-resume.pdf" target="_blank">Resume</a></li>
-            </ul>
 
-            <div class="vertical-divider"></div>
+            <hr class="footer-hr">
 
-            <div class="intro-text">
-                <h2>Ethan Sautto</h2>
-                <p><span class="grey">Currently</span> Associate Marketing Specialist @ <a href="https://www.yardi.com/" target="_blank">Yardi</a></p>
-                <p><span class="grey">Graduated</span> California Polytechnic University, San Luis Obispo</p>
-            </div>
-        </div>
-
-        <div class="horizontal-divider"></div>
-
-        <!-- PANEL HOST -->
-        <div class="featured-projects">
-
-            <!-- Scrollable wrapper -->
-            <div class="panel-scroll-wrap" id="panelScrollWrap">
-
-                <!-- Work -->
-                <div class="fp-panel active" id="panel-work">
-                    <div class="carousel-container">
-                        <div class="carousel-track">
-                            <!-- Slide 1 -->
-                            <div class="carousel-slide" id="clc-thumbnail">
-                                <a href="casestudy-clc.html" class="slide-link">
-                                    <img src="Pictures/home/clc-thumbnail.webp" alt="A physical sign and mobile game interface mockup.">
-                                    <h2>Meet The Creek: AR Educational Mobile Game</h2>
-                                </a>
-                            </div>
-                            <!-- Slide 2 -->
-                            <div class="carousel-slide" id="volvo-thumbnail">
-                                <a href="casestudy-volvo.html" class="slide-link">
-                                    <img src="Pictures/home/volvo-thumbnail.webp" alt="Two gauge cluster screen mockups.">
-                                    <h2>Volvo Infotainment Redesign</h2>
-                                </a>
-                            </div>
-                            <!-- Slide 3 -->
-                            <div class="carousel-slide" id="livin-thumbnail">
-                                <a href="casestudy-livin.html" class="slide-link">
-                                    <img src="Pictures/home/livin-thumbnail.webp" alt="Laptop showing the landing page for Livin.">
-                                    <h2>Livin: College Sublet Platform</h2>
-                                </a>
-                            </div>
-                            <!-- Slide 4 -->
-                            <div class="carousel-slide" id="astonmartin-thumbnail">
-                                <a href="casestudy-astonmartin.html" class="slide-link">
-                                    <img src="Pictures/home/astonmartin-thumbnail.webp" alt="Laptop showing the Aston Martin website.">
-                                    <h2>Aston Martin Web Facelift</h2>
-                                </a>
-                            </div>
+            <footer>
+                <div class="footer-logo">
+                    <a href="index.html">
+                        <div class="logo-img-wrap">
+                            <img loading="lazy" src="assets-icons/ethansautto-logo.png" alt="Ethan Sautto" class="logo-default">
+                            <img loading="lazy" src="assets-icons/ethansautto-logo-hover.png" alt="" class="logo-hover">
                         </div>
-                    </div>
-                    
-                    <div class="carousel-dots">
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                    </div>
-                    <div class="carousel-restart" id="carouselRestart">← Back to start</div>
+                    </a>
                 </div>
-
-
-                <!-- Side Quests -->
-                <div class="fp-panel" id="panel-side-quests">
-                    <div class="side-quests-inner">
-
-                        <section class="bento-wrap sidequest-item">
-                            <div class="bento-grid">
-
-                                <!-- Large tile - Cal Poly Racing -->
-                                <div class="bento-cell bento-large">
-                                    <a class="bento-item" id="livery" href="https://dribbble.com/shots/25996323-Cal-Poly-Racing-FSAE-Car-Livery" target="_blank" rel="noopener">
-                                        <img src="Pictures/side-quests/cpr_livery.webp" alt="Cal Poly Racing FSAE Car Livery" loading="lazy">
-                                    </a>
-                                    <div class="bento-description" id="livery-description">
-                                        <h4>Cal Poly Racing — FSAE Livery</h4>
-                                        <p>For the 2024-2025 season, I planned, designed, and executed the livery for our Formula racecar.</p>
-                                        <p>This was my first foray into vinyl wrap design, and proved to be a challenging and exciting iterative process. With the help of several graphic designers, I was able to consolidate different approaches to the livery into a flowing, modern design.</p>
-                                    </div>
-                                </div>
-                                <div class="bento-description-bg" id="livery-description-bg"></div>
-
-                                <!-- Wide tile - Highway Racers -->
-                                <div class="bento-cell bento-wide">
-                                    <a class="bento-item" id="highwayracers" href="https://editor.p5js.org/ethansautto/full/DX0Q8plLD" target="_blank" rel="noopener">
-                                        <div class="bento-video">
-                                            <video autoplay muted loop playsinline>
-                                                <source src="Pictures/side-quests/highway_racers_gameplay.mp4" type="video/mp4">
-                                            </video>
-                                        </div>
-                                    </a>
-                                    <div class="bento-description" id="highwayracers-description">
-                                        <h4>Highway Racers</h4>
-                                        <p>For a quarter-long project in a computer science class at Cal Poly, I worked with 4 other students to create a simple videogame in p5.js.</p>
-                                        <p>This was the first game any of us had ever made, so there was a steep learning curve. In the end, we were able to create a two-player "drive-to-survive" endless scroller that was super fun to play!</p>
-                                    </div>
-                                </div>
-                                <div class="bento-description-bg" id="highwayracers-description-bg"></div>
-
-                                <!-- Wide tile - TAGA Logo Animation -->
-                                <div class="bento-cell bento-wide">
-                                    <a class="bento-item" id="TAGA" href="https://dribbble.com/shots/27249653-TAGA-Logo-Animation" target="_blank" rel="noopener">
-                                        <div class="bento-video">
-                                            <video autoplay muted loop playsinline>
-                                                <source src="Pictures/side-quests/taga_logo_animation.mp4" type="video/mp4">
-                                            </video>
-                                        </div>
-                                    </a>
-                                    <div class="bento-description" id="TAGA-description">
-                                        <h4>TAGA Logo Animation</h4>
-                                        <p>After the 2026 TAGA conference moved from in-person to online, each team had to restructure their presentation to be played as a video. Taking advantage of the new format, I created a simple logo animation in After Effects to include in our video.</p>
-                                    </div>
-                                </div>
-                                <div class="bento-description-bg" id="TAGA-description-bg"></div>
-
-                                <!-- Wide tile - CPR Logo Animation -->
-                                <div class="bento-cell bento-wide">
-                                    <a class="bento-item" id="logoanimation" href="https://dribbble.com/shots/25986666-Logo-Animation-built-with-After-Effects" target="_blank" rel="noopener">
-                                        <div class="bento-video">
-                                            <video autoplay muted loop playsinline>
-                                                <source src="Pictures/side-quests/cpr_logo_animation.mp4" type="video/mp4">
-                                            </video>
-                                        </div>
-                                    </a>
-                                    <div class="bento-description" id="logo-description">
-                                        <h4>CPR Logo Animation</h4>
-                                        <p>Wanting to practice my After Effects skills, I created this logo animation for Cal Poly Racing.</p>
-                                        <p>Motion graphics have always been a cool area of design that I haven't explored as much as I'd like to. Whenever I get the chance, small projects like these help to improve my skills in the medium.</p>
-                                    </div>
-                                </div>
-                                <div class="bento-description-bg" id="logoanimation-description-bg"></div>
-
-                                <!-- Medium tile - Grassroots Mag Covers -->
-                                <div class="bento-cell bento-medium">
-                                    <a class="bento-item" id="grassroots" href="https://dribbble.com/shots/25996637-Grassroots-Magazine-Cover-Art" target="_blank" rel="noopener">
-                                        <img src="Pictures/side-quests/grassroots_mag_covers.webp" alt="Grassroots Magazine Cover Art" loading="lazy">
-                                    </a>
-                                    <div class="bento-description" id="grassroots-description">
-                                        <h4>Grassroots Magazine</h4>
-                                        <p>Like any designer, I've always had an idea for a magazine.</p>
-                                        <p>At some point, I'd love to start formally interviewing the car enthusiasts I meet at events and ask them about their cars, the culture, etc. In the meantime, I created some concept cover art for the series using Adobe Photoshop and Illustrator.</p>
-                                        <p>I wanted to capture the nostalgic feeling many have for car culture while keeping things new-age, as the articles would mostly focus on current events in the car world.</p>
-                                    </div>
-                                </div>
-                                <div class="bento-description-bg" id="grassroots-description-bg"></div>
-
-                                <!-- Tall tile - Font Posters -->
-                                <div class="bento-cell bento-tall">
-                                    <a class="bento-item" id="fontposters" href="https://dribbble.com/shots/26878321-Font-Posters-made-in-Adobe-Illustrator" target="_blank" rel="noopener">
-                                        <img src="Pictures/side-quests/font_poster.webp" alt="Font poster for Adobe Arabic." loading="lazy">
-                                    </a>
-                                    <div class="bento-description" id="poster-description">
-                                        <h4>Font Posters</h4>
-                                        <p>I made a couple of these font posters for a class in community college.</p>
-                                        <p>They were actually pretty fun to make, and I enjoyed learning about the font I chose and thinking of striking ways I could represent it.</p>
-                                    </div>
-                                </div>
-                                <div class="bento-description-bg" id="poster-description-bg"></div>
-
-                                <!-- Small Tile - Blog -->
-                                <div class="bento-cell bento-small">
-                                    <a class="bento-item" id="blog" href="index.html" rel="noopener">
-                                        <img src="Pictures/side-quests/my_e30.webp" alt="White BMW E30 in a driveway." loading="lazy">
-                                    </a>
-                                    <div class="bento-description" id="blog-description">
-                                        <h4>My blog</h4>
-                                        <p>I write down my thoughts about car stuff here.</p>
-                                    </div>
-                                </div>
-                                <div class="bento-description-bg" id="blog-description-bg"></div>
-
-                                <!-- Wide tile - Pixel Art -->
-                                <div class="bento-cell bento-wide">
-                                    <a class="bento-item" id="pixelart" href="https://dribbble.com/shots/26878309-Pixel-Cars-for-Cal-Poly-Racing-made-in-Illustrator" target="_blank" rel="noopener">
-                                        <img src="Pictures/side-quests/cpr_pixelart.webp" alt="Cal Poly Racing pixel art thumbnail" loading="lazy">
-                                    </a>
-                                    <div class="bento-description" id="pixelart-description">
-                                        <h4>Pixel Art</h4>
-                                        <p>As part of a merch series for Cal Poly Racing, I created some pixelized racers.</p>
-                                        <p>Both were created in Adobe Illustrator, and represent the organization's Baja SAE and Formula SAE teams. Making pixel art can be tedious, but it was satisfying to see them on our shirts at the end.</p>
-                                    </div>
-                                </div>
-                                <div class="bento-description-bg" id="pixelart-description-bg"></div>
-
-                            </div>
-                        </section>
-
+                <div class="footer-CTA">
+                    <h3>Let's talk more about UX!</h3>
+                    <div class="contact-links">
+                        <a href="https://www.linkedin.com/in/ethansautto/" target="_blank" class="contact-button">
+                            <img loading="lazy" src="assets-icons/linkedin-logo.png" alt="" class="contact-button-icon">
+                            LinkedIn
+                        </a>
+                        <a href="assets-icons/ethan-sautto-resume.pdf" target="_blank" class="contact-button">
+                            <img loading="lazy" src="assets-icons/ethansautto-logo.png" alt="" class="contact-button-icon">
+                            Resume
+                        </a>
+                        <a href="mailto:ethansautto@gmail.com" target="_blank" class="contact-button">
+                            <img loading="lazy" src="assets-icons/paper-plane.png" alt="" class="contact-button-icon">
+                            Email
+                        </a>
                     </div>
                 </div>
+            </footer>
+        </section>
 
 
-                <!-- About -->
-                <div class="fp-panel" id="panel-about">
-                    <div class="about-inner">
-
-                        <!-- BIO -->
-                        <div class="bio">
-                            <div class="bio-pics">
-                                <div class="bio-portrait">
-                                    <img src="Pictures/about/ethan-portrait.JPG" alt="A portrait of Ethan Sautto." loading="lazy">
-                                    <p>That's me!</p>
-                                </div>
-
-                                <div class="bio-car">
-                                    <img src="Pictures/about/my240.JPG" alt="A photo of Ethan's old Nissan that he thinks is cool." loading="lazy">
-                                    <p>My old Nissan I like working on.</p>
-                                </div>
-
-                                <div class="music">
-                                    <div class="music-player" id="musicPlayer">
-                                        <div class="music-player-inner">
-                                            <div class="music-album-art" id="albumArt"></div>
-                                            <div class="music-info">
-                                                <p class="music-title" id="songTitle">Loading...</p>
-                                                <p class="music-artist" id="songArtist"></p>
-                                            </div>
-                                            <div class="music-controls">
-                                                <button class="music-btn" id="prevBtn" aria-label="Previous">
-                                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg>
-                                                </button>
-                                                <button class="music-btn music-btn-play" id="playBtn" aria-label="Play/Pause">
-                                                    <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                                                    <svg id="pauseIcon" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                                                </button>
-                                                <button class="music-btn" id="nextBtn" aria-label="Next">
-                                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zm2.5-6 5.5 4v-8l-5.5 4zm7.5-6h2v12h-2z"/></svg>
-                                                </button>
-                                            </div>
-                                            <div class="music-progress-wrap">
-                                                <div class="music-progress-bar">
-                                                    <div class="music-progress-fill" id="progressFill"></div>
-                                                </div>
-                                                <div class="music-times">
-                                                    <span id="currentTime">0:00</span>
-                                                    <span id="totalTime">0:00</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="musicdesc">Some of my favorite songs (Try it!)</p>
-                                </div>
-                            </div>
-
-                            <div class="bio-text">
-                                <h3>I think design gets <span class="italic">really</span> interesting when the creator's personality shines through.</h3>
-                                <span class="about-label">How I got into UX.</span>
-                                <p>My journey into UX started with my love for cars, of all things. I've always viewed them as an extremely underrated medium for art — one that combines visual aesthetics with a specifically tuned user experience.</p>
-                                <span class="about-label">What I've been doing</span>
-                                <p>After completing two years at my local community college, where I experimented with front end development, sculpting, and industrial design, I discovered Cal Poly's Graphic Communication program.</p>
-                                <p>For the past two years, I've been enrolled in a steady 16+ units while maintaining President's honor roll and staying heavily involved with several student orgs.</p>
-                                <span class="about-label">Where I'm at now</span>
-                                <p>Now I'm working in a full time position at Yardi, where I'm dedicating the same effort I've been putting in non-stop for the past 4 years.</p>
-                            </div>
-                        </div>
-
-                        <!-- WORK HISTORY -->
-                        <div class="work">
-                            <h2 class="about-section-title">Work History</h2>
-                            <div class="work-history">
-
-                                <div class="work-history-item">
-                                    <div class="work-item-title">
-                                        <img src="Assets_icons/yardi-logo.png" alt="Yardi logo.">
-                                        <h3>Associate Marketing Specialist @ Yardi</h3>
-                                    </div>
-                                    <span class="work-date-pill">June 2026 – Current</span>
-                                </div>
-
-                                <div class="work-history-item">
-                                    <div class="work-item-title">
-                                        <img src="Assets_icons/calpolyiter8-logo.jpg" alt="Iter8 logo.">
-                                        <h3>UX Designer @ Cal Poly Iter8</h3>
-                                    </div>
-                                    <span class="work-date-pill">Dec 2025 – Jun 2026</span>
-                                </div>
-
-                                <div class="work-history-item">
-                                    <div class="work-item-title">
-                                        <img src="Assets_icons/hack4impact-logo.png" alt="Hack 4 Impact logo.">
-                                        <h3>UX Designer @ Hack4Impact</h3>
-                                    </div>
-                                    <span class="work-date-pill">Sep 2025 – Jun 2026</span>
-                                </div>
-
-                                <div class="work-history-item">
-                                    <div class="work-item-title">
-                                        <img src="Assets_icons/taga-logo.png" alt="TAGA logo.">
-                                        <h3>Web Coordinator @ TAGA</h3>
-                                    </div>
-                                    <span class="work-date-pill">Jun 2025 – Jun 2026</span>
-                                </div>
-
-                                <div class="work-history-item">
-                                    <div class="work-item-title">
-                                        <img src="Assets_icons/calpolyracing-logo.png" alt="Cal Poly Racing logo.">
-                                        <h3>Creative Director @ Cal Poly Racing</h3>
-                                    </div>
-                                    <span class="work-date-pill">Aug 2024 – Jun 2026</span>
-                                </div>
-
-                                <div class="work-history-item">
-                                    <div class="work-item-title">
-                                        <img src="Assets_icons/livin-logo.png" alt="Livin logo.">
-                                        <h3>UX Designer @ Livin</h3>
-                                    </div>
-                                    <span class="work-date-pill">Jun 2025 – Jan 2026</span>
-                                </div>
-
-                                <div class="work-history-item">
-                                    <div class="work-item-title">
-                                        <img src="Assets_icons/vc-logo.png" alt="Ventura College logo.">
-                                        <h3>Marketing Intern @ Ventura College</h3>
-                                    </div>
-                                    <span class="work-date-pill">Aug 2023 – Jan 2024</span>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!-- THOUGHTS -->
-                        <div class="thoughts">
-                            <h2 class="about-section-title">Thoughts About UX</h2>
-                            <div class="thoughts-inner">
-
-                                <div class="thought-item">
-                                    <button class="thought-toggle" aria-expanded="false">
-                                        <h3>My Perspective On AI and LLM Platforms</h3>
-                                        <span class="thought-chevron">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                                        </span>
-                                    </button>
-                                    <div class="thought-body">
-                                        <p>With the rapid proliferation of LLMs, it's easy to feel like you're missing out if you're not implementing AI into your platform. As a designer, it's my job to know exactly when and where AI tools are effective. This means constantly learning how to use new technology and taking note of which new AI features are actually helpful. I'm of the opinion that the "move fast and break things" motto is no longer the best course of action. Instead, careful consideration must be taken when restructuring your platform or workflow to make room for new AI technology. Users can tell the difference between a rushed AI add-on vs. a thoughtful, seemless integration.</p>
-                                    </div>
-                                </div>
-
-                                <div class="thought-item">
-                                    <button class="thought-toggle" aria-expanded="false">
-                                        <h3>Blending Design and Development</h3>
-                                        <span class="thought-chevron">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                                        </span>
-                                    </button>
-                                    <div class="thought-body">
-                                        <p>Starting my design journey on a computer science track gave me a special appreciation for how designs actually translate into a product. There are some important considerations I find a lot of beginner designers forget to take in this regard. How will this feature be maintained? Will its implementation bottleneck the development of any other features? Will the feature have to change due to practical limitations? These kind of questions should be asked by designers who want to be more involved in the development process. As someone who has experience with a broad set of design mediums, I'm passionate about bringing designers and developers together in a more hybrid workflow.</p>
-                                    </div>
-                                </div>
-
-                                <div class="thought-item">
-                                    <button class="thought-toggle" aria-expanded="false">
-                                        <h3>Long Term Career Goals</h3>
-                                        <span class="thought-chevron">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                                        </span>
-                                    </button>
-                                    <div class="thought-body">
-                                        <p>User Experience, as a concept, has the unique quality of being so broad that it can be applied to nearly any product or service. So, the question of "what are you doing after college?" can be a bit daunting. Luckily, I have many other design-related interests that I'd love to explore in tandem with UX. I'm incredibly interested in automotive design, as there's just so much room for innovation when thinking about car interiors. As the world goes electric, what differentiates the user experience when the powertrain is no longer a variable? I'm also interested in game design for its unique medium for education and rhetoric. In terms of career structure, I'd love to find a long-term environment that allows me to continue to learn and broaden my design skills.</p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!-- GET IN TOUCH -->
-                        <div class="get-in-touch">
-                            <h2 class="about-section-title">Let's continue the conversation.</h2>
-                            <a href="#" data-panel="contact" class="cf-submit git-btn">Get in touch →</a>
-                        </div>
-
-                    </div>
+        <section id="side-quests" class="tab-content">
+            <div class="side-quests-content">
+                <div class="side-quests-item" tabindex="0" data-title="Cal Poly Racing — FSAE Livery" data-description="For the 2024-2025 season, I planned, designed, and executed the livery for our Formula racecar. This was my first foray into vinyl wrap design, and proved to be a challenging and exciting iterative process. With the help of several graphic designers, I was able to consolidate different approaches to the livery into a flowing, modern design.">
+                    <img loading="lazy" src="Pictures/side-quests/cpr-livery.webp" alt="Cal Poly Racing FSAE Car Livery.">
                 </div>
-
-
-                <!-- Contact -->
-                <div class="fp-panel" id="panel-contact">
-                    <div class="contact-inner">
-                        <div class="contact-form-wrap">
-
-                            <div class="contact-header">
-                                <h2>Say hello.</h2>
-                                <p class="grey">Fill out the form and I'll get back to you.</p>
-                            </div>
-
-                            <div class="contact-links-row">
-                                <a href="https://www.linkedin.com/in/ethansautto/" target="_blank" class="contact-pill">
-                                    <img src="Assets_icons/linkedin-logo.png" alt="" class="contact-pill-icon">
-                                    LinkedIn
-                                </a>
-                                <a href="Assets_icons/ethan-sautto-resume.pdf" target="_blank" class="contact-pill">
-                                    <img src="Assets_icons/ethansautto-logo.png" alt="" class="contact-pill-icon">
-                                    Resume
-                                </a>
-                            </div>
-
-                            <div class="cf-field-row">
-                                <div class="cf-field">
-                                    <label for="cf-name">Name</label>
-                                    <input type="text" id="cf-name" placeholder="Your name" autocomplete="name">
-                                </div>
-                                <div class="cf-field">
-                                    <label for="cf-email">Email</label>
-                                    <input type="email" id="cf-email" placeholder="your@email.com" autocomplete="email">
-                                </div>
-                            </div>
-
-                            <div class="cf-field">
-                                <label for="cf-subject">Subject</label>
-                                <input type="text" id="cf-subject" placeholder="What's this about?">
-                            </div>
-
-                            <div class="cf-field">
-                                <label for="cf-message">Message</label>
-                                <textarea id="cf-message" rows="5" placeholder="Tell me more..."></textarea>
-                            </div>
-
-                            <div class="cf-actions">
-                                <button class="cf-submit" id="cf-submit-btn" type="button">Send message →</button>
-                                <p class="cf-status" id="cf-status" aria-live="polite"></p>
-                            </div>
-
-                        </div>
-                    </div>
+                <div class="side-quests-item" tabindex="0" data-title="Highway Racers" data-description="For a quarter-long project in a computer science class at Cal Poly, I worked with 4 other students to create a simple videogame in p5.js. This was the first game any of us had ever made, so there was a steep learning curve. In the end, we were able to create a two-player 'drive-to-survive' endless scroller that was super fun to play!">
+                    <video autoplay muted loop playsinline preload="none" src="Pictures/side-quests/highway-racers-gameplay.mp4" type="video/mp4"></video>
                 </div>
-
+                <div class="side-quests-item" tabindex="0" data-title="TAGA Logo Animation" data-description="After the 2026 TAGA conference moved from in-person to online, each team had to restructure their presentation to be played as a video. Taking advantage of the new format, I created a simple logo animation in After Effects to include in our video.">
+                    <video autoplay muted loop playsinline preload="none" src="Pictures/side-quests/taga-logo-animation.mp4" type="video/mp4"></video>
+                </div>
+                <div class="side-quests-item" tabindex="0" data-title="Grassroots Magazine" data-description="Like any designer, I've always had an idea for a magazine. At some point, I'd love to start formally interviewing the car enthusiasts I meet at events and ask them about their cars, the culture, etc. In the meantime, I created some concept cover art for the series using Adobe Photoshop and Illustrator. I wanted to capture the nostalgic feeling many have for car culture while keeping things new-age, as the articles would mostly focus on current events in the car world.">
+                    <img loading="lazy" src="Pictures/side-quests/grassroots-mag-covers.webp" alt="Grassroots Magazine Cover Art.">
+                </div>
+                <div class="side-quests-item" tabindex="0" data-title="Pixel Art" data-description="As part of a merch series for Cal Poly Racing, I created some pixelized racers. Both were created in Adobe Illustrator, and represent the organization's Baja SAE and Formula SAE teams. Making pixel art can be tedious, but it was satisfying to see them on our shirts at the end.">
+                    <img loading="lazy" src="Pictures/side-quests/cpr-pixelart.webp" alt="Cal Poly Racing pixel art thumbnail.">
+                </div>
+                <div class="side-quests-item" tabindex="0" data-title="Cal Poly Racing Logo Animation" data-description="Wanting to practice my After Effects skills, I created this logo animation for Cal Poly Racing. Motion graphics have always been a cool area of design that I haven't explored as much as I'd like to. Whenever I get the chance, small projects like these help to improve my skills in the medium.">
+                    <video autoplay muted loop playsinline preload="none" src="Pictures/side-quests/cpr-logo-animation.mp4" type="video/mp4"></video>
+                </div>
             </div>
 
-            <!-- Bottom fade mask -->
-            <div class="panel-fade-mask" id="panelFadeMask"></div>
+            <hr class="footer-hr">
 
-        </div>
+            <footer>
+                <div class="footer-logo">
+                    <a href="index.html">
+                        <div class="logo-img-wrap">
+                            <img loading="lazy" src="assets-icons/ethansautto-logo.png" alt="Ethan Sautto" class="logo-default">
+                            <img loading="lazy" src="assets-icons/ethansautto-logo-hover.png" alt="" class="logo-hover">
+                        </div>
+                    </a>
+                </div>
+                <div class="footer-CTA">
+                    <h3>Let's talk more about UX!</h3>
+                    <div class="contact-links">
+                        <a href="https://www.linkedin.com/in/ethansautto/" target="_blank" class="contact-button">
+                            <img loading="lazy" src="assets-icons/linkedin-logo.png" alt="" class="contact-button-icon">
+                            LinkedIn
+                        </a>
+                        <a href="assets-icons/ethan-sautto-resume.pdf" target="_blank" class="contact-button">
+                            <img loading="lazy" src="assets-icons/ethansautto-logo.png" alt="" class="contact-button-icon">
+                            Resume
+                        </a>
+                        <a href="mailto:ethansautto@gmail.com" target="_blank" class="contact-button">
+                            <img loading="lazy" src="assets-icons/paper-plane.png" alt="" class="contact-button-icon">
+                            Email
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </section>
 
+
+        <section id="about" class="tab-content">
+            <div class="about-content">
+                <div class="about-content-upper">
+                    <div class="about-header-photos">
+                        <img loading="lazy" src="Pictures/about/ethan-portrait.webp" alt="">
+                        <img loading="lazy" src="Pictures/about/ethan-presenting.webp" alt="">
+                    </div>
+
+                    <div class="about-context">
+                        <div class="about-header">
+                            <h3>Hi! I'm Ethan.</h3>
+                            <p>I think design gets really interesting when the creator's personality shines through.</p>
+                        </div>
+                        <h4>How I Got Into UX</h4>
+                        <p>My journey into UX started with my love for cars, of all things. I've always viewed them as an extremely underrated medium for art – one that combines visual aesthetics with a specifically tuned user experience.</p>
+                        
+                        <h4>What I've Been Doing</h4>
+                        <p>After completing two years at my local community college, where I experimented with front end development, sculpting, and industrial design, I discovered Cal Poly's Graphic Communication program.</p>
+                        <p>For two years after that, I tackled a steady 16+ units while maintaining President's honor roll and staying heavily involved with several student orgs.</p>
+                        
+                        <h4>Where I'm At Now</h4>
+                        <p>Now I'm working in a full time position at Yardi, where I'm dedicating the same effort I've been putting in non-stop for the past 4 years.</p>
+                    </div>
+                </div>
+                
+
+                <div class="about-content-middle">
+                    <div class="about-funfact">
+                        <div class="about-funfact-photo">
+                            <video autoplay muted loop playsinline preload="none" src="Pictures/about/240-vid.mp4"></video>
+                        </div>
+                        <p>My old Nissan I like to work on</p>
+                    </div>
+
+                    <div class="about-funfact">
+                        <div class="music-player" id="musicPlayer">
+                            <div class="music-player-inner">
+                                <div class="music-album-art" id="albumArt"></div>
+                                <div class="music-info">
+                                    <p class="music-title" id="songTitle">Loading...</p>
+                                    <p class="music-artist" id="songArtist"></p>
+                                </div>
+                                <div class="music-controls">
+                                    <button class="music-btn" id="prevBtn" aria-label="Previous">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg>
+                                    </button>
+                                    <button class="music-btn music-btn-play" id="playBtn" aria-label="Play/Pause">
+                                        <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                                        <svg id="pauseIcon" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                                    </button>
+                                    <button class="music-btn" id="nextBtn" aria-label="Next">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zm2.5-6 5.5 4v-8l-5.5 4zm7.5-6h2v12h-2z"/></svg>
+                                    </button>
+                                </div>
+                                <div class="music-progress-wrap">
+                                    <div class="music-progress-bar">
+                                        <div class="music-progress-fill" id="progressFill"></div>
+                                    </div>
+                                    <div class="music-times">
+                                        <span id="currentTime">0:00</span>
+                                        <span id="totalTime">0:00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Some of my favorite songs</p>
+                    </div>
+                </div>
+
+                <div class="work-history">
+                    <h3>Work History</h3>
+
+                    <div class="work-history-item">
+                        <div class="work-item-title">
+                            <img loading="lazy" src="assets-icons/yardi-logo.png" alt="Yardi logo.">
+                            <h4>Associate Marketing Specialist @ Yardi</h4>
+                        </div>
+                        <span class="work-date-pill">June 2026 – Current</span>
+                        </div>
+
+                        <div class="work-history-item">
+                            <div class="work-item-title">
+                                <img loading="lazy" src="assets-icons/calpolyiter8-logo.jpg" alt="Iter8 logo.">
+                                <h4>UX Designer @ Cal Poly Iter8</h4>
+                            </div>
+                            <span class="work-date-pill">Dec 2025 – Jun 2026</span>
+                        </div>
+
+                        <div class="work-history-item">
+                            <div class="work-item-title">
+                                <img loading="lazy" src="assets-icons/hack4impact-logo.png" alt="Hack 4 Impact logo.">
+                                <h4>UX Designer @ Hack4Impact</h4>
+                            </div>
+                            <span class="work-date-pill">Sep 2025 – Jun 2026</span>
+                        </div>
+
+                        <div class="work-history-item">
+                            <div class="work-item-title">
+                                <img loading="lazy" src="assets-icons/taga-logo.png" alt="TAGA logo.">
+                                <h4>Web Coordinator @ TAGA</h4>
+                            </div>
+                            <span class="work-date-pill">Jun 2025 – Jun 2026</span>
+                        </div>
+
+                        <div class="work-history-item">
+                            <div class="work-item-title">
+                                <img loading="lazy" src="assets-icons/calpolyracing-logo.png" alt="Cal Poly Racing logo.">
+                                <h4>Creative Director @ Cal Poly Racing</h4>
+                            </div>
+                            <span class="work-date-pill">Aug 2024 – Jun 2026</span>
+                        </div>
+
+                        <div class="work-history-item">
+                            <div class="work-item-title">
+                                <img loading="lazy" src="assets-icons/livin-logo.png" alt="Livin logo.">
+                                <h4>UX Designer @ Livin</h4>
+                            </div>
+                            <span class="work-date-pill">Jun 2025 – Jan 2026</span>
+                        </div>
+
+                        <div class="work-history-item">
+                            <div class="work-item-title">
+                                <img loading="lazy" src="assets-icons/vc-logo.png" alt="Ventura College logo.">
+                                <h4>Marketing Intern @ Ventura College</h4>
+                            </div>
+                            <span class="work-date-pill">Aug 2023 – Jan 2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="FAQs">
+                    <h3>Thoughts About UX</h3>
+                    <div class="FAQs-inner">
+
+                        <div class="FAQ-item">
+                            <button class="FAQ-toggle" aria-expanded="false">
+                                <h4>My Perspective On AI and LLM Platforms</h4>
+                                <span class="FAQ-chevron">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                                </span>
+                            </button>
+                            <div class="FAQ-body">
+                                <p>With the rapid proliferation of LLMs, it's easy to feel like you're missing out if you're not implementing AI into your platform. As a designer, it's my job to know exactly when and where AI tools are effective. This means constantly learning how to use new technology and taking note of which new AI features are actually helpful. I'm of the opinion that the "move fast and break things" motto is no longer the best course of action. Instead, careful consideration must be taken when restructuring your platform or workflow to make room for new AI technology. Users can tell the difference between a rushed AI add-on vs. a FAQful, seemless integration.</p>
+                            </div>
+                        </div>
+
+                        <div class="FAQ-item">
+                            <button class="FAQ-toggle" aria-expanded="false">
+                                <h4>Blending Design and Development</h4>
+                                <span class="FAQ-chevron">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                                </span>
+                            </button>
+                            <div class="FAQ-body">
+                                <p>Starting my design journey on a computer science track gave me a special appreciation for how designs actually translate into a product. There are some important considerations I find a lot of beginner designers forget to take in this regard. How will this feature be maintained? Will its implementation bottleneck the development of any other features? Will the feature have to change due to practical limitations? These kind of questions should be asked by designers who want to be more involved in the development process. As someone who has experience with a broad set of design mediums, I'm passionate about bringing designers and developers together in a more hybrid workflow.</p>
+                            </div>
+                        </div>
+
+                        <div class="FAQ-item">
+                            <button class="FAQ-toggle" aria-expanded="false">
+                                <h4>Long Term Career Goals</h4>
+                                <span class="FAQ-chevron">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                                </span>
+                            </button>
+                            <div class="FAQ-body">
+                                <p>User Experience, as a concept, has the unique quality of being so broad that it can be applied to nearly any product or service. So, the question of "what are you doing after college?" can be a bit daunting. Luckily, I have many other design-related interests that I'd love to explore in tandem with UX. I'm incredibly interested in automotive design, as there's just so much room for innovation when thinking about car interiors. As the world goes electric, what differentiates the user experience when the powertrain is no longer a variable? I'm also interested in game design for its unique medium for education and rhetoric. In terms of career structure, I'd love to find a long-term environment that allows me to continue to learn and broaden my design skills.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            <hr class="footer-hr">
+
+            <footer>
+                <div class="footer-logo">
+                    <a href="index.html">
+                        <div class="logo-img-wrap">
+                            <img loading="lazy" src="assets-icons/ethansautto-logo.png" alt="Ethan Sautto" class="logo-default">
+                            <img loading="lazy" src="assets-icons/ethansautto-logo-hover.png" alt="" class="logo-hover">
+                        </div>
+                    </a>
+                </div>
+                <div class="footer-CTA">
+                    <h3>Let's talk more about UX!</h3>
+                    <div class="contact-links">
+                        <a href="https://www.linkedin.com/in/ethansautto/" target="_blank" class="contact-button">
+                            <img loading="lazy" src="assets-icons/linkedin-logo.png" alt="" class="contact-button-icon">
+                            LinkedIn
+                        </a>
+                        <a href="assets-icons/ethan-sautto-resume.pdf" target="_blank" class="contact-button">
+                            <img loading="lazy" src="assets-icons/ethansautto-logo.png" alt="" class="contact-button-icon">
+                            Resume
+                        </a>
+                        <a href="mailto:ethansautto@gmail.com" target="_blank" class="contact-button">
+                            <img loading="lazy" src="assets-icons/paper-plane.png" alt="" class="contact-button-icon">
+                            Email
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </section>
     </div>
 
-
-
-    <script>
-        // PANEL SWITCHER
-        (function() {
-            const scrollWrap = document.getElementById('panelScrollWrap');
-            const fadeMask   = document.getElementById('panelFadeMask');
-            const navLinks   = document.querySelectorAll('[data-panel]');
-
-            // Check whether content overflows and show/hide the fade mask
-            function checkOverflow() {
-                // For panels with their own inner scroll container, check that instead
-                const activePanel = document.querySelector('.fp-panel.active');
-                const innerScroll = activePanel && activePanel.querySelector('.side-quests-inner, .about-inner, .contact-inner');
-                const target = innerScroll || scrollWrap;
-                const overflows = target.scrollHeight > target.clientHeight + 2;
-                const atBottom  = target.scrollTop + target.clientHeight >= target.scrollHeight - 4;
-                fadeMask.classList.toggle('visible', overflows && !atBottom);
-            }
-
-            scrollWrap.addEventListener('scroll', checkOverflow);
-            // Also listen on inner scrollable containers
-            document.querySelectorAll('.side-quests-inner, .about-inner, .contact-inner').forEach(function(el) {
-                el.addEventListener('scroll', checkOverflow);
-            });
-            window.addEventListener('resize', checkOverflow);
-
-            // How long the fade-out animation runs (must match CSS)
-            const FADE_OUT_MS = 180;
-            const FADE_IN_CLEANUP_MS = 950;
-
-            function switchPanel(targetId) {
-                const current = document.querySelector('.fp-panel.active');
-                const next    = document.getElementById('panel-' + targetId);
-                if (!next || next === current) return;
-
-                // Update active nav link immediately
-                navLinks.forEach(l => {
-                    l.classList.toggle('nav-active', l.dataset.panel === targetId);
-                });
-
-                function showNext() {
-                    // Scroll back to top
-                    scrollWrap.scrollTop = 0;
-                    window.scrollTo(0, 0);
-
-                    // Let body scroll for tall panels
-                    const scrollablePanels = ['side-quests', 'about', 'contact'];
-                    document.body.classList.toggle('panel-scrollable', scrollablePanels.includes(targetId));
-
-                    // Activate next panel
-                    next.classList.remove('panel-animating');
-                    next.classList.add('active');
-
-                    // Trigger entrance animations on next frame so display:block
-                    // is committed before the animation class is added
-                    requestAnimationFrame(() => {
-                        next.classList.add('panel-animating');
-                    });
-
-                    // Strip panel-animating after animations finish so
-                    // revisiting the panel re-runs them cleanly
-                    setTimeout(() => {
-                        next.classList.remove('panel-animating');
-                    }, FADE_IN_CLEANUP_MS);
-
-                    // Re-check overflow
-                    requestAnimationFrame(() => requestAnimationFrame(checkOverflow));
-                }
-
-                if (current) {
-                    // Play fade-out on current panel, then swap
-                    current.classList.add('panel-fading-out');
-                    setTimeout(() => {
-                        current.classList.remove('active', 'panel-fading-out', 'panel-animating');
-                        showNext();
-                    }, FADE_OUT_MS);
-                } else {
-                    showNext();
-                }
-            }
-
-            // Attach click handlers
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    switchPanel(this.dataset.panel);
-                });
-            });
-
-            // Logo goes to work panel
-            document.querySelector('.logo a[data-panel="work"]')?.addEventListener('click', function(e) {
-                e.preventDefault();
-                switchPanel('work');
-            });
-
-            // Initial overflow check after page loads
-            window.addEventListener('load', checkOverflow);
-        })();
-
-
-        // CAROUSEL (work panel)
-        document.addEventListener('DOMContentLoaded', function() {
-            const track = document.querySelector('.carousel-track');
-            const slides = document.querySelectorAll('.carousel-slide');
-            const dots = document.querySelectorAll('.dot');
-            let currentIndex = 0;
-            const slideCount = slides.length;
-            
-            // Drag variables
-            let isDragging = false;
-            let startPos = 0;
-            let currentTranslate = 0;
-            let prevTranslate = 0;
-            let animationID = 0;
-            let dragStartTime = 0;
-            
-            // Disable transition while dragging
-            slides.forEach(slide => {
-                slide.classList.remove('active', 'visible-title');
-            });
-            
-            function getPositionX(event) {
-                return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
-            }
-            
-            function setSliderPosition() {
-                track.style.transform = `translateX(${currentTranslate}px)`;
-            }
-            
-            function animation() {
-                setSliderPosition();
-                if (isDragging) requestAnimationFrame(animation);
-            }
-            
-            function updateSlideAndDots() {
-                const slideWidth = slides[0].getBoundingClientRect().width;
-                const nearestIndex = Math.round(-currentTranslate / slideWidth);
-                
-                // Constrain to valid range
-                currentIndex = Math.min(Math.max(nearestIndex, 0), slideCount - 1);
-                
-                // Update title visibility
-                slides.forEach(slide => {
-                    slide.classList.remove('visible-title');
-                });
-                slides[currentIndex].classList.add('visible-title');
-                
-                // Update dots
-                dots.forEach((dot, i) => {
-                    if (i === currentIndex) {
-                        dot.classList.add('active');
-                    } else {
-                        dot.classList.remove('active');
-                    }
-                });
-                
-                // Snap to slide
-                prevTranslate = -currentIndex * slideWidth;
-                currentTranslate = prevTranslate;
-                setSliderPosition();
-            }
-            
-            // Mouse/Touch Events
-            track.addEventListener('mousedown', dragStart);
-            track.addEventListener('touchstart', dragStart);
-            track.addEventListener('mouseup', dragEnd);
-            track.addEventListener('touchend', dragEnd);
-            track.addEventListener('mouseleave', dragEnd);
-            track.addEventListener('mousemove', drag);
-            track.addEventListener('touchmove', drag, { passive: false });
-            
-            // Prevent default drag behavior on images
-            track.addEventListener('dragstart', (e) => e.preventDefault());
-            
-            function dragStart(e) {
-                isDragging = true;
-                dragStartTime = Date.now();
-                startPos = getPositionX(e);
-                
-                // Cancel any ongoing transitions
-                track.style.transition = 'none';
-
-                // Calculate current translate if not set
-                if (!prevTranslate) {
-                    const slideWidth = slides[0].getBoundingClientRect().width;
-                    prevTranslate = -currentIndex * slideWidth;
-                    currentTranslate = prevTranslate;
-                }
-                
-                animationID = requestAnimationFrame(animation);
-            }
-            
-            function drag(e) {
-                if (!isDragging) return;
-                
-                const currentPosition = getPositionX(e);
-                const slideWidth = slides[0].getBoundingClientRect().width;
-                const dragDelta = Math.abs(currentPosition - startPos);
-
-                // Only prevent scroll/default once we're sure it's a horizontal drag
-                if (dragDelta > 8) {
-                    e.preventDefault();
-                }
-                
-                // Calculate new position with boundaries
-                let newTranslate = prevTranslate + (currentPosition - startPos);
-                
-                // Add resistance at edges (optional - makes dragging feel better)
-                const minTranslate = -(slideCount - 1) * slideWidth - 50;
-                const maxTranslate = 50;
-                
-                if (newTranslate < minTranslate) {
-                    newTranslate = minTranslate + (newTranslate - minTranslate) * 0.2;
-                } else if (newTranslate > maxTranslate) {
-                    newTranslate = maxTranslate + (newTranslate - maxTranslate) * 0.2;
-                }
-                
-                currentTranslate = newTranslate;
-            }
-            
-            function dragEnd(e) {
-                if (!isDragging) return;
-                
-                isDragging = false;
-                cancelAnimationFrame(animationID);
-                
-                const dragDuration = Date.now() - dragStartTime;
-                const slideWidth = slides[0].getBoundingClientRect().width;
-                const dragDistance = Math.abs(currentTranslate - prevTranslate);
-                
-                // Flag as a drag so slide-link clicks are suppressed
-                if (dragDistance > 5) {
-                    track.dataset.wasDragging = 'true';
-                    setTimeout(() => { delete track.dataset.wasDragging; }, 50);
-                }
-                
-                // Determine if this was a quick flick (fast drag)
-                if (dragDuration < 300 && Math.abs(currentTranslate - prevTranslate) > 30) {
-                    // Flick navigation
-                    if (currentTranslate < prevTranslate - 30) {
-                        // Dragged left - go to next
-                        currentIndex = Math.min(currentIndex + 1, slideCount - 1);
-                    } else if (currentTranslate > prevTranslate + 30) {
-                        // Dragged right - go to previous
-                        currentIndex = Math.max(currentIndex - 1, 0);
-                    }
-                } else {
-                    // Normal drag - snap based on position
-                    const dragDelta = currentTranslate - prevTranslate;
-                    if (Math.abs(dragDelta) > slideWidth * 0.2) {
-                        if (dragDelta < 0 && currentIndex < slideCount - 1) {
-                            currentIndex++;
-                        } else if (dragDelta > 0 && currentIndex > 0) {
-                            currentIndex--;
-                        }
-                    }
-                }
-                
-                // Snap to slide with animation
-                track.style.transition = 'transform 0.3s ease-out';
-                prevTranslate = -currentIndex * slideWidth;
-                currentTranslate = prevTranslate;
-                setSliderPosition();
-                
-                // Update UI
-                slides.forEach(slide => {
-                    slide.classList.remove('visible-title');
-                });
-                slides[currentIndex].classList.add('visible-title');
-                
-                dots.forEach((dot, i) => {
-                    if (i === currentIndex) {
-                        dot.classList.add('active');
-                    } else {
-                        dot.classList.remove('active');
-                    }
-                });
-                
-                setTimeout(() => {
-                    track.style.transition = 'transform 0.5s ease-in-out';
-                }, 300);
-
-                updateRestartButton();
-            }
-            
-            // Click on non-active slides to navigate to them
-            slides.forEach((slide, index) => {
-                slide.addEventListener('click', function(e) {
-                    if (index === currentIndex) return;
-                    if (track.dataset.wasDragging) return;
-                    e.preventDefault();
-                    e.stopPropagation();
-
-                    currentIndex = index;
-                    const slideWidth = slides[0].getBoundingClientRect().width;
-                    prevTranslate = -currentIndex * slideWidth;
-                    currentTranslate = prevTranslate;
-                    track.style.transform = `translateX(${currentTranslate}px)`;
-
-                    slides.forEach(s => s.classList.remove('visible-title'));
-                    slides[currentIndex].classList.add('visible-title');
-
-                    dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
-                    updateRestartButton();
-                }, true);
-            });
-
-            // Restart button
-            const restartBtn = document.getElementById('carouselRestart');
-
-            function updateRestartButton() {
-                restartBtn.classList.toggle('visible', currentIndex > 0);
-            }
-
-            restartBtn.addEventListener('click', function() {
-                currentIndex = 0;
-                const slideWidth = slides[0].getBoundingClientRect().width;
-                prevTranslate = -currentIndex * slideWidth;
-                currentTranslate = prevTranslate;
-                track.style.transform = `translateX(${currentTranslate}px)`;
-
-                slides.forEach(s => s.classList.remove('visible-title'));
-                slides[0].classList.add('visible-title');
-
-                dots.forEach((dot, i) => dot.classList.toggle('active', i === 0));
-                updateRestartButton();
-            });
-            
-            // Dot navigation
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    currentIndex = index;
-                    
-                    const slideWidth = slides[0].getBoundingClientRect().width;
-                    prevTranslate = -currentIndex * slideWidth;
-                    currentTranslate = prevTranslate;
-                    track.style.transform = `translateX(${currentTranslate}px)`;
-                    
-                    // Update UI
-                    slides.forEach(slide => {
-                        slide.classList.remove('visible-title');
-                    });
-                    slides[currentIndex].classList.add('visible-title');
-                    
-                    dots.forEach((dot, i) => {
-                        if (i === currentIndex) {
-                            dot.classList.add('active');
-                        } else {
-                            dot.classList.remove('active');
-                        }
-                    });
-                    updateRestartButton();
-                });
-            });
-            
-            // Suppress link click if the user was dragging
-            track.addEventListener('click', function(e) {
-                if (track.dataset.wasDragging) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                }
-            }, true);
-
-            // Keyboard navigation
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'ArrowRight') {
-                    e.preventDefault();
-                    if (currentIndex < slideCount - 1) {
-                        currentIndex++;
-                    } else {
-                        currentIndex = 0; // Loop back to start
-                    }
-                    
-                    const slideWidth = slides[0].getBoundingClientRect().width;
-                    prevTranslate = -currentIndex * slideWidth;
-                    currentTranslate = prevTranslate;
-                    track.style.transform = `translateX(${currentTranslate}px)`;
-                    
-                    // Update UI
-                    slides.forEach(slide => {
-                        slide.classList.remove('visible-title');
-                    });
-                    slides[currentIndex].classList.add('visible-title');
-                    
-                    dots.forEach((dot, i) => {
-                        if (i === currentIndex) {
-                            dot.classList.add('active');
-                        } else {
-                            dot.classList.remove('active');
-                        }
-                    });
-                }
-            });
-            
-            // Handle window resize
-            window.addEventListener('resize', function() {
-                const slideWidth = slides[0].getBoundingClientRect().width;
-                prevTranslate = -currentIndex * slideWidth;
-                currentTranslate = prevTranslate;
-                track.style.transform = `translateX(${currentTranslate}px)`;
-            });
-            
-            // Initialize
-            slides[0].classList.add('visible-title');
-            
-            const slideWidth = slides[0].getBoundingClientRect().width;
-            prevTranslate = -currentIndex * slideWidth;
-            currentTranslate = prevTranslate;
-            setSliderPosition();
-        });
-
-
-        // THOUGHTS ACCORDION
-        document.addEventListener('click', function(e) {
-            const btn = e.target.closest('.thought-toggle');
-            if (!btn) return;
-            const item   = btn.closest('.thought-item');
-            const isOpen = item.classList.contains('open');
-
-            document.querySelectorAll('.thought-item').forEach(i => {
-                i.classList.remove('open');
-                i.querySelector('.thought-toggle').setAttribute('aria-expanded', 'false');
-                i.querySelector('.thought-body').style.maxHeight = null;
-            });
-
-            if (!isOpen) {
-                item.classList.add('open');
-                btn.setAttribute('aria-expanded', 'true');
-                const body = item.querySelector('.thought-body');
-                body.style.maxHeight = body.scrollHeight + 'px';
-            }
-        });
-
-
-        // MUSIC PLAYER
-        (function() {
-            const audioPlayer = new Audio();
-
-            const songs = [
-                { title: "What's Now Is Now", artist: "CAKE",             color: "#236F9E", accent: "#BF3722", image: "Assets_icons/albums/showroomofcompassion.jpg", audio: "Assets_icons/albums/whatsnowisnow.m4a" },
-                { title: "Pogo",               artist: "Digitalism",       color: "#160926", accent: "#3FC23A", image: "Assets_icons/albums/idealism.jpg",              audio: "Assets_icons/albums/pogo.m4a" },
-                { title: "Ever (Foreign Flag)",artist: "Team Sleep",       color: "#755B12", accent: "#CF4108", image: "Assets_icons/albums/teamsleep.jpg",             audio: "Assets_icons/albums/ever.m4a" },
-                { title: "Collapsing New Buildings", artist: "pennines",   color: "#136085", accent: "#0A212B", image: "Assets_icons/albums/fairdos.jpg",               audio: "Assets_icons/albums/collapsingnewbuildings.m4a" },
-                { title: "Wither",             artist: "Chatterton",       color: "#4C639C", accent: "#261B15", image: "Assets_icons/albums/fieldsofthis.jpg",          audio: "Assets_icons/albums/wither.m4a" },
-                { title: "Cath...",            artist: "Death Cab for Cutie", color: "#752310", accent: "#1C3469", image: "Assets_icons/albums/narrowstairs.jpg",     audio: "Assets_icons/albums/cath.m4a" },
-                { title: "The Flower Called Nowhere", artist: "Stereolab", color: "#28706F", accent: "#A3BA3F", image: "Assets_icons/albums/dotsandloops.png",         audio: "Assets_icons/albums/theflowercallednowhere.m4a" },
-                { title: "Love Proceeding",    artist: "BADBADNOTGOOD",    color: "#0D3D66", accent: "#1973C2", image: "Assets_icons/albums/talkmemory.jpg",            audio: "Assets_icons/albums/loveproceeding.m4a" }
-            ];
-
-            let currentSongIndex = Math.floor(Math.random() * songs.length);
-            let isPlaying = false;
-
-            function formatTime(secs) {
-                const m = Math.floor(secs / 60);
-                const s = Math.floor(secs % 60);
-                return `${m}:${s.toString().padStart(2, '0')}`;
-            }
-
-            function loadSong(index) {
-                const song = songs[index];
-                audioPlayer.src = song.audio || '';
-                document.getElementById('songTitle').textContent  = song.title;
-                document.getElementById('songArtist').textContent = song.artist;
-                document.getElementById('totalTime').textContent   = '0:00';
-                document.getElementById('currentTime').textContent = '0:00';
-                document.getElementById('progressFill').style.width = '0%';
-
-                const player   = document.getElementById('musicPlayer');
-                const albumArt = document.getElementById('albumArt');
-                player.style.background   = song.color;
-                albumArt.style.background = `radial-gradient(circle at 30% 30%, ${song.accent}33, ${song.color})`;
-                albumArt.style.borderColor = `${song.accent}44`;
-                albumArt.style.backgroundImage    = `url('${song.image}')`;
-                albumArt.style.backgroundSize     = 'cover';
-                albumArt.style.backgroundPosition = 'center';
-                document.getElementById('songTitle').style.color = '#ffffff';
-                document.querySelector('.music-btn-play').style.background = song.accent;
-                document.querySelector('.music-progress-fill').style.background = song.accent;
-            }
-
-            audioPlayer.addEventListener('timeupdate', () => {
-                const pct = (audioPlayer.currentTime / audioPlayer.duration) * 100;
-                document.getElementById('progressFill').style.width = pct + '%';
-                document.getElementById('currentTime').textContent = formatTime(audioPlayer.currentTime);
-                const timeLeft = audioPlayer.duration - audioPlayer.currentTime;
-                if (timeLeft <= 2 && timeLeft > 0 && isPlaying && audioPlayer.volume > 0) {
-                    audioPlayer.volume = Math.max(timeLeft / 2, 0);
-                }
-            });
-
-            audioPlayer.addEventListener('loadedmetadata', () => {
-                document.getElementById('totalTime').textContent = formatTime(audioPlayer.duration);
-            });
-
-            audioPlayer.addEventListener('ended', () => {
-                audioPlayer.volume = 1;
-                nextSong();
-            });
-
-            function fadeVolume(from, to, duration, callback) {
-                const steps = 20, stepTime = duration / steps, stepSize = (to - from) / steps;
-                let current = from;
-                audioPlayer.volume = from;
-                const fade = setInterval(() => {
-                    current += stepSize;
-                    audioPlayer.volume = Math.min(Math.max(current, 0), 1);
-                    if ((stepSize > 0 && current >= to) || (stepSize < 0 && current <= to)) {
-                        audioPlayer.volume = to;
-                        clearInterval(fade);
-                        if (callback) callback();
-                    }
-                }, stepTime);
-            }
-
-            function togglePlay() {
-                isPlaying = !isPlaying;
-                document.getElementById('playIcon').style.display  = isPlaying ? 'none'  : 'block';
-                document.getElementById('pauseIcon').style.display = isPlaying ? 'block' : 'none';
-                if (isPlaying) {
-                    audioPlayer.volume = 0;
-                    audioPlayer.play();
-                    fadeVolume(0, 1, 600);
-                } else {
-                    fadeVolume(1, 0, 600, () => audioPlayer.pause());
-                }
-            }
-
-            function nextSong() {
-                fadeVolume(1, 0, 600, () => {
-                    audioPlayer.pause();
-                    isPlaying = false;
-                    document.getElementById('playIcon').style.display  = 'block';
-                    document.getElementById('pauseIcon').style.display = 'none';
-                    currentSongIndex = (currentSongIndex + 1) % songs.length;
-                    loadSong(currentSongIndex);
-                });
-            }
-
-            function prevSong() {
-                fadeVolume(1, 0, 600, () => {
-                    audioPlayer.pause();
-                    isPlaying = false;
-                    document.getElementById('playIcon').style.display  = 'block';
-                    document.getElementById('pauseIcon').style.display = 'none';
-                    currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
-                    loadSong(currentSongIndex);
-                });
-            }
-
-            document.getElementById('playBtn').addEventListener('click', togglePlay);
-            document.getElementById('nextBtn').addEventListener('click', nextSong);
-            document.getElementById('prevBtn').addEventListener('click', prevSong);
-
-            loadSong(currentSongIndex);
-        })();
-
-
-        // CONTACT FORM
-        (function() {
-            const btn    = document.getElementById('cf-submit-btn');
-            const status = document.getElementById('cf-status');
-
-            btn.addEventListener('click', function() {
-                const name    = document.getElementById('cf-name').value.trim();
-                const email   = document.getElementById('cf-email').value.trim();
-                const subject = document.getElementById('cf-subject').value.trim();
-                const message = document.getElementById('cf-message').value.trim();
-
-                if (!name || !email || !message) {
-                    status.textContent = 'Please fill in your name, email, and message.';
-                    status.className   = 'cf-status cf-error';
-                    return;
-                }
-
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(email)) {
-                    status.textContent = 'That email doesn\'t look right.';
-                    status.className   = 'cf-status cf-error';
-                    return;
-                }
-
-                const mailtoSubject = encodeURIComponent(subject || 'Message from ' + name);
-                const mailtoBody    = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
-                window.location.href = 'mailto:ethansautto@gmail.com?subject=' + mailtoSubject + '&body=' + mailtoBody;
-
-                status.textContent = 'Opening your mail client...';
-                status.className   = 'cf-status cf-success';
-            });
-
-            // Clear status on input
-            ['cf-name','cf-email','cf-subject','cf-message'].forEach(function(id) {
-                document.getElementById(id).addEventListener('input', function() {
-                    status.textContent = '';
-                    status.className   = 'cf-status';
-                });
-            });
-        })();
-
-
-        // PAGE LOAD ANIMATION
-        window.addEventListener('load', function() {
-            document.body.classList.add('loaded');
-        });
-
-        // Release will-change after animations complete to free GPU memory
-        document.querySelectorAll('.home > *, .intro ul li, .intro .vertical-divider, .intro .intro-text, .intro .intro-text h2, .intro .intro-text p').forEach(function(el) {
-            el.addEventListener('animationend', function() {
-                this.style.willChange = 'auto';
-            }, { once: true });
-        });
-
-
-        // HAMBURGER MENU
-        (function() {
-            const btn     = document.getElementById('hamburgerBtn');
-            const drawer  = document.getElementById('mobileNavDrawer');
-            const overlay = document.getElementById('mobileNavOverlay');
-            const close   = document.getElementById('mobileNavClose');
-
-            function openMenu() {
-                drawer.classList.add('open');
-                overlay.classList.add('open');
-                btn.setAttribute('aria-expanded', 'true');
-                document.body.style.overflow = 'hidden';
-            }
-
-            function closeMenu() {
-                drawer.classList.remove('open');
-                overlay.classList.remove('open');
-                btn.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = '';
-            }
-
-            btn.addEventListener('click', openMenu);
-            close.addEventListener('click', closeMenu);
-            overlay.addEventListener('click', closeMenu);
-
-            // Close on panel link tap
-            drawer.querySelectorAll('a[data-panel]').forEach(function(link) {
-                link.addEventListener('click', closeMenu);
-            });
-        })();
-    </script>
-
+    <div class="side-quest-overlay" id="sideQuestOverlay">
+        <div class="side-quest-overlay-backdrop" data-overlay-close></div>
+        <div class="side-quest-overlay-content">
+            <div class="side-quest-overlay-media"></div>
+            <div class="side-quest-overlay-text">
+                <h3 class="side-quest-overlay-title"></h3>
+                <p class="side-quest-overlay-description"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
-</html>
