@@ -63,25 +63,51 @@
 })();
 
 const DEFAULT_TAB = "work";
+const TAB_FADE_OUT_MS = 180; // keep in sync with .tab-content.is-leaving duration in style.css
+
+function activateTab(sections, target) {
+    sections.forEach((section) => {
+        section.classList.toggle("is-active", section === target);
+        section.style.display = ""; // clear any leftover inline fallback
+    });
+}
 
 function showTab(id) {
     const sections = document.querySelectorAll(".tab-content");
-    let matched = false;
-
+    let target = null;
     sections.forEach((section) => {
-        const isMatch = section.id === id;
-        section.classList.toggle("is-active", isMatch);
-        if (isMatch) matched = true;
+        if (section.id === id) target = section;
     });
 
-    // Fallback to Work section
-    if (!matched) {
-        sections.forEach((section) => {
-            section.style.display = section.id === DEFAULT_TAB ? "block" : "none";
-        });
+    const resolvedId = target ? id : DEFAULT_TAB;
+    const resolvedTarget = target || document.getElementById(DEFAULT_TAB) || sections[0];
+
+    updateActiveLink(resolvedId);
+
+    const current = document.querySelector(".tab-content.is-active");
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // Nothing to fade out (first load) or already on this tab: switch immediately
+    if (!current || current === resolvedTarget || prefersReducedMotion) {
+        activateTab(sections, resolvedTarget);
+        return;
     }
 
-    updateActiveLink(matched ? id : DEFAULT_TAB);
+    // Fade the current tab out, then swap once the animation finishes
+    current.classList.remove("is-active");
+    current.classList.add("is-leaving");
+
+    let finished = false;
+    const finish = () => {
+        if (finished) return;
+        finished = true;
+        current.classList.remove("is-leaving");
+        activateTab(sections, resolvedTarget);
+    };
+
+    current.addEventListener("animationend", finish, { once: true });
+    // Safety net in case the animationend event doesn't fire (e.g. display toggled elsewhere)
+    setTimeout(finish, TAB_FADE_OUT_MS + 50);
 }
 
 function updateActiveLink(id) {
