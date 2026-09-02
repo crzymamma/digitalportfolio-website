@@ -1042,6 +1042,10 @@ footer {
         width: 100%;
         margin-bottom: 0;
     }
+
+    .FAQ-body p {
+        max-width: 95%;
+    }
 }
 
 @media (min-width: 1100px) and (max-width: 1400px) {
